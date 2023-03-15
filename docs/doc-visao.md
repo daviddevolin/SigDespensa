@@ -19,7 +19,7 @@ Membro     |     Competências   |
 Taciano    | Desenvolvedor Java, Junit, Eclipse, JSP, JSF, Hibernate, Matemática, Latex, etc |
 Sandra     | Gestão, Geográfa |
 Zé         | Desenvolvedor Java, Astrofísico |
-David      | Desenvolvedor JavaScript |
+David      | Full-Stack Developer - Python, C, Java, JavaScript, HTML, CSS, React.Js, MySQL, Django |
 
 ## Perfis dos Usuários
 

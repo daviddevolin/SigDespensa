@@ -5,12 +5,12 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 ## Equipe e Definição de Papéis
 
-Membro     |     Papel   |   E-mail   |
----------  | ----------- | ---------- |
-Taciano    | Cliente Professor  | taciano@bsi.ufrn.br
-Sandra     | Cliente (Diretora) | sandra@ceres.ufrn.br
-Zé         | Analista, Testador | ze@silva.com
-Maria      | Gerente, Desenvolvedor | maria@silva.com
+Membro     |     Papel   |   E-mail   |    Github   |
+---------  | ----------- | ---------- |  ---------- |
+Taciano    | Cliente Professor  | taciano@bsi.ufrn.br |
+Sandra     | Cliente (Diretora) | sandra@ceres.ufrn.br |
+Zé         | Analista, Testador | ze@silva.com |
+David      | Gerente, Analista | davidccb@live.com | daviddevolin |
 
 ### Matriz de Competências
 

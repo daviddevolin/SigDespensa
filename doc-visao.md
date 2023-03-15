@@ -19,7 +19,7 @@ Membro     |     Competências   |
 Taciano    | Desenvolvedor Java, Junit, Eclipse, JSP, JSF, Hibernate, Matemática, Latex, etc |
 Sandra     | Gestão, Geográfa |
 Zé         | Desenvolvedor Java, Astrofísico |
-Maria      | Gestão, Desenvolvedor Java, Pesquisadora em Engenharia de Software |
+David      | Desenvolvedor JavaScript |
 
 ## Perfis dos Usuários
 

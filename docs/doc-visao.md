@@ -10,6 +10,8 @@ Membro     |     Papel   |   E-mail   |    Github   |
 David      | Gerente, Analista | davidccb@live.com | daviddevolin |
 Manoel     | Analista | manoel.anizio456@gmail.com | manizio |
 Lucas     | Analista | lucascantodev@gmail.com | lucascantodev |
+Isadora   | Analista | isadorashs1@gmail.com | isadorazs |
+
 
 ### Matriz de Competências
 
@@ -18,6 +20,8 @@ Membro     |     Competências   |
 David      | Full-Stack Developer - Python, C, Java, JavaScript, HTML, CSS, React.js, MySQL, Django |
 Manoel | Desenvolvedor Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
 Lucas | Desenvolvedor JavaScript, HTML, CSS, React.js, NextJS, Node, MySQL |
+Isadora | Desenvolvedora Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
+
 
 ## Perfis dos Usuários
 

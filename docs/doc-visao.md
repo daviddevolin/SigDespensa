@@ -11,7 +11,7 @@ David      | Gerente, Analista | davidccb@live.com | daviddevolin |
 Manoel     | Analista | manoel.anizio456@gmail.com | manizio |
 Lucas     | Analista | lucascantodev@gmail.com | lucascantodev |
 Isadora   | Analista | isadorashs1@gmail.com | isadorazs |
-Ítalo   | Analista | italog09@gmail.com | italoguil |
+Ítalo   | Analista | italog09@gmail.com | italoguilh |
 
 
 ### Matriz de Competências

@@ -7,19 +7,16 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 Membro     |     Papel   |   E-mail   |    Github   |
 ---------  | ----------- | ---------- |  ---------- |
-Taciano    | Cliente Professor  | taciano@bsi.ufrn.br |
-Sandra     | Cliente (Diretora) | sandra@ceres.ufrn.br |
-Zé         | Analista, Testador | ze@silva.com |
 David      | Gerente, Analista | davidccb@live.com | daviddevolin |
+Manoel     | Analista | manoel.anizio456@gmail.com | manizio |
+
 
 ### Matriz de Competências
 
 Membro     |     Competências   |
 ---------  | ----------- |
-Taciano    | Desenvolvedor Java, Junit, Eclipse, JSP, JSF, Hibernate, Matemática, Latex, etc |
-Sandra     | Gestão, Geográfa |
-Zé         | Desenvolvedor Java, Astrofísico |
-David      | Full-Stack Developer - Python, C, Java, JavaScript, HTML, CSS, React.Js, MySQL, Django |
+David      | Full-Stack Developer - Python, C, Java, JavaScript, HTML, CSS, React.js, MySQL, Django |
+Manoel | Desenvolvedor Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
 
 ## Perfis dos Usuários
 
@@ -27,9 +24,8 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 
 Perfil                                 | Descrição   |
 ---------                              | ----------- |
-Administrador | Este usuário realiza os cadastros base e pode realizar qualquer função.
-Docentes | Este usuário pode verificar seu horário, e acessar turmas, estruturas curriculares, lista de alunos nas turmas, cadastrar enquetes e ver resultados, etc
-Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar interesse em uma turma, e acessar turmas, a estrutura do curso, responder enquetes, etc.
+Administrador | Este usuário realiza os cadastros de despensas e pode realizar qualquer função.
+Cliente | Este usuário pode visualizar, adicionar, remover e editar itens da despensa
 
 ## Lista de Requisitos Funcionais
 

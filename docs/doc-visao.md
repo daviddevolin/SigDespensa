@@ -32,19 +32,23 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 Perfil                                 | Descrição   |
 ---------                              | ----------- |
 Administrador | Este usuário realiza os cadastros de despensas e pode realizar qualquer função.
-Cliente | Este usuário pode visualizar, adicionar, remover e editar itens da despensa
+Usuário | Este usuário pode visualizar, adicionar, remover e editar itens da despensa
 
 ## Lista de Requisitos Funcionais
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Manter um cadastro de Cliente     | Um cliente representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um cliente tem código-ID, nome, email, endereço, cpf, senha, telefone. | Cliente |
-RF002 - Manter um cadastro de Administrador | Um administrador representa um usuário com acesso completo ao sistema, podendo utilizar de todas as funções disponíveis. Um administrador tem código-ID, nome, senha, endereço, cpf, email e uma chave de registro. | Administrador |
-RF003 - Manter o cadastro de Salas | Uma sala tem um número, um nome, capacidade, tamanho, bloco e o centro a qual pertence. | Administrador |
-RF004 - Manter cadastro de Componentes Curriculares | Um componente curricular é de um tipo de componente. Um componente curricular tem: código, nome, ementa, departamento, carga horária e modalidade, equivalências e requisitos com outros componentes, data de criação. | Administrador |
-RF005 - Manter o cadastro de Horários de Aula | Um horário tem: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início, uma hora de final | Administrador |
-RF006 - Manter o cadastro de professores | um professor tem: matrícula, nome, e-mail, telefone e o departamento | Administrador |
-RF007 - Manter cadastro de Turmas | Uma turma tem: código, professor, sala e horários (horário da turma). Uma turma é de um componente curricular. Uma turma tem um ou mais professores. Uma turma tem uma ou mais salas. Uma turma tem vários horários de aulas. | Chefes e Coordenadores |
+RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, cpf, senha, telefone. | Usuário |
+RF002 - Alterar um Usuário | Editar um usuário tem:  código-ID, nome, email, endereço, cpf, senha, telefone. | Usuário |
+RF003 - Excluir Usuário |  Excluir Usuário tem: código-ID, email, CPF e senha. Remove permanentemente o cadastro do Usuário| Usuário, Administrador|
+RF004 - Inserir Administrador | Um administrador representa um usuário com acesso completo ao sistema, podendo utilizar de todas as funções disponíveis. Um administrador tem código-ID, nome, senha, endereço, cpf, email e uma chave de registro. | Administrador |
+RF005 - Alterar Administrador | Editar um Administrador tem:  código-ID, nome, email, endereço, cpf, senha, telefone. | Administrador|
+RF006 - Excluir Administrador | Excluir Administrador tem: código-ID, email, CPF e senha. Remove permanentemente o cadastro do Administrador| Administrador|
+RF007 - Manter o cadastro de Depósito | Um depósito tem um número, capacidade, tamanho e categoria. | Administrador |
+RF008 - Manter cadastro de Categorias | As categorias estabelecem que tipo de item pode ser armazenado em determinado deposito. Uma catégoria tem: código-ID e nome. | Administrador |
+RF009 - Cadastro de Horários de serviço | Um horário de serviço tem: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início, uma hora de final | Administrador |
+RF010 - 
+RF011 -  Cadastro do Histórico  | Um Histórico tem: codigo-ID, e horários, data, ID-usuário. Um histórico ira constar, todo o acesso e movimentação feita por cada usuário ao depósito. | Cliente, Administrador |
 
 ### Modelo Conceitual
 

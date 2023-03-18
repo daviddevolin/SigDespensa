@@ -70,6 +70,13 @@ Requisito                                 | Descrição   |
 RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamento no Firefox e no Chrome. |
 RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milessegundos |
 RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
+RNF004 - Usabilidade | Deve ser fácil de usar e intuitivo para o usuário. |
+RNF005 - Bom desempenho | Deve ser rápido, mesmo quando lida com grandes quantidades de dados ou processos complexos. |
+RNF006 - Segurança | Deve ser seguro e funcionar sem erros ou falhas frequentes. Podem ser realizados testes de estresse e de carga para verificar a estabilidade do software. |
+RNF007 - Adaptabilidade | Deve ser adaptável a diferentes necessidades do usuário e permitir personalização para atender a requisitos específicos. |
+RNF008 - Fácil manutenção |  O software deve ser fácil de manter e atualizar.|
+RNF009 - Possibilidade de backup | deve ser capaz de realizar backups frequentes de dados armazenados. |
+
 
 ## Riscos
 

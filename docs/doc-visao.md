@@ -38,17 +38,20 @@ Usuário | Este usuário pode visualizar, adicionar, remover e editar itens da d
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, cpf, senha, telefone. | Usuário |
-RF002 - Alterar um Usuário | Editar um usuário tem:  código-ID, nome, email, endereço, cpf, senha, telefone. | Usuário |
-RF003 - Excluir Usuário |  Excluir Usuário tem: código-ID, email, CPF e senha. Remove permanentemente o cadastro do Usuário| Usuário, Administrador|
+RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, cpf, senha e telefone. | Usuário, Administrador |
+RF002 - Alterar um Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: código-ID, nome, email, endereço, cpf, senha e telefone. | Usuário |
+RF003 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Usuário, Administrador|
 RF004 - Inserir Administrador | Um administrador representa um usuário com acesso completo ao sistema, podendo utilizar de todas as funções disponíveis. Um administrador tem código-ID, nome, senha, endereço, cpf, email e uma chave de registro. | Administrador |
-RF005 - Alterar Administrador | Editar um Administrador tem:  código-ID, nome, email, endereço, cpf, senha, telefone. | Administrador|
-RF006 - Excluir Administrador | Excluir Administrador tem: código-ID, email, CPF e senha. Remove permanentemente o cadastro do Administrador| Administrador|
-RF007 - Manter o cadastro de Depósito | Um depósito tem um número, capacidade, tamanho e categoria. | Administrador |
-RF008 - Manter cadastro de Categorias | As categorias estabelecem que tipo de item pode ser armazenado em determinado deposito. Uma catégoria tem: código-ID e nome. | Administrador |
-RF009 - Cadastro de Horários de serviço | Um horário de serviço tem: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início, uma hora de final | Administrador |
-RF010 - 
-RF011 -  Cadastro do Histórico  | Um Histórico tem: codigo-ID, e horários, data, ID-usuário. Um histórico ira constar, todo o acesso e movimentação feita por cada usuário ao depósito. | Cliente, Administrador |
+RF005 - Alterar Administrador | Edita as informações de um Administrador. Alterar Administrador tem:  código-ID, nome, email, endereço, cpf, senha e telefone. | Administrador|
+RF006 - Excluir Administrador | Remove permanentemente o cadastro do Administrador. Excluir Administrador tem: código-ID, email, CPF e senha. | Administrador|
+RF007 - Manter o cadastro de Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: um número, capacidade, tamanho e categoria. | Administrador |
+RF008 - Manter cadastro de Categorias |  As Categorias estabelecem que tipo de item pode ser armazenado em determinado deposito. As Categorias têm: código-ID e nome. | Administrador |
+RF009 - Cadastro de Horários de serviço | Horários Os Horários de Serviço têm: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início e uma hora final | Administrador |
+RF010 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Usuário, Administrador |
+RF011 - Inserir Item | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema. Um Item tem: código-ID, categoria, marca, tamanho e data de validade | Usuário, Administrador |
+RF012 - Alterar um Item | Altera as informações de um determinado item. Alterar um Item tem: código-ID, categoria, marca, tamanho e data de validade | Usuário, Administrador |
+RF013 - Excluir um Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, categoria, marca, tamanho e data de validade | Usuário, Administrador |
+RF014 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Usuário, Administrador |
 
 ### Modelo Conceitual
 

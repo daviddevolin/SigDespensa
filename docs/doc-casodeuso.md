@@ -33,7 +33,69 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF001          | Inserir Administrador |
-| RF002          | Alterar Administrador  |
+| RF004          | Inserir Administrador |
+| RF005          | Alterar Administrador  |
 | RF003          | Pesquisar Usuários        |
-| RF004          | Excluir Administrador |
+| RF006          | Excluir Administrador |
+
+### Caso de Uso CDU03 - Manter Despensa
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O caso de uso Manter Despensa é uma funcionalidade essencial para o SigDespensa, pois é o pilar principal de todo o sistema, sem ele não haveria SigDespensa. Manter despensa é responsável pela gestão de todo o estoque, sendo composto de requisitos funcionais como: Inserir Despensa, Alterar Despensa, Pesquisar Despensa e Excluir Despensa. Manter Despensa é responsável por inserir novas despensas, editar informações de uma determinada despensa, pesquisar informações sobre uma despensa e até mesmo excluir permanentemente o cadastro de uma despensa. O caso de uso em questão possui os seguintes atributos: código-ID, quantidadeTotal, capacidade e categoria.  |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF007          | Inserir Despensa |
+| RF008          | Alterar Despensa  |
+| RF009          | Pesquisar Despensa        |
+| RF019          | Excluir Despensa |
+
+### Caso de Uso CDU04 - Manter Despensa
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O caso de uso Manter Despensa é uma funcionalidade essencial para o SigDespensa, pois é o pilar principal de todo o sistema, sem ele não haveria SigDespensa. Manter despensa é responsável pela gestão de todo o estoque, sendo composto de requisitos funcionais como: Inserir Despensa, Alterar Despensa, Pesquisar Despensa e Excluir Despensa. Manter Despensa é responsável por inserir novas despensas, editar informações de uma determinada despensa, pesquisar informações sobre uma despensa e até mesmo excluir permanentemente o cadastro de uma despensa. O caso de uso em questão possui os seguintes atributos: código-ID, quantidadeTotal, capacidade e categoria.  |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF007          | Inserir Despensa |
+| RF008          | Alterar Despensa  |
+| RF009          | Pesquisar Despensa        |
+| RF019          | Excluir Despensa |
+
+### Caso de Uso CDU05 - Manter Categoria
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | Manter Categorias é importante para a melhor identificação dos itens contidos em uma despensa, estabelecendo uma categoria para o item que se encontra no estoque. Este caso de uso é responsável por: inserir uma categoria ao sistema, alterar informações de uma categoria quando necessário, pesquisar por informações específicas de uma categoria e excluir permanentemente o cadastro de uma categoria. Manter Categorias possui os seguintes atributos: código-ID, nome. |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF011          | Inserir Categoria |
+| RF013          | Alterar Categoria  |
+| RF012          | Pesquisar Categoria        |
+| RF014          | Excluir Categoria |
+
+### Caso de Uso CDU06 - Manter Item
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | Assim como o caso de uso anterior, Manter Item é um caso de uso importantíssimo para o funcionamento do SigDespensa. Manter Item é responsável por inserir, alterar, pesquisar e exluir items que se encontram em uma despensa. Semelhante aos outros CRUDS dentro do sistema, é possível inserir um item completamente novo com seus atributos, alterar informações quando necessário, pesquisar o mesmo de acordo com suas informações e até mesmo excluí-lo permanentemente. Manter Item possui os seguintes atributos: código-ID, categoria, marca, tamanho e data de validade. |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF017          | Inserir Item |
+| RF018          | Alterar Item  |
+| RF019          | Pesquisar Item        |
+| RF020          | Excluir Item |
+
+### Caso de Uso CDU07 - Monitorar Níveis de Despensa
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | Este caso de uso é responsável por monitorar os níveis do estoque de um determinado produto dentro da despensa. De início, uma porcentagem é determinada, se ocorrer da quantidade de produtos ficar menor ou igual à porcentagem definida como padrão pelo sistema, os usuários e administradores da despensa serão notificados que os mantimentos estão perto de acabar. |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF021          | Monitorar níveis de Despensa |

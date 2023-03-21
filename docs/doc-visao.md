@@ -46,12 +46,12 @@ RF004 - Inserir Administrador | Um administrador representa um usuário com aces
 RF005 - Alterar Administrador | Edita as informações de um Administrador. Alterar Administrador tem: nome, email, endereço, cpf, senha e telefone. | Administrador|
 RF006 - Excluir Administrador | Remove permanentemente o cadastro do Administrador. Excluir Administrador tem: código-ID, email, CPF e senha. | Administrador|
 RF007 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal, capacidade, e categoria. | Administrador |
-RF008 - Pesquisar Despensa | Pesquisa informações sobre uma despensa. Pesquisar despensa tem: código-ID. | Administrador, Usuário |
-RF009 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Administrador |
+RF008 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Administrador |
+RF009 - Pesquisar Despensa | Pesquisa informações sobre uma despensa. Pesquisar despensa tem: código-ID. | Administrador, Usuário |
 RF010 - Excluir Despensa | Remove permanentemente o cadastro de uma despensa. Excluir despensa tem: código-ID | Administrador |
 RF011 - Inserir Categoria |  Categoria estabelece que tipo de item pode ser armazenado em determinado depósito. Uma Categoria tem: código-ID e nome. | Administrador |
+RF013 - Alterar Categoria | Edita informações de uma categoria. Editar categoria tem: código-ID, nome | Administrador |
 RF012 - Pesquisar Categoria | Pesquisa informações de uma categoria. Pesquisar categoria tem: nome | Administrador, Usuário |
-RF013 - Editar Categoria | Edita informações de uma categoria. Editar categoria tem: código-ID, nome | Administrador |
 RF014 - Excluir Categoria | Remove permanentemente o cadastro de uma categoria. Excluir categoria tem: código-ID | Administrador |
 RF015 - Cadastro de Horários de serviço | Horários Os Horários de Serviço têm: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início e uma hora final | Administrador |
 RF016 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Administrador, Usuário |

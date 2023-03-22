@@ -53,13 +53,12 @@ RF011 - Inserir Categoria |  Categoria estabelece que tipo de item pode ser arma
 RF013 - Alterar Categoria | Edita informações de uma categoria. Editar categoria tem: código-ID, nome | Administrador |
 RF012 - Pesquisar Categoria | Pesquisa informações de uma categoria. Pesquisar categoria tem: nome | Administrador, Usuário |
 RF014 - Excluir Categoria | Remove permanentemente o cadastro de uma categoria. Excluir categoria tem: código-ID | Administrador |
-RF015 - Cadastro de Horários de serviço | Horários Os Horários de Serviço têm: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início e uma hora final | Administrador |
-RF016 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Administrador, Usuário |
-RF017 - Inserir Item | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema. Um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
-RF018 - Alterar Item | Altera as informações de um determinado item. Alterar um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
-RF019 - Pesquisar Item | Pesquisa informações de um item. Pesquisar item tem: código-ID | Administrador, Usuário |
-RF020 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
-RF021 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Administrador, Usuário |
+RF015 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Administrador, Usuário |
+RF016 - Inserir Item | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema. Um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
+RF017 - Alterar Item | Altera as informações de um determinado item. Alterar um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
+RF018 - Pesquisar Item | Pesquisa informações de um item. Pesquisar item tem: código-ID | Administrador, Usuário |
+RF019 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
+RF020 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Administrador, Usuário |
 
 ### Modelo Conceitual
 

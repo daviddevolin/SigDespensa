@@ -51,20 +51,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF009          | Pesquisar Despensa        |
 | RF019          | Excluir Despensa |
 
-### Caso de Uso CDU04 - Manter Despensa
 
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O caso de uso Manter Despensa é uma funcionalidade essencial para o SigDespensa, pois é o pilar principal de todo o sistema, sem ele não haveria SigDespensa. Manter despensa é responsável pela gestão de todo o estoque, sendo composto de requisitos funcionais como: Inserir Despensa, Alterar Despensa, Pesquisar Despensa e Excluir Despensa. Manter Despensa é responsável por inserir novas despensas, editar informações de uma determinada despensa, pesquisar informações sobre uma despensa e até mesmo excluir permanentemente o cadastro de uma despensa. O caso de uso em questão possui os seguintes atributos: código-ID, quantidadeTotal, capacidade e categoria.  |
-
-| **Requisitos Funcionais envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF007          | Inserir Despensa |
-| RF008          | Alterar Despensa  |
-| RF009          | Pesquisar Despensa        |
-| RF019          | Excluir Despensa |
-
-### Caso de Uso CDU05 - Manter Categoria
+### Caso de Uso CDU04 - Manter Categoria
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -77,7 +65,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF012          | Pesquisar Categoria        |
 | RF014          | Excluir Categoria |
 
-### Caso de Uso CDU06 - Manter Item
+### Caso de Uso CDU05 - Manter Item
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -90,7 +78,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF019          | Pesquisar Item        |
 | RF020          | Excluir Item |
 
-### Caso de Uso CDU07 - Monitorar Níveis de Despensa
+### Caso de Uso CDU06 - Monitorar Níveis de Despensa
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |

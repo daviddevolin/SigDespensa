@@ -82,7 +82,7 @@ RNF005 - Bom desempenho | Deve ser rápido, mesmo quando lida com grandes quanti
 RNF006 - Segurança | Deve ser seguro e funcionar sem erros ou falhas frequentes. Podem ser realizados testes de estresse e de carga para verificar a estabilidade do software. |
 RNF007 - Adaptabilidade | Deve ser adaptável a diferentes necessidades do usuário e permitir personalização para atender a requisitos específicos. |
 RNF008 - Fácil manutenção |  O software deve ser fácil de manter e atualizar.|
-RNF009 - Possibilidade de backup | deve ser capaz de realizar backups frequentes de dados armazenados. |
+RNF009 - Possibilidade de backup | Deve ser capaz de realizar backups frequentes de dados armazenados. |
 
 
 ## Riscos
@@ -91,9 +91,9 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-16/03/2023 | Implementação de protótipo com as tecnologias | Alto | Todos | Vigente | Procurar por materiais de ensino abrangentes sobre a tecnologia em questão e realizar um caso simples de implementação como exercício inicial |
-16/03/2023 | Falta de conhecimento das tecnologias | Alto | Todos | Vigente |Pesquisar tutoriais, assistir aulas sobre o assunto |
+16/03/2023 | Implementação de protótipo com as tecnologias | Alta | Todos | Vigente | Procurar por materiais de ensino abrangentes sobre a tecnologia em questão e realizar um caso simples de implementação como exercício inicial |
+16/03/2023 | Falta de conhecimento das tecnologias | Alta | Todos | Vigente |Pesquisar tutoriais, assistir aulas sobre o assunto |
 16/03/2023 | Distribuição inadequada de responsabilidades | Médio | Gerente | Vigente | Compreender precisamente as demandas do cliente em cada interação e ser pragmático ao estabelecer o que produzir diante do tempo disponível dos colaboradores da equipe |
-16/03/2023 | Atrasos na entrega de tarefas | Alta | Todos | Vigente |  planejar e executar as atividades com antecedência, sem deixar de dedicar um pouco do tempo de cada dia ao projeto |
+16/03/2023 | Atrasos na entrega de tarefas | Alta | Todos | Vigente |  Planejar e executar as atividades com antecedência, sem deixar de dedicar um pouco do tempo de cada dia ao projeto |
 
 ### Referências

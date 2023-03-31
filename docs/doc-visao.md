@@ -22,7 +22,7 @@ David      | Full-Stack Developer - Python, C, Java, JavaScript, HTML, CSS, Reac
 Manoel | Desenvolvedor Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
 Lucas | Desenvolvedor JavaScript, HTML, CSS, React.js, NextJS, Node, MySQL |
 Isadora | Desenvolvedora Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
-Ítalo | Desenvolvedora Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
+Ítalo | Desenvolvedor Python, Java, C/C++, JavaScript, HTML, CSS, React.js, MySQL, Django |
 
 
 ## Perfis dos Usuários
@@ -38,12 +38,12 @@ Usuário | Este usuário pode visualizar, adicionar, remover e editar itens da d
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, cpf, senha e telefone. | Administrador, Usuário |
-RF002 - Alterar Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: nome, email, endereço, cpf, senha e telefone. | Administrador, Usuário |
+RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, CPF, senha e telefone. | Administrador, Usuário |
+RF002 - Alterar Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: nome, email, endereço, CPF, senha e telefone. | Administrador, Usuário |
 RF003 - Pesquisar Usuário | Pesquisa informações de um determinado usuário. Pesquisar usuário tem: código-ID | Administrador, Usuário
 RF003 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Administrador, Usuário|
-RF004 - Inserir Administrador | Um administrador representa um usuário com acesso completo ao sistema, podendo utilizar de todas as funções disponíveis. Um administrador tem: código-ID, nome, senha, endereço, cpf, email e uma chave de registro. | Administrador |
-RF005 - Alterar Administrador | Edita as informações de um Administrador. Alterar Administrador tem: nome, email, endereço, cpf, senha e telefone. | Administrador|
+RF004 - Inserir Administrador | Um administrador representa um usuário com acesso completo ao sistema, podendo utilizar de todas as funções disponíveis. Um administrador tem: código-ID, nome, senha, endereço, CPF, email e uma chave de registro. | Administrador |
+RF005 - Alterar Administrador | Edita as informações de um Administrador. Alterar Administrador tem: nome, email, endereço, CPF, senha e telefone. | Administrador|
 RF006 - Excluir Administrador | Remove permanentemente o cadastro do Administrador. Excluir Administrador tem: código-ID, email, CPF e senha. | Administrador|
 RF007 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal, capacidade, e categoria. | Administrador |
 RF008 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Administrador |

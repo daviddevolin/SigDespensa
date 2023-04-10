@@ -60,15 +60,11 @@ RF018 - Pesquisar Item | Pesquisa informações de um item. Pesquisar item tem: 
 RF019 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, categoria, marca, tamanho e data de validade | Administrador, Usuário |
 RF020 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Administrador, Usuário |
 
-### Modelo Conceitual
 
-Abaixo apresentamos o modelo conceitual usando o **YUML**.
+## Diagrama de Caso de Uso
 
- ![Modelo UML](yuml/monitoria-modelo.png)
+![Diagrama de Caso de Uso](../img/usecase.svg) 
 
-O código que gera o diagrama está [Aqui!](yuml/monitoria-yuml.md). O detalhamento dos modelos conceitual e de dados do projeto estão no [Documento de Modelos](doc-modelos.md).
-
-#### Descrição das Entidades
 
 ## Lista de Requisitos Não-Funcionais
 
@@ -95,5 +91,6 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 16/03/2023 | Falta de conhecimento das tecnologias | Alta | Todos | Vigente |Pesquisar tutoriais, assistir aulas sobre o assunto |
 16/03/2023 | Distribuição inadequada de responsabilidades | Médio | Gerente | Vigente | Compreender precisamente as demandas do cliente em cada interação e ser pragmático ao estabelecer o que produzir diante do tempo disponível dos colaboradores da equipe |
 16/03/2023 | Atrasos na entrega de tarefas | Alta | Todos | Vigente |  Planejar e executar as atividades com antecedência, sem deixar de dedicar um pouco do tempo de cada dia ao projeto |
+
 
 ### Referências

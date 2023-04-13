@@ -10,7 +10,7 @@ Inventory - Tutorial em inglês
 
 * <a href="https://www.youtube.com/watch?v=RE72oSx5ivI&list=PLo7TNe_pEoMXb9GyzueM7516fOR0gPxNX">Inventory Tutorial-Playlist<a>
 
-Connect React JS Frontend with Django Backend|
+Connect React JS Frontend with Django Backend
 
 * <a href="https://www.youtube.com/watch?v=tiungJDoQyA">Connect React JS with Django <a>
 

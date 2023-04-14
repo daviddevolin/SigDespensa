@@ -184,3 +184,16 @@
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
 | código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
+
+## Cadastro do Histórico
+
+|   Tabela   | Cadastro do Histórico  |
+| ---------- | ------------- |
+| Descrição  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |            |
+| horários      | representa a hora em que a movimentação foi feita | DATETIME      | ---      | Unique / Not Null     |
+| data      | representa a data em que a movimentação foi feita | DATETIME      | ---      | Unique / Not  Null             |
+| código-ID do user          | Código ID do usuário que executou a movimentação                               | INT          | ---     | PK / Identity         |            |

@@ -109,4 +109,4 @@
 | código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
 | quantTotal          | quantidade total de produtos na despensa                               | INT          | 300     | Not Null       |
 | capacidade          | capacidade total de produtos na despensa                               | INT          | 300     | Not Null         |
-| categoria          | categoria dos produtos da despensa                               | VARCHAR          | 300     | Not Null         |
+| categoria          | categoria dos produtos da despensa                               | VARCHAR          | 300     | Not Null         | 

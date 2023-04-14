@@ -61,11 +61,6 @@ RF019 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um It
 RF020 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Administrador, Usuário |
 
 
-## Diagrama de Caso de Uso
-
-![Diagrama de Caso de Uso](../img/usecase.svg) 
-
-
 ## Lista de Requisitos Não-Funcionais
 
 Requisito                                 | Descrição   |

@@ -142,3 +142,45 @@
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
 | código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+
+## Inserir Categoria
+
+|   Tabela   | Inserir Categoria  |
+| ---------- | ------------- |
+| Descrição  | Categoria estabelece que tipo de item pode ser armazenado em determinado depósito|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+
+## Alterar Categoria
+
+|   Tabela   | Alterar Categoria  |
+| ---------- | ------------- |
+| Descrição  | Edita informações de uma categoria|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+
+## Pesquisar Categoria
+
+|   Tabela   | Pesquisar Categoria  |
+| ---------- | ------------- |
+| Descrição  | Pesquisa as informações de uma categoria|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+
+## Excluir Categoria
+
+|   Tabela   | Excluir Categoria  |
+| ---------- | ------------- |
+| Descrição  | Remove permanentemente o cadastro de uma categoria|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |

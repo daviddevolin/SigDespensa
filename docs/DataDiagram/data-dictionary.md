@@ -110,3 +110,15 @@
 | quantTotal          | quantidade total de produtos na despensa                               | INT          | 300     | Not Null       |
 | capacidade          | capacidade total de produtos na despensa                               | INT          | 300     | Not Null         |
 | categoria          | categoria dos produtos da despensa                               | VARCHAR          | ---    | Not Null         | 
+
+## Alterar Despensa
+
+|   Tabela   | Inserir Despensa  |
+| ---------- | ------------- |
+| Descrição  | Edita as informações de uma determinada Despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| quantTotal          | quantidade total de produtos na despensa                               | INT          | 300     | Not Null       |
+| capacidade          | capacidade total de produtos na despensa                               | INT          | 300     | Not Null         |
+| categoria          | categoria dos produtos da despensa                               | VARCHAR          | ---    | Not Null         | 

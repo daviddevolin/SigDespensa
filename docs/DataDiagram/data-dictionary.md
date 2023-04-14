@@ -152,7 +152,7 @@
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
 | código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
-| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Unique / Not Null              |
 
 ## Alterar Categoria
 
@@ -163,7 +163,7 @@
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
 | código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
-| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Unique / Not Null              |
 
 ## Pesquisar Categoria
 
@@ -173,7 +173,7 @@
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Not Null              |
+| nome          | representa o nome da categoria                      | VARCHAR      | 150     | Unique / Not Null              |
 
 ## Excluir Categoria
 

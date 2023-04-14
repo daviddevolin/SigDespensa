@@ -113,7 +113,7 @@
 
 ## Alterar Despensa
 
-|   Tabela   | Inserir Despensa  |
+|   Tabela   | Alterar Despensa  |
 | ---------- | ------------- |
 | Descrição  | Edita as informações de uma determinada Despensa|
 
@@ -125,9 +125,19 @@
 
 ## Pesquisar Despensa
 
-|   Tabela   | Inserir Despensa  |
+|   Tabela   | Pesquisar Despensa  |
 | ---------- | ------------- |
 | Descrição  | Pesquisa informações sobre uma despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+
+## Excluir Despensa
+
+|   Tabela   | Excluir Despensa  |
+| ---------- | ------------- |
+| Descrição  |Remove permanentemente o cadastro de uma despensa|
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |

@@ -122,3 +122,13 @@
 | quantTotal          | quantidade total de produtos na despensa                               | INT          | 300     | Not Null       |
 | capacidade          | capacidade total de produtos na despensa                               | INT          | 300     | Not Null         |
 | categoria          | categoria dos produtos da despensa                               | VARCHAR          | ---    | Not Null         | 
+
+## Pesquisar Despensa
+
+|   Tabela   | Inserir Despensa  |
+| ---------- | ------------- |
+| Descrição  | Pesquisa informações sobre uma despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||

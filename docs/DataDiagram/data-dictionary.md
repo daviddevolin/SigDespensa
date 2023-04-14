@@ -253,3 +253,15 @@
 | marca          | Representa qual é a marca do item                               | VARCHAR          | 300     | Not Null         |
 | peso          | representa o peso dos produtos                               | FLOAT          | ---    | Not Null         | 
 | data de validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null    
+
+## Monitorar Níveis de Despensa
+
+|   Tabela   | Monitorar níveis de despensa  |
+| ---------- | ------------- |
+| Descrição  | Monitora os níveis do estoque de um determinado produto dentro da despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
+| porcentagem          | representa a porcentagem ocupada na despensa                              | FLOAT          | 100    | Not Null         | 

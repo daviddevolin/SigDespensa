@@ -197,3 +197,59 @@
 | horários      | representa a hora em que a movimentação foi feita | DATETIME      | ---      | Unique / Not Null     |
 | data      | representa a data em que a movimentação foi feita | DATETIME      | ---      | Unique / Not  Null             |
 | código-ID do user          | Código ID do usuário que executou a movimentação                               | INT          | ---     | PK / Identity         |            |
+
+## Inserir Item
+
+|   Tabela   | Inserir Despensa  |
+| ---------- | ------------- |
+| Descrição  | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
+| categoria          | representa qual a cadegoria do item                               | VARCHAR          | ---     | Not Null       |
+| marca          | Representa qual é a marca do item                               | VARCHAR          | 300     | Not Null         |
+| peso          | representa o peso dos produtos                               | FLOAT          | ---    | Not Null         | 
+| data de validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null         
+
+## Alterar Item
+
+|   Tabela   | Alterar Item  |
+| ---------- | ------------- |
+| Descrição  | Altera as informações de um determinado item|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
+| categoria          | representa qual a cadegoria do item                               | VARCHAR          | ---     | Not Null       |
+| marca          | Representa qual é a marca do item                               | VARCHAR          | 300     | Not Null         |
+| peso          | representa o peso dos produtos                               | FLOAT          | ---    | Not Null         | 
+| data de validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null         
+
+## Pesquisar Item
+
+|   Tabela   | Pesquisar Item  |
+| ---------- | ------------- |
+| Descrição  | Pesquisa informações de um item|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
+
+## Excluir Item
+
+|   Tabela   | Excluir Item  |
+| ---------- | ------------- |
+| Descrição  | Remove permanentemente um Item da despensa|
+
+|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
+| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
+| categoria          | representa qual a cadegoria do item                               | VARCHAR          | ---     | Not Null       |
+| marca          | Representa qual é a marca do item                               | VARCHAR          | 300     | Not Null         |
+| peso          | representa o peso dos produtos                               | FLOAT          | ---    | Not Null         | 
+| data de validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null    

@@ -13,3 +13,12 @@ Neste documento temos o modelo Conceitual (UML) ou de Dados (Entidade-Relacionam
 | Histórico     | Entidade  que respresenta                               |
 
 ## Modelo de Dados (Entidade-Relacionamento)
+
+```mermaid
+ erDiagram
+    Usuario }|--||Despensa_Usuario :tem
+    Despensa }|--|| Despensa_Usuario : tem
+    Despensa ||--|{ Categoria : tem
+    Despensa ||--o{Historico : tem
+    Categoria ||--o{ Item : tem
+```

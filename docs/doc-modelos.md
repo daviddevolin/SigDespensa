@@ -22,3 +22,23 @@ Neste documento temos o modelo Conceitual (UML) ou de Dados (Entidade-Relacionam
     Despensa ||--o{Historico : has
     Categoria ||--o{ Item : has
 ```
+
+
+## Modelo Conceitual
+
+```mermaid
+classDiagram
+    class Usuario{
+        -int codigo-ID
+        -string nome
+        -string email
+        -string senha
+        -string cpf
+        -string telefone
+        
+        +updateUser() Usuario
+        +searchUser() Usuario
+        +insertUser() void
+        +deleteUser() Usuario
+    }
+```

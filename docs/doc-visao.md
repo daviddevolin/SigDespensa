@@ -38,8 +38,8 @@ Usuário | Este usuário pode visualizar, adicionar, remover e editar itens da d
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email, endereço, CPF, senha e telefone. | Usuário |
-RF002 - Alterar Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: nome, email, endereço, CPF, senha e telefone. | Usuário |
+RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email,  CPF, senha e telefone. | Usuário |
+RF002 - Alterar Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: nome, email,  CPF, senha e telefone. | Usuário |
 RF003 - Pesquisar Usuário | Pesquisa informações de um determinado usuário. Pesquisar usuário tem: código-ID | Usuário
 RF003 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Usuário|
 RF004 - Fazer Login | Realiza o login do usuário com as informações passadas: email e senha | Usuário |

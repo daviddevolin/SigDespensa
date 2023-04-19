@@ -17,51 +17,6 @@
 | telefone      | representa o numero para contato do usuário | INT      | 11      | Unique / Not Null             |
 
 
-
-## Inserir Administrador
-
-|   Tabela   | Inserir Administrador  |
-| ---------- | ------------- |
-| Descrição  | Cadastra administradores no sistema|
-
-|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
-| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
-| nome          | representa o nome do administrador                      | VARCHAR      | 150     | Not Null              |
-| email      | representa o e-mail escolhido pelo administrador | VARCHAR      | 50      | Unique / Not Null     |
-| senha      | representa a senha de administrador | VARCHAR      | 50      | Unique / Not  Null             |
-| endereço      | representa o local de moradia do administrador | VARCHAR      | 100      | Not Null              |
-| CPF      | representa o Cadastro de Pessoa Física do administrador | VARCHAR      | 11      | Unique / Not Null              |
-| telefone      | representa o número para contato do administrador | INT      | 11      | Unique / Not Null             |
-
-## Alterar Administrador
-
-|   Tabela   | Alterar Administrador  |
-| ---------- | ------------- |
-| Descrição  | Altera administradores no sistema|
-
-|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
-| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| nome          | representa o nome do administrador                      | VARCHAR      | 150     | Not Null              |
-| email      | representa o e-mail escolhido pelo administrador | VARCHAR      | 50      | Unique / Not Null     |
-| senha      | representa a senha de administrador | VARCHAR      | 50      | Unique / Not  Null             |
-| endereço      | representa o local de moradia do administrador | VARCHAR      | 100      | Not Null              |
-| CPF      | representa o Cadastro de Pessoa Física do administrador | VARCHAR      | 11      | Unique / Not Null              |
-| telefone      | representa o número para contato do administrador | INT      | 11      | Unique / Not Null             |
-
-## Excluir Administrador
-
-|   Tabela   | Excluir Administrador  |
-| ---------- | ------------- |
-| Descrição  | Exclui administradores no sistema|
-
-|  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
-| ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
-| email      | representa o e-mail escolhido pelo administrador | VARCHAR      | 50      | Unique / Not Null     |
-| senha      | representa a senha de administrador | VARCHAR      | 50      | Unique / Not  Null             |
-| CPF      | representa o Cadastro de Pessoa Física do administrador | VARCHAR      | 11      | Unique / Not Null              |
-
 ## Inserir Despensa
 
 |   Tabela   | Inserir Despensa  |

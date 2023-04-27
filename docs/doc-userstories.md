@@ -22,28 +22,21 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF001          | Inserir Usuário |
 | RF002          | Alterar Usuário  |
-| RF003          | Pesquisar Usuários |
+| RF003          | Pesquisar Usuários        |
 | RF004          | Excluir Usuário |
 
+### User Story US02 - Manter Administrador
 
-|                           |              |
-| ------------------------- | -------------|
-| **Prioridade**            | Essencial    |
-| **Estimativa**            |              |
-| **Tempo Gasto (real):**   |              |
-| **Tamanho Funcional**     |  19          |
-| **Analista**              | Italo        |
-| **Desenvolvedor**         | Manoel       |
-| **Revisor**               | David        |
-| **Testador**              | Isadora      |
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | A user story "Manter Administrador" é de extrema importância para o sistema da despensa, pois é responsável pela gestão das informações de usuário com privilégios administrativos. Por meio desse user story, o Administrador terá acesso através de um login utilizando um email e senha. Cada administrador deverá fornecer informações básicas para cadastro, como nome, endereço de email, CPF, endereço, senha e chave de registro. Os administradores terão liberdade de alterar suas informações pessoais, excluir suas contas do sistema e pesquisar informações de um determinado usuário. O administrador tem os seguintes atributos: código-ID, nome, senha, endereço, CPF, email e uma chave de registro. |
 
- 
-|Contagem |      N       |
-|---------|--------------|
-|ALI      |      7       |
-|EE       |      9       |
-|CE       |      3       |
-
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF004          | Inserir Administrador |
+| RF005          | Alterar Administrador  |
+| RF003          | Pesquisar Usuários        |
+| RF006          | Excluir Administrador |
 
 ### User Story US03 - Manter Despensa
 

@@ -56,7 +56,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF007          | Inserir Despensa |
 | RF008          | Alterar Despensa  |
 | RF009          | Pesquisar Despensa        |
-| RF019          | Excluir Despensa |
+| RF010          | Excluir Despensa |
 
 
 |                           |              |
@@ -87,8 +87,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF011          | Inserir Categoria |
-| RF013          | Alterar Categoria  |
-| RF012          | Pesquisar Categoria        |
+| RF012          | Alterar Categoria  |
+| RF013          | Pesquisar Categoria        |
 | RF014          | Excluir Categoria |
 
 
@@ -119,10 +119,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF017          | Inserir Item |
-| RF018          | Alterar Item  |
-| RF019          | Pesquisar Item        |
-| RF020          | Excluir Item |
+| RF016          | Inserir Item |
+| RF017          | Alterar Item  |
+| RF018          | Pesquisar Item        |
+| RF019          | Excluir Item |
 
 
 |                           |              |
@@ -153,4 +153,4 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF021          | Monitorar níveis de Despensa |
+| RF025          | Monitorar níveis de Despensa |

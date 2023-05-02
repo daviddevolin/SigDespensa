@@ -12,7 +12,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
 | 18/03/2023 | 0.0.1   | Template e descrição do documento  | David, Manoel, Isadora, Ítalo |
 
-### User Story US01 - Manter Usuário
+### User Story US00 - Manter Usuário
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |CE       |      3       |
 
 
-### User Story US03 - Manter Despensa
+### User Story US01 - Manter Despensa
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -78,7 +78,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |CE       |      3       |
 
 
-### User Story US04 - Manter Categoria
+### User Story US02 - Manter Categoria
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -111,7 +111,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |CE       |      3       |
 
 
-### User Story US05 - Manter Item
+### User Story US03 - Manter Item
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -145,7 +145,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 
 
-### User Story US06 - Monitorar Níveis de Despensa
+### User Story US04 - Monitorar Níveis de Despensa
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |

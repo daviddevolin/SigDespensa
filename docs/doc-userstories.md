@@ -10,7 +10,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Data       | Versão  | Descrição                          | Autor                          |
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
-| 18/03/2023 | 0.0.1   | Template e descrição do documento  | David, Manoel, Lucas, Isadora, Ítalo |
+| 18/03/2023 | 0.0.1   | Template e descrição do documento  | David, Manoel, Isadora, Ítalo |
 
 ### User Story US01 - Manter Usuário
 

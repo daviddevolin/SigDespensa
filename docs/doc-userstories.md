@@ -29,7 +29,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |              |
 | ------------------------- | -------------|
 | **Prioridade**            | Essencial    |
-| **Estimativa**            |              |
+| **Estimativa**            |  10          |
 | **Tempo Gasto (real):**   |              |
 | **Tamanho Funcional**     |  19          |
 | **Analista**              | Italo        |
@@ -62,7 +62,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |              |
 | ------------------------- | -------------|
 | **Prioridade**            | Essencial    |
-| **Estimativa**            |              |
+| **Estimativa**            |   10         |
 | **Tempo Gasto (real):**   |              |
 | **Tamanho Funcional**     |  19          |
 | **Analista**              | Manoel       |

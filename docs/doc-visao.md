@@ -39,28 +39,28 @@ Requisito                                 | Descrição   | Ator |
 RF001 - Inserir Usuário     | Um usuário representa um usuário autorizado para adicionar, remover e editar itens da despensa. Um Usuário tem: código-ID, nome, email,  CPF, senha e telefone. | Usuário |
 RF002 - Alterar Usuário | Edita as informações de um determinado Usuário. Alterar um usuário tem: nome, email,  CPF, senha e telefone. | Usuário |
 RF003 - Pesquisar Usuário | Pesquisa informações de um determinado usuário. Pesquisar usuário tem: código-ID | Usuário
-RF003 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Usuário|
-RF004 - Fazer Login | Realiza o login do usuário com as informações passadas: email e senha | Usuário |
-RF005 - Controle de permissões de usuários no sistema | O sistema deverá conceder permissões de administrador para usuários que criarem uma despensa e para usuários selecionados pelo administrador. | Usuário |
-RF006 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal, capacidade, e categoria. | Usuário |
-RF007 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Usuário |
-RF008 - Pesquisar Despensa | Pesquisa informações sobre uma despensa. Pesquisar despensa tem: código-ID. | Usuário |
-RF009 - Excluir Despensa | Remove permanentemente o cadastro de uma despensa. Excluir despensa tem: código-ID | Usuário |
-RF010 - Inserir Categoria |  Categoria estabelece que tipo de item pode ser armazenado em determinado depósito. Uma Categoria tem: código-ID e nome. | Usuário |
-RF011 - Alterar Categoria | Edita informações de uma categoria. Editar categoria tem: código-ID, nome | Usuário |
-RF012 - Pesquisar Categoria | Pesquisa informações de uma categoria. Pesquisar categoria tem: nome | Usuário |
-RF013 - Excluir Categoria | Remove permanentemente o cadastro de uma categoria. Excluir categoria tem: código-ID | Usuário |
-RF014 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Usuário |
-RF015 - Inserir Item | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema. Um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
-RF016 - Alterar Item | Altera as informações de um determinado item. Alterar um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
-RF017 - Pesquisar Item | Pesquisa informações de um item. Pesquisar item tem: código-ID, nome | Usuário |
-RF018 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
-RF019 - Relatório de entrada de itens na despensa | Registra o cadastro de novos itens na despensa. Relatório de entrada tem: código-ID, item, quantidade, data, código-ID-usuário | Usuário |
-RF020 - Relatório de saída de itens da despensa | Registra a retirada ou exclusão de itens da despensa. Relatório de saída tem: código-ID, item, quantidade, data, código-ID-usuário | Usuário |
-RF021 - Filtrar Item Por Nome | Filtra itens da despensa baseado no nome, em ordem crescente ou decrescente. Filtrar item por nome tem: nome | Usuário |
-RF022 - Filtrar Item Por Data | Filtra itens da despensa baseado na data adicionada, em ordem crescente ou decrescente. Filtrar item por data tem: data | Usuário |
-RF023 - Adição de notas pessoais | Adiciona notas pessoais para itens na despensa. Adição de notas pessoais tem: descrição, data | Usuário |
-RF024 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Usuário |
+RF004 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Usuário|
+RF005 - Fazer Login | Realiza o login do usuário com as informações passadas: email e senha | Usuário |
+RF006 - Controle de permissões de usuários no sistema | O sistema deverá conceder permissões de administrador para usuários que criarem uma despensa e para usuários selecionados pelo administrador. | Usuário |
+RF007 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal, capacidade, e categoria. | Usuário |
+RF008 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Usuário |
+RF009 - Pesquisar Despensa | Pesquisa informações sobre uma despensa. Pesquisar despensa tem: código-ID. | Usuário |
+RF010 - Excluir Despensa | Remove permanentemente o cadastro de uma despensa. Excluir despensa tem: código-ID | Usuário |
+RF011 - Inserir Categoria |  Categoria estabelece que tipo de item pode ser armazenado em determinado depósito. Uma Categoria tem: código-ID e nome. | Usuário |
+RF012 - Alterar Categoria | Edita informações de uma categoria. Editar categoria tem: código-ID, nome | Usuário |
+RF013 - Pesquisar Categoria | Pesquisa informações de uma categoria. Pesquisar categoria tem: nome | Usuário |
+RF014 - Excluir Categoria | Remove permanentemente o cadastro de uma categoria. Excluir categoria tem: código-ID | Usuário |
+RF015 - Cadastro do Histórico  | Um Histórico irá constar, todo o acesso e movimentação feita por cada usuário ao despensa. Um Histórico tem: codigo-ID, e horários, data e ID-usuário.  | Usuário |
+RF016 - Inserir Item | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema. Um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
+RF017 - Alterar Item | Altera as informações de um determinado item. Alterar um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
+RF018 - Pesquisar Item | Pesquisa informações de um item. Pesquisar item tem: código-ID, nome | Usuário |
+RF019 - Excluir Item | Remove permanentemente um Item da despensa. Excluir um Item tem: código-ID, nome, categoria, marca, peso e data de validade | Usuário |
+RF020 - Relatório de entrada de itens na despensa | Registra o cadastro de novos itens na despensa. Relatório de entrada tem: código-ID, item, quantidade, data, código-ID-usuário | Usuário |
+RF021 - Relatório de saída de itens da despensa | Registra a retirada ou exclusão de itens da despensa. Relatório de saída tem: código-ID, item, quantidade, data, código-ID-usuário | Usuário |
+RF022 - Filtrar Item Por Nome | Filtra itens da despensa baseado no nome, em ordem crescente ou decrescente. Filtrar item por nome tem: nome | Usuário |
+RF023 - Filtrar Item Por Data | Filtra itens da despensa baseado na data adicionada, em ordem crescente ou decrescente. Filtrar item por data tem: data | Usuário |
+RF024 - Adição de notas pessoais | Adiciona notas pessoais para itens na despensa. Adição de notas pessoais tem: descrição, data | Usuário |
+RF025 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Usuário |
 
 
 

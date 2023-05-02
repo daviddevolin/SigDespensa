@@ -59,6 +59,25 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF019          | Excluir Despensa |
 
 
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |              |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | Manoel       |
+| **Desenvolvedor**         | Italo        |
+| **Revisor**               | Isadora      |
+| **Testador**              | David        |
+
+ 
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
+
 ### User Story US04 - Manter Categoria
 
 |               |                                                                |

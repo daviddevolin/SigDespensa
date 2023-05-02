@@ -91,6 +91,26 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF012          | Pesquisar Categoria        |
 | RF014          | Excluir Categoria |
 
+
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | Isadora      |
+| **Desenvolvedor**         | David        |
+| **Revisor**               | Manoel       |
+| **Testador**              | Italo        |
+
+ 
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
+
 ### User Story US05 - Manter Item
 
 |               |                                                                |
@@ -103,6 +123,27 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF018          | Alterar Item  |
 | RF019          | Pesquisar Item        |
 | RF020          | Excluir Item |
+
+
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | David        |
+| **Desenvolvedor**         | Isadora      |
+| **Revisor**               | Italo        |
+| **Testador**              | Manoel       |
+
+ 
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
+
 
 ### User Story US06 - Monitorar Níveis de Despensa
 

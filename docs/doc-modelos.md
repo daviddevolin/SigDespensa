@@ -29,16 +29,52 @@ Neste documento temos o modelo Conceitual (UML) ou de Dados (Entidade-Relacionam
 ```mermaid
 classDiagram
     class Usuario{
-        -int codigo-ID
+        -int id
         -string nome
         -string email
         -string senha
         -string cpf
         -string telefone
         
-        +updateUser() Usuario
-        +searchUser() Usuario
-        +insertUser() void
-        +deleteUser() Usuario
+        +updateUser(id) Usuario
+        +searchUser(id) Usuario
+        +insertUser(Usuario usuario) void
+        +deleteUser(id) Usuario
     }
+    class Despensa{
+        -int id
+        -int quantTotal
+        -int capacidade
+        -Categoria categoria
+
+        +updateDespensa(id) Despensa
+        +searchDespensa(id) Despensa
+        +insertDespensa(Despensa despensa) void
+        +deleteDespensa(id) Despensa
+    }
+    class Categoria{
+        -int id
+        -string nome
+
+        +updateCategoria(id) Categoria
+        +searchCategoria(id) Categoria
+        +insertCategoria(Categoria categoria) void
+        +deleteCategoria(id) Categoria
+    }
+
+    class Item{
+        -int id
+        -string nome
+        -Categoria categoria
+        -string marca
+        -float peso
+        -date data_de_validade
+
+        +updateItem(id) Item
+        +searchItem(id) Item
+        +insertItem(Item item) void
+        +deleteItem(id) Item
+    }
+
+
 ```

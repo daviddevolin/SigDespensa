@@ -8,7 +8,7 @@
 
 |  Nome         | Descrição                      | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------| ------------ | ------- | --------------------- |
-| código-ID     | identificador gerado pelo SGBD |       INT    |   ---   | PK Identity        |
+| id     | identificador gerado pelo SGBD |       INT    |   ---   | PK / Identity        |
 | nome          | representa o nome do usuário   | VARCHAR      |   150   | Not Null           |
 | email         | representa o e-mail escolhido pelo usuário | VARCHAR      |   50   | Unique / Not Null     |
 | senha         | representa a senha de usuário  | VARCHAR      | 50      | Unique / Not  Null  |
@@ -24,7 +24,7 @@
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| id          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
 | quantTotal          | quantidade total de produtos na despensa                               | INT          | 300     | Not Null       |
 | capacidade          | capacidade total de produtos na despensa                               | INT          | 300     | Not Null         |
 | categoria          | categoria dos produtos da despensa                               | VARCHAR          | ---    | Not Null         | 
@@ -37,7 +37,7 @@
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
+| id          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |
 | nome          | representa o nome da categoria                      | VARCHAR      | 150     | Unique / Not Null              |
 
 ## Histórico
@@ -48,22 +48,22 @@
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |            |
+| id          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         |            |
 | horários      | representa a hora em que a movimentação foi feita | DATETIME      | ---      | Unique / Not Null     |
 | data      | representa a data em que a movimentação foi feita | DATETIME      | ---      | Unique / Not  Null             |
-| código-ID do user          | Código ID do usuário que executou a movimentação                               | INT          | ---     | PK / Identity         |            |
+| user_id          | Código ID do usuário que executou a movimentação                               | INT          | ---     | PK / Identity         |            |
 
 ## Item
 
-|   Tabela   | Inserir Despensa  |
+|   Tabela   | Inserir Item  |
 | ---------- | ------------- |
 | Descrição  | Um Item representa um produto ou objeto que pode ser armazenado e gerenciado no sistema|
 
 |  Nome         | Descrição                                                    | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | ------------------------------------------------------------ | ------------ | ------- | --------------------- |
-| código-ID          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
+| id          | identificador gerado pelo SGBD                               | INT          | ---     | PK / Identity         ||
 | nome          | representa o nome do item                      | VARCHAR      | 150     | Not Null              |
 | categoria          | representa qual a cadegoria do item                               | VARCHAR          | ---     | Not Null       |
 | marca          | Representa qual é a marca do item                               | VARCHAR          | 300     | Not Null         |
 | peso          | representa o peso dos produtos                               | FLOAT          | ---    | Not Null         | 
-| data de validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null         
+| data_de_validade     | representa a data de validade dos produtos | DATETIME      | ---      | Unique / Not  Null         

@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
+    <style>
+    </style>
 </head>
 <body>
     <ul>
+        {%if not usuarios%}
+            <h1>Sem usuários!</h1>
+        {% endif %}   
         {% for u in usuarios %}
-            <li>{{u.id}} -- {{u.nome}}</li>
+            <li>{{u.id}} -- {{u.nome}} <a href="{%url 'editar' u.id %}">Editar</a> <a href="{%url 'delete' u.id%}">Deletar</a></li>
         {% endfor %}
     </ul>
 </body>
-</html>
+</html> 

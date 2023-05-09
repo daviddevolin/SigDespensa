@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SigDespensa</title>
+    <title>{{usuario.nome}}</title>
     <style>
         input{
             display: block;
         }
-
-
-
     </style>
 </head>
 <body>
-    <h1>SigDespensa</h1>
-    <a href="{%url 'users' %}">Usuários</a>
 
-    <form action="{%url 'salvar' %}" method="POST">
+    {{usuario.id}} -- {{usuario.nome}}
+
+    <form action="{%url 'update' usuario.id%}" method="POST">
         {% csrf_token %}
         <label for="nome">Nome: </label>
-        <input type="text" name="nome">
+        <input type="text" name="nome" value="{{usuario.nome}}">
         <label for="email">Email: </label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="{{usuario.email}}">
         <label for="cpf">CPF: </label>
-        <input type="text" name="cpf">
+        <input type="text" name="cpf" value="{{usuario.cpf}}">
         <label for="telefone">Telefone: </label>
-        <input type="text" name="telefone">
-        <button type="submit">Enviar</button>
+        <input type="text" name="telefone" value="{{usuario.telefone}}">
+        <button type="submit">Editar</button>
     </form>
 </body>
 </html>

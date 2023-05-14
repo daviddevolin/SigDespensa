@@ -76,8 +76,8 @@ Neste documento mostraremos o projeto arquitetural do sistema com uma breve desc
 
 | Componente | Tecnologia | Descrição
 |------------|------------|----------
-|View|ReactJS| Criação de componentes visuais para a tela
-|Service|Axios| Comunicação via HTTP com a API
-|Controller| Express| Servidor para receber as requisições HTTP
-|Repository| PrismaJS| ORM para fazer comunicação com o banco de dados
-|Database|PostgreSQL| Banco de dados para guardar as informações salvas
+|Model |Django|Modelos definidos utilizando o ORM do Django
+|View|Django| Criação de componentes visuais para a tela
+|Controller| Django| Servidor para receber as requisições HTTP
+|Database|SQLite| Banco de dados para guardar as informações salvas
+|

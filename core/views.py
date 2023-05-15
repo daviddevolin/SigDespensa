@@ -45,3 +45,12 @@ def deleteUser(request, id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
     return redirect(listUsers)
+
+def searchUsers(request):
+    s_nome = request.POST.get('search')
+    if s_nome:
+        usuarios = Usuario.objects.filter(nome__icontains=s_nome)
+        return render(request, "search.html", {"usuarios": usuarios})
+    else:
+        usuarios =""
+        return render(request, "search.html", {"usuarios": usuarios})

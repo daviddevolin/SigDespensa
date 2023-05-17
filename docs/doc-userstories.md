@@ -11,6 +11,22 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Data       | Versão  | Descrição                          | Autor                          |
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
 | 18/03/2023 | 0.0.1   | Template e descrição do documento  | David, Manoel, Isadora, Ítalo |
+| 27/04/2023 | 0.0.2   |Correção dos requisitos funcionais e da descrição| David |
+| 27/04/2023 | 0.0.3   |Correção dos requisitos funcionais e da descrição| David |
+| 27/04/2023 | 0.0.4   |Atualização da descrição e dos requisitos funcionais| David, Manoel, Isadora, Italo |
+| 02/05/2023 | 0.0.5   |Estimativa de tempo, tempo gasto e definição das funções, atualização de requisitos| David|
+| 02/05/2023 | 0.0.6   |Correção dos requisitos| David|
+| 02/05/2023 | 0.0.7   |Correção dos requisitos| Manoel|
+| 02/05/2023 | 0.0.8   |Correção dos autores| David|
+| 02/05/2023 | 0.0.9   |Correção |Correção do número de user stories| David|
+
+
+
+
+
+
+
+
 
 ### User Story US00 - Manter Usuário
 

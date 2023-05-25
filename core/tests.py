@@ -22,7 +22,7 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
 
-    def test_saveUser_view(self):
+    def test_save_user_view(self):
         data = {
             'nome': 'John Doe',
             'email': 'john@example.com',
@@ -41,13 +41,13 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(john.cpf, '12345678902')
         self.assertEqual(john.telefone, '9876543210')
 
-    def test_listUsers_view(self):
+    def test_list_users_view(self):
         response = self.client.get(reverse('users'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users.html')
         self.assertQuerysetEqual(response.context['usuarios'], [repr(self.usuario_felipe), repr(self.usuario_isabele)])
 
-    def test_updateUser_view(self):
+    def test_update_user_view(self):
         response = self.client.get(reverse('editar', args=[self.usuario_felipe.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'update.html')
@@ -66,7 +66,7 @@ class UsuarioViewsTestCase(TestCase):
         self.usuario_felipe.refresh_from_db()
         self.assertEqual(self.usuario_felipe.nome, 'Felipe Souza Novo')
 
-    def test_deleteUser_view(self):
+    def test_delete_user_view(self):
         response = self.client.get(reverse('delete', args=[self.usuario_felipe.id]))
         self.assertEqual(response.status_code, 302)
 
@@ -74,7 +74,7 @@ class UsuarioViewsTestCase(TestCase):
         with self.assertRaises(Usuario.DoesNotExist):
             Usuario.objects.get(id=self.usuario_felipe.id)
 
-    def test_searchUsers_view(self):
+    def test_search_users_view(self):
         data = {
             'search': 'Isabele'
         }

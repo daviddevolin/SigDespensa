@@ -3,7 +3,7 @@ from .models import Usuario
 def home(request):
     return render(request, "index.html")
 
-def saveUser(request):
+def save_user(request):
     nome = request.POST.get('nome')
     email = request.POST.get('email')
     cpf = request.POST.get('cpf')
@@ -16,12 +16,12 @@ def saveUser(request):
     return render(request, 'index.html')
 
 
-def listUsers(request):
+def list_users(request):
     usuarios = Usuario.objects.all()
 
     return render(request, "users.html", {"usuarios": usuarios})
 
-def updateUser(request, id):
+def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
     return render(request, "update.html", {"usuario": usuario})
 
@@ -39,14 +39,14 @@ def update(request, id):
     usuario.telefone = telefone
     usuario.save()
 
-    return redirect(listUsers)
+    return redirect(list_users)
 
-def deleteUser(request, id):
+def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
-    return redirect(listUsers)
+    return redirect(list_users)
 
-def searchUsers(request):
+def search_users(request):
     s_nome = request.POST.get('search')
     if s_nome:
         usuarios = Usuario.objects.filter(nome__icontains=s_nome)

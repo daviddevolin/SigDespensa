@@ -3,5 +3,4 @@ Django==4.2.1
 django-cpf==0.1.0
 sqlparse==0.4.4
 tzdata==2023.3
-cpf-field
-
+coverage==7.2.6

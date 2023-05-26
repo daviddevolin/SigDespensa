@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigDespensa</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>SigDespensa</h1>
+    <a href="{% url 'items' %}">Itens</a>
+
+    <form action="{% url 'save_item' %}" method="POST">
+        {% csrf_token %}
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome">
+        <label for="categoria">Categoria: </label>
+        <input type="text" name="categoria">
+        <label for="marca">Marca: </label>
+        <input type="text" name="marca">
+        <label for="peso">Peso: </label>
+        <input type="text" name="peso">
+        <label for="data_validade">Data de Validade: </label>
+        <input type="text" name="data_validade">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

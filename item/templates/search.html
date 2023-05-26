@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
+        <label for="search">Search by name:</label>
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if items %}
+        <h2>Search Results</h2>
+        <ul>
+            {% for item in items %}
+                <li>{{ item.nome }} - {{ item.categoria }} - {{ item.marca }} - {{ item.peso }} - {{ item.data_validade }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>

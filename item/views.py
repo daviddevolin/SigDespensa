@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Item
+from item.models import Item
 
 def home(request):
     return render(request, "index.html")

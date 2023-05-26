@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'cpf_field'
+    'cpf_field',
+    'item'
 ]
 
 MIDDLEWARE = [

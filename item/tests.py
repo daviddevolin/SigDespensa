@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Item
+from item.models import Item
 
 class ItemViewsTestCase(TestCase):
     def setUp(self):

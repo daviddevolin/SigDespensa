@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigDespensa - Itens</title>
+</head>
+<body>
+    <h1>SigDespensa - Itens</h1>
+
+    <!-- Formulário para adicionar um item -->
+    <form action="{% url 'save_item' %}" method="POST">
+        {% csrf_token %}
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome">
+        <label for="categoria">Categoria: </label>
+        <input type="text" name="categoria">
+        <label for="marca">Marca: </label>
+        <input type="text" name="marca">
+        <label for="peso">Peso: </label>
+        <input type="text" name="peso">
+        <label for="validade">Data de Validade: </label>
+        <input type="text" name="validade">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Lista de itens -->
+    <ul>
+        {% for item in itens %}
+        <li>
+            <strong>ID:</strong> {{ item.id }}<br>
+            <strong>Nome:</strong> {{ item.nome }}<br>
+            <strong>Categoria:</strong> {{ item.categoria }}<br>
+            <strong>Marca:</strong> {{ item.marca }}<br>
+            <strong>Peso:</strong> {{ item.peso }}<br>
+            <strong>Data de Validade:</strong> {{ item.validade }}<br>
+
+            <!-- Link para atualizar o item -->
+            <a href="{% url 'update_item' item.id %}">Editar</a>
+
+            <!-- Link para excluir o item -->
+            <a href="{% url 'delete_item' item.id %}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

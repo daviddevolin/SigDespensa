@@ -1,0 +1,7 @@
+<h1>Confirmar Exclusão</h1>
+<p>Você tem certeza de que deseja excluir a despensa "{{ despensa.nome }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Excluir</button>
+</form>
+<a href="{% url 'despensa_list' %}">Cancelar</a>

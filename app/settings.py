@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'cpf_field',
-    'item'
+    'item',
+    'despensa',
 ]
 
 MIDDLEWARE = [

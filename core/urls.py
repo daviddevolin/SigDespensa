@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from .views import home, save_user, list_users, update_user, update, delete_user, search_users
-urlpatterns = [
+app_name = 'users'
+urlpatterns =  [
     path('', home),
     path('salvar/', save_user, name="salvar"),
     path('users/', list_users, name="users"),

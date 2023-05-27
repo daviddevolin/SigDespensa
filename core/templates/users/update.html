@@ -15,7 +15,7 @@
 
     {{usuario.id}} -- {{usuario.nome}}
 
-    <form action="{%url 'update' usuario.id%}" method="POST">
+    <form action="{%url 'users:update' usuario.id%}" method="POST">
         {% csrf_token %}
         <label for="nome">Nome: </label>
         <input type="text" name="nome" value="{{usuario.nome}}">

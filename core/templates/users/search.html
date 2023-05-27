@@ -14,7 +14,7 @@
             <h1>Sem usuários!</h1>
         {% endif %}   
         {% for u in usuarios %}
-            <li>{{u.id}} -- {{u.nome}} <a href="{%url 'editar' u.id %}">Editar</a> <a href="{%url 'delete' u.id%}">Deletar</a></li>
+            <li>{{u.id}} -- {{u.nome}} <a href="{%url 'users:editar' u.id %}">Editar</a> <a href="{%url 'users:delete' u.id%}">Deletar</a></li>
         {% endfor %}
     </ul>
 </body>

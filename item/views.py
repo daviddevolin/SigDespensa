@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from item.models import Item
 
-def home(request):
-    return render(request, "index.html")
+def item_home(request):
+    return render(request, "items/index.html")
 
 def save_item(request):
     nome = request.POST.get('nome')
@@ -17,15 +17,15 @@ def save_item(request):
                         peso=peso,
                         data_validade=data_validade)
     
-    return render(request, 'index.html')
+    return render(request, 'items/index.html')
 
 def list_items(request):
     items = Item.objects.all()
-    return render(request, "items.html", {"items": items})
+    return render(request, "items/items.html", {"items": items})
 
 def update_item(request, id):
     item = Item.objects.get(id=id)
-    return render(request, "update.html", {"item": item})
+    return render(request, "items/update.html", {"item": item})
 
 def update(request, id):
     nome = request.POST.get('nome')
@@ -53,7 +53,7 @@ def search_items(request):
     s_nome = request.POST.get('search')
     if s_nome:
         items = Item.objects.filter(nome__icontains=s_nome)
-        return render(request, "search.html", {"items": items})
+        return render(request, "items/search.html", {"items": items})
     else:
         items = ""
-        return render(request, "search.html", {"items": items})
+        return render(request, "items/search.html", {"items": items})

@@ -10,15 +10,13 @@
             display: block;
         }
 
-
-
     </style>
 </head>
 <body>
     <h1>SigDespensa</h1>
-    <a href="{%url 'users' %}">Usuários</a>
+    <a href="{%url 'users:users' %}">Usuários</a>
 
-    <form action="{%url 'salvar' %}" method="POST">
+    <form action="{%url 'users:salvar' %}" method="POST">
         {% csrf_token %}
         <label for="nome">Nome: </label>
         <input type="text" name="nome">

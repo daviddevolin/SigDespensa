@@ -13,9 +13,9 @@
 </head>
 <body>
     <h1>SigDespensa</h1>
-    <a href="{% url 'items' %}">Itens</a>
+    <a href="{% url 'items:items' %}">Itens</a>
 
-    <form action="{% url 'save_item' %}" method="POST">
+    <form action="{% url 'items:salvar' %}" method="POST">
         {% csrf_token %}
         <label for="nome">Nome: </label>
         <input type="text" name="nome">

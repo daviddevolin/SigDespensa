@@ -8,14 +8,14 @@
     <ul>
         {% for despensa in despensas %}
         <li>
-            <a href="{% url 'despensa_detail' despensa.pk %}">{{ despensa.nome }}</a>
-            - <a href="{% url 'despensa_update' despensa.pk %}">Editar</a>
-            - <a href="{% url 'despensa_delete' despensa.pk %}">Deletar</a>
+            <a href="{% url 'despensas:despensa_detail' despensa.pk %}">{{ despensa.nome }}</a>
+            - <a href="{% url 'despensas:despensa_update' despensa.pk %}">Editar</a>
+            - <a href="{% url 'despensas:despensa_delete' despensa.pk %}">Deletar</a>
         </li>
         {% empty %}
         <li>Nenhuma despensa encontrada.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'despensa_create' %}">Adicionar Despensa</a>
+    <a href="{% url 'despensas:despensa_create' %}">Adicionar Despensa</a>
 </body>
 </html>

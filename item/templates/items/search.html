@@ -9,7 +9,7 @@
 <body>
     <h1>Search</h1>
 
-    <form action="{% url 'search' %}" method="POST">
+    <form action="{% url 'items:search' %}" method="POST">
         {% csrf_token %}
         <label for="search">Search by name:</label>
         <input type="text" name="search">

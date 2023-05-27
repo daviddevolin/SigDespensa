@@ -10,7 +10,7 @@
     <h1>SigDespensa - Itens</h1>
 
     <!-- Formulário para adicionar um item -->
-    <form action="{% url 'save_item' %}" method="POST">
+    <form action="{% url 'items:salvar' %}" method="POST">
         {% csrf_token %}
         <label for="nome">Nome: </label>
         <input type="text" name="nome">
@@ -21,26 +21,26 @@
         <label for="peso">Peso: </label>
         <input type="text" name="peso">
         <label for="validade">Data de Validade: </label>
-        <input type="text" name="validade">
+        <input type="text" name="data_validade">
         <button type="submit">Adicionar</button>
     </form>
 
     <!-- Lista de itens -->
     <ul>
-        {% for item in itens %}
+        {% for item in items %}
         <li>
             <strong>ID:</strong> {{ item.id }}<br>
             <strong>Nome:</strong> {{ item.nome }}<br>
             <strong>Categoria:</strong> {{ item.categoria }}<br>
             <strong>Marca:</strong> {{ item.marca }}<br>
             <strong>Peso:</strong> {{ item.peso }}<br>
-            <strong>Data de Validade:</strong> {{ item.validade }}<br>
+            <strong>Data de Validade:</strong> {{ item.data_validade }}<br>
 
             <!-- Link para atualizar o item -->
-            <a href="{% url 'update_item' item.id %}">Editar</a>
+            <a href="{% url 'items:editar' item.id %}">Editar</a>
 
             <!-- Link para excluir o item -->
-            <a href="{% url 'delete_item' item.id %}">Excluir</a>
+            <a href="{% url 'items:delete' item.id %}">Excluir</a>
         </li>
         {% endfor %}
     </ul>

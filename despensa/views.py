@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Despensa
@@ -19,7 +17,7 @@ def despensa_create(request):
         capacidade = request.POST.get('capacidade')
         categoria = request.POST.get('categoria')
         Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, categoria=categoria)
-        return redirect('despensa_list')
+        return redirect('despensas:despensa_list')
     return render(request, 'despensa/form.html')
 
 def despensa_update(request, pk):
@@ -34,12 +32,12 @@ def despensa_update(request, pk):
         despensa.capacidade = capacidade
         despensa.categoria = categoria
         despensa.save()
-        return redirect('despensa_list')
+        return redirect('despensas:despensa_list')
     return render(request, 'despensa/form.html', {'despensa': despensa})
 
 def despensa_delete(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
     if request.method == 'POST':
         despensa.delete()
-        return redirect('despensa_list')
+        return redirect('despensas:despensa_list')
     return render(request, 'despensa/confirm_delete.html', {'despensa': despensa})

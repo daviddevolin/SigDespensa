@@ -1,16 +1,17 @@
 from django.urls import path
-from despensa.views import (
+from .views import (
     despensa_list,
     despensa_detail,
     despensa_create,
     despensa_update,
     despensa_delete
 )
+app_name='despensas'
 
 urlpatterns = [
     path('', despensa_list, name='despensa_list'),
-    path('<int:pk>/', despensa_detail, name='despensa_detail'),
+    path('<int:pk>', despensa_detail, name='despensa_detail'),
     path('create/', despensa_create, name='despensa_create'),
-    path('<int:pk>/update/', despensa_update, name='despensa_update'),
-    path('<int:pk>/delete/', despensa_delete, name='despensa_delete'),
+    path('update/<int:pk>', despensa_update, name='despensa_update'),
+    path('delete/<int:pk>', despensa_delete, name='despensa_delete'),
 ]

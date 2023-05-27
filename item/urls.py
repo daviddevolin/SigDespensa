@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import home, save_item, list_items, update_item, update, delete_item, search_items
-
+from .views import item_home, save_item, list_items, update_item, update, delete_item, search_items
+app_name = 'items'
 urlpatterns = [
-    path('', home),
+    path('', item_home),
     path('salvar/', save_item, name="salvar"),
     path('items/', list_items, name="items"),
     path('editar/<int:id>/', update_item, name="editar"),

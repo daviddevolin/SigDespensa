@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{categoria.nome}}</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    {{categoria.id}} -- {{categoria.nome}}
+
+    <form action="{%url 'categories:update' categoria.id%}" method="POST">
+        {% csrf_token %}
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="{{categoria.nome}}">
+        <button type="submit">Editar</button>
+    </form>
+</body>
+</html>

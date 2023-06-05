@@ -17,3 +17,33 @@ Connect React JS Frontend with Django Backend
 
 Django 4 CRUD completo
 * [Django 4 CRUD completo em ~30 minutos](https://www.youtube.com/watch?v=GGBzMpIAgz4) 
+
+# Instalando o sistema
+É necessário ter alguma versão do python instalada no seu sistema. De preferência python >= 3.10
+
+### Para criar um ambiente virtual
+```
+python -m venv <nome do ambiente virtual>
+```
+
+### Para iniciar o ambiente virtual
+
+bash:
+```
+$ source <venv>/bin/activate
+```
+cmd:
+```
+C:\> <venv>\Scripts\activate.bat
+```
+
+### Para instalar os requisitos
+
+```
+pip install -r requirements.txt
+```
+
+### Para inicializar o servidor Django
+```
+python manage.py runserver
+```

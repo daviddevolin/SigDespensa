@@ -1,19 +1,30 @@
 from django.shortcuts import render, redirect
 from .models import Usuario
+from .forms import UsuarioForm
 def home(request):
-    return render(request, "users/index.html")
+    usuario_form = UsuarioForm()
+    return render(request, "users/index.html", {"form": usuario_form})
 
 def save_user(request):
-    nome = request.POST.get('nome')
-    email = request.POST.get('email')
-    cpf = request.POST.get('cpf')
-    telefone = request.POST.get('telefone')
 
-    Usuario.objects.create(nome=nome,
-                        email=email,
-                        cpf=cpf,
-                        telefone=telefone)
-    return render(request, 'users/index.html')
+    form = UsuarioForm(request.POST)
+
+    if form.is_valid():
+        cleaned_data = form.cleaned_data
+
+        nome = cleaned_data.get('nome')
+        email = cleaned_data.get('email')
+        cpf = cleaned_data.get('cpf')
+        telefone = cleaned_data.get('telefone')
+
+        Usuario.objects.create(nome=nome,
+                            email=email,
+                            cpf=cpf,
+                            telefone=telefone)
+        
+        return render(request, 'users/index.html', {"form": UsuarioForm()})
+    else:
+        return render(request, 'users/index.html', {"form": UsuarioForm(), "errors": form.errors})
 
 
 def list_users(request):
@@ -23,23 +34,29 @@ def list_users(request):
 
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
-    return render(request, "users/update.html", {"usuario": usuario})
+    return render(request, "users/update.html", {"usuario": usuario, "form": UsuarioForm()})
 
 def update(request, id):
-    nome = request.POST.get('nome')
-    email = request.POST.get('email')
-    cpf = request.POST.get('cpf')
-    telefone = request.POST.get('telefone')
-
+    form = UsuarioForm(request.POST)
     usuario = Usuario.objects.get(id=id)
+    
+    if form.is_valid():
+        cleaned_data = form.cleaned_data
+        nome = cleaned_data.get('nome')
+        email = cleaned_data.get('email')
+        cpf = cleaned_data.get('cpf')
+        telefone = cleaned_data.get('telefone')
 
-    usuario.nome = nome
-    usuario.email = email
-    usuario.cpf = cpf
-    usuario.telefone = telefone
-    usuario.save()
 
-    return redirect('users:users')
+        usuario.nome = nome
+        usuario.email = email
+        usuario.cpf = cpf
+        usuario.telefone = telefone
+        usuario.save()
+
+        return redirect('users:users')
+    else:
+        return render(request, 'users/update.html', {"usuario": usuario,"form": UsuarioForm(), "errors": form.errors})
 
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)

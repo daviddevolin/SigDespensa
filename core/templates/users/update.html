@@ -17,15 +17,14 @@
 
     <form action="{%url 'users:update' usuario.id%}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" value="{{usuario.nome}}">
-        <label for="email">Email: </label>
-        <input type="text" name="email" value="{{usuario.email}}">
-        <label for="cpf">CPF: </label>
-        <input type="text" name="cpf" value="{{usuario.cpf}}">
-        <label for="telefone">Telefone: </label>
-        <input type="text" name="telefone" value="{{usuario.telefone}}">
+        {{form}}
         <button type="submit">Editar</button>
+
+        {%if not errors%}
+            <div></div>
+        {%else%}
+            <div>{{errors}}</div>
+        {% endif %}
     </form>
 </body>
 </html>

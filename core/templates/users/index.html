@@ -18,15 +18,13 @@
 
     <form action="{%url 'users:salvar' %}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome">
-        <label for="email">Email: </label>
-        <input type="text" name="email">
-        <label for="cpf">CPF: </label>
-        <input type="text" name="cpf">
-        <label for="telefone">Telefone: </label>
-        <input type="text" name="telefone">
+        {{form}}
         <button type="submit">Enviar</button>
+        {% if not errs %}
+            <div></div>
+        {% else %}
+            <div>{{errs}}</div>
+        {%endif%}
     </form>
 </body>
 </html>

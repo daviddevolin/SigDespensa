@@ -1,6 +1,7 @@
 # Create your views here.
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Despensa
+from .forms import DespensaForm
 
 def despensa_list(request):
     despensas = Despensa.objects.all()
@@ -18,7 +19,7 @@ def despensa_create(request):
         categoria = request.POST.get('categoria')
         Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, categoria=categoria)
         return redirect('despensas:despensa_list')
-    return render(request, 'despensa/form.html')
+    return render(request, 'despensa/form.html', {"form": DespensaForm()})
 
 def despensa_update(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
@@ -33,7 +34,7 @@ def despensa_update(request, pk):
         despensa.categoria = categoria
         despensa.save()
         return redirect('despensas:despensa_list')
-    return render(request, 'despensa/form.html', {'despensa': despensa})
+    return render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
 
 def despensa_delete(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)

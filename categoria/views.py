@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Categoria
+from .forms import CategoriaForm
 # Create your views here.
 def home(request):
-    return render(request, "categories/index.html")
+    return render(request, "categories/index.html", {'form': CategoriaForm()})
 
 def save_category(request):
     nome = request.POST.get('nome')
     Categoria.objects.create(nome=nome)
-    return render(request, 'categories/index.html')
+    return render(request, 'categories/index.html', {'form': CategoriaForm()})
 
 def list_categories(request):
     categorias = Categoria.objects.all()
@@ -15,7 +16,7 @@ def list_categories(request):
 
 def update_category(request, id):
     categoria = Categoria.objects.get(id=id)
-    return render(request, "categories/update.html", {"categoria": categoria})
+    return render(request, "categories/update.html", {"categoria": categoria, 'form':CategoriaForm()})
 
 def update(request, id):
     nome = request.POST.get('nome')

@@ -18,8 +18,7 @@
 
     <form action="{%url 'categories:salvar' %}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome">
+        {{form}}
         <button type="submit">Enviar</button>
     </form>
 </body>

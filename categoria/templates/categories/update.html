@@ -17,8 +17,7 @@
 
     <form action="{%url 'categories:update' categoria.id%}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" value="{{categoria.nome}}">
+        {{form}}
         <button type="submit">Editar</button>
     </form>
 </body>

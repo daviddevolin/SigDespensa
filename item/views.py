@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from item.models import Item
+from .forms import ItemForm
 
 def item_home(request):
-    return render(request, "items/index.html")
+    return render(request, "items/index.html", {'form': ItemForm()})
 
 def save_item(request):
     nome = request.POST.get('nome')
@@ -17,15 +18,15 @@ def save_item(request):
                         peso=peso,
                         data_validade=data_validade)
     
-    return render(request, 'items/index.html')
+    return render(request, 'items/index.html', {'form': ItemForm()})
 
 def list_items(request):
     items = Item.objects.all()
-    return render(request, "items/items.html", {"items": items})
+    return render(request, "items/items.html", {"items": items, 'form': ItemForm()})
 
 def update_item(request, id):
     item = Item.objects.get(id=id)
-    return render(request, "items/update.html", {"item": item})
+    return render(request, "items/update.html", {"item": item, 'form': ItemForm()})
 
 def update(request, id):
     nome = request.POST.get('nome')
@@ -42,12 +43,12 @@ def update(request, id):
     item.data_validade = data_validade
     item.save()
 
-    return redirect(list_items)
+    return redirect('items:items')
 
 def delete_item(request, id):
     item = Item.objects.get(id=id)
     item.delete()
-    return redirect(list_items)
+    return redirect('items:items')
 
 def search_items(request):
     s_nome = request.POST.get('search')

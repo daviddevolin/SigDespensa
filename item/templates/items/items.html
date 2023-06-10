@@ -9,23 +9,10 @@
 <body>
     <h1>SigDespensa - Itens</h1>
 
-    <!-- Formulário para adicionar um item -->
-    <form action="{% url 'items:salvar' %}" method="POST">
-        {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome">
-        <label for="categoria">Categoria: </label>
-        <input type="text" name="categoria">
-        <label for="marca">Marca: </label>
-        <input type="text" name="marca">
-        <label for="peso">Peso: </label>
-        <input type="text" name="peso">
-        <label for="validade">Data de Validade: </label>
-        <input type="text" name="data_validade">
-        <button type="submit">Adicionar</button>
-    </form>
-
     <!-- Lista de itens -->
+    {%if not items%}
+        <h2>Nenhum item cadastrado!</h2>
+    {% endif %}
     <ul>
         {% for item in items %}
         <li>

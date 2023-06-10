@@ -17,16 +17,7 @@
 
     <form action="{% url 'items:salvar' %}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome">
-        <label for="categoria">Categoria: </label>
-        <input type="text" name="categoria">
-        <label for="marca">Marca: </label>
-        <input type="text" name="marca">
-        <label for="peso">Peso: </label>
-        <input type="text" name="peso">
-        <label for="data_validade">Data de Validade: </label>
-        <input type="text" name="data_validade">
+        {{form}}
         <button type="submit">Enviar</button>
     </form>
 </body>

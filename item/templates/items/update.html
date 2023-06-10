@@ -13,20 +13,11 @@
 </head>
 <body>
     <h1>SigDespensa</h1>
-    <a href="{% url 'items' %}">Itens</a>
+    <a href="{% url 'items:items' %}">Itens</a>
 
-    <form action="{% url 'update_item' item.id %}" method="POST">
+    <form action="{% url 'items:update' item.id %}" method="POST">
         {% csrf_token %}
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" value="{{ item.nome }}">
-        <label for="categoria">Categoria: </label>
-        <input type="text" name="categoria" value="{{ item.categoria }}">
-        <label for="marca">Marca: </label>
-        <input type="text" name="marca" value="{{ item.marca }}">
-        <label for="peso">Peso: </label>
-        <input type="text" name="peso" value="{{ item.peso }}">
-        <label for="data_validade">Data de Validade: </label>
-        <input type="text" name="data_validade" value="{{ item.data_validade }}">
+        {{form}}
         <button type="submit">Atualizar</button>
     </form>
 </body>

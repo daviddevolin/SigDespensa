@@ -1,7 +1,6 @@
 from django.db import models
 
 class Item(models.Model):
-    codigo_id = models.CharField(max_length=50)
     nome = models.CharField(max_length=100)
     categoria = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)

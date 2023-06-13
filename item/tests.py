@@ -8,28 +8,28 @@ class ItemViewsTestCase(TestCase):
             nome='Arroz',
             categoria='Alimentos',
             marca='Marca A',
-            peso='1kg',
+            peso=1000,
             data_validade='2023-06-01'
         )
         self.item2 = Item.objects.create(
             nome='Feijão',
             categoria='Alimentos',
             marca='Marca B',
-            peso='500g',
+            peso=500,
             data_validade='2023-05-31'
         )
 
     def test_home_view(self):
         response = self.client.get(reverse('items:home'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'items/index.html')
 
     def test_save_item_view(self):
         data = {
             'nome': 'Macarrão',
             'categoria': 'Alimentos',
             'marca': 'Marca C',
-            'peso': '500g',
+            'peso': 500,
             'data_validade': '2023-06-02'
         }
         response = self.client.post(reverse('items:save_item'), data)
@@ -42,13 +42,13 @@ class ItemViewsTestCase(TestCase):
     def test_list_items_view(self):
         response = self.client.get(reverse('items:items'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'items.html')
+        self.assertTemplateUsed(response, 'items/items.html')
         self.assertQuerysetEqual(response.context['itens'], [repr(self.item1), repr(self.item2)])
 
     def test_update_item_view(self):
         response = self.client.get(reverse('items:update_item', args=[self.item1.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'update.html')
+        self.assertTemplateUsed(response, 'items/update.html')
         self.assertEqual(response.context['item'], self.item1)
 
     def test_update_view(self):
@@ -56,7 +56,7 @@ class ItemViewsTestCase(TestCase):
             'nome': 'Arroz Integral',
             'categoria': 'Alimentos',
             'marca': 'Marca A',
-            'peso': '1kg',
+            'peso': 1000,
             'data_validade': '2023-06-01'
         }
         response = self.client.post(reverse('items:update', args=[self.item1.id]), data)
@@ -79,5 +79,5 @@ class ItemViewsTestCase(TestCase):
         }
         response = self.client.post(reverse('items:search_items'), data)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'search.html')
+        self.assertTemplateUsed(response, 'items/search.html')
         self.assertQuerysetEqual(response.context['itens'], [repr(self.item2)])

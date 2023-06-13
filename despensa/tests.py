@@ -38,13 +38,13 @@ class DespensaViewsTestCase(TestCase):
     def test_despensa_list_view(self):
         response = self.client.get(reverse('despensas:despensa_list'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'despensa.html')
+        self.assertTemplateUsed(response, 'despensa/list.html')
         self.assertQuerysetEqual(response.context['despensas'], [repr(self.despensa1), repr(self.despensa2)])
 
     def test_despensa_update_view(self):
         response = self.client.get(reverse('despensas:despensa_update', args=[self.despensa1.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'update.html')
+        self.assertTemplateUsed(response, 'despensa/update.html')
         self.assertEqual(response.context['despensa'], self.despensa1)
 
     def test_update_view(self):

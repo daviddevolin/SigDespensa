@@ -20,7 +20,7 @@ class UsuarioViewsTestCase(TestCase):
     def test_home_view(self):
         response = self.client.get(reverse('users:home'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'users/index.html')
 
     def test_save_user_view(self):
         data = {
@@ -50,7 +50,7 @@ class UsuarioViewsTestCase(TestCase):
     def test_update_user_view(self):
         response = self.client.get(reverse('users:editar', args=[self.usuario_felipe.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'update.html')
+        self.assertTemplateUsed(response, 'users/update.html')
         self.assertEqual(response.context['usuario'], self.usuario_felipe)
 
     def test_update_view(self):
@@ -80,5 +80,5 @@ class UsuarioViewsTestCase(TestCase):
         }
         response = self.client.post(reverse('users:search'), data)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'search.html')
+        self.assertTemplateUsed(response, 'users/search.html')
         self.assertQuerysetEqual(response.context['usuarios'], [repr(self.usuario_isabele)])

@@ -32,7 +32,7 @@ class ItemViewsTestCase(TestCase):
             'peso': 500,
             'data_validade': '2023-06-02'
         }
-        response = self.client.post(reverse('items:save_item'), data)
+        response = self.client.post(reverse('items:salvar'), data)
         self.assertEqual(response.status_code, 302)
 
         # Verificar se o item foi salvo no banco de dados
@@ -46,7 +46,7 @@ class ItemViewsTestCase(TestCase):
         self.assertQuerysetEqual(response.context['itens'], [repr(self.item1), repr(self.item2)])
 
     def test_update_item_view(self):
-        response = self.client.get(reverse('items:update_item', args=[self.item1.id]))
+        response = self.client.get(reverse('items:update', args=[self.item1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'items/update.html')
         self.assertEqual(response.context['item'], self.item1)
@@ -66,7 +66,7 @@ class ItemViewsTestCase(TestCase):
         self.assertEqual(self.item1.nome, 'Arroz Integral')
 
     def test_delete_item_view(self):
-        response = self.client.get(reverse('items:delete_item', args=[self.item1.id]))
+        response = self.client.get(reverse('items:delete', args=[self.item1.id]))
         self.assertEqual(response.status_code, 302)
 
         # Verificar se o item foi removido do banco de dados
@@ -77,7 +77,7 @@ class ItemViewsTestCase(TestCase):
         data = {
             'search': 'Feijão'
         }
-        response = self.client.post(reverse('items:search_items'), data)
+        response = self.client.post(reverse('items:search'), data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'items/search.html')
         self.assertQuerysetEqual(response.context['itens'], [repr(self.item2)])

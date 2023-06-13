@@ -44,7 +44,7 @@ class UsuarioViewsTestCase(TestCase):
     def test_list_users_view(self):
         response = self.client.get(reverse('users:users'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'users.html')
+        self.assertTemplateUsed(response, 'users/users.html')
         self.assertQuerysetEqual(response.context['usuarios'], [repr(self.usuario_felipe), repr(self.usuario_isabele)])
 
     def test_update_user_view(self):

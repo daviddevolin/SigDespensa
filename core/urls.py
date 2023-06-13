@@ -3,7 +3,7 @@ from django.urls import path, include
 from .views import home, save_user, list_users, update_user, update, delete_user, search_users
 app_name = 'users'
 urlpatterns =  [
-    path('', home),
+    path('', home, name="home"),
     path('salvar/', save_user, name="salvar"),
     path('users/', list_users, name="users"),
     path('editar/<int:id>', update_user, name="editar"),

@@ -18,7 +18,7 @@ class UsuarioViewsTestCase(TestCase):
         )
 
     def test_home_view(self):
-        response = self.client.get(reverse('home'))
+        response = self.client.get(reverse('users:home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
 
@@ -29,7 +29,7 @@ class UsuarioViewsTestCase(TestCase):
             'cpf': '12345678902',
             'telefone': '9876543210'
         }
-        response = self.client.post(reverse('salvar'), data)
+        response = self.client.post(reverse('users:salvar'), data)
         self.assertEqual(response.status_code, 200)
 
         # Verificar se o usuário foi salvo no banco de dados
@@ -42,13 +42,13 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(john.telefone, '9876543210')
 
     def test_list_users_view(self):
-        response = self.client.get(reverse('users'))
+        response = self.client.get(reverse('users:users'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users.html')
         self.assertQuerysetEqual(response.context['usuarios'], [repr(self.usuario_felipe), repr(self.usuario_isabele)])
 
     def test_update_user_view(self):
-        response = self.client.get(reverse('editar', args=[self.usuario_felipe.id]))
+        response = self.client.get(reverse('users:editar', args=[self.usuario_felipe.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'update.html')
         self.assertEqual(response.context['usuario'], self.usuario_felipe)
@@ -60,14 +60,14 @@ class UsuarioViewsTestCase(TestCase):
             'cpf': '12345678901',
             'telefone': '1234567890'
         }
-        response = self.client.post(reverse('update', args=[self.usuario_felipe.id]), data)
+        response = self.client.post(reverse('users:update', args=[self.usuario_felipe.id]), data)
         self.assertEqual(response.status_code, 302)
 
         self.usuario_felipe.refresh_from_db()
         self.assertEqual(self.usuario_felipe.nome, 'Felipe Souza Novo')
 
     def test_delete_user_view(self):
-        response = self.client.get(reverse('delete', args=[self.usuario_felipe.id]))
+        response = self.client.get(reverse('users:delete', args=[self.usuario_felipe.id]))
         self.assertEqual(response.status_code, 302)
 
         # Verificar se o usuário foi removido do banco de dados
@@ -78,7 +78,7 @@ class UsuarioViewsTestCase(TestCase):
         data = {
             'search': 'Isabele'
         }
-        response = self.client.post(reverse('search'), data)
+        response = self.client.post(reverse('users:search'), data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'search.html')
         self.assertQuerysetEqual(response.context['usuarios'], [repr(self.usuario_isabele)])

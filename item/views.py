@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
 from item.models import Item
 from .forms import ItemForm
+from django.views.decorators.http import require_http_methods
 
+@require_http_methods(["GET", "POST"])
 def item_home(request):
     return render(request, "items/index.html", {'form': ItemForm()})
 
+@require_http_methods(["GET", "POST"])
 def save_item(request):
     nome = request.POST.get('nome')
     categoria = request.POST.get('categoria')
@@ -20,14 +23,17 @@ def save_item(request):
     
     return render(request, 'items/index.html', {'form': ItemForm()})
 
+@require_http_methods(["GET", "POST"])
 def list_items(request):
     items = Item.objects.all()
     return render(request, "items/items.html", {"items": items, 'form': ItemForm()})
 
+@require_http_methods(["GET", "POST"])
 def update_item(request, id):
     item = Item.objects.get(id=id)
     return render(request, "items/update.html", {"item": item, 'form': ItemForm()})
 
+@require_http_methods(["GET", "POST"])
 def update(request, id):
     nome = request.POST.get('nome')
     categoria = request.POST.get('categoria')
@@ -45,11 +51,13 @@ def update(request, id):
 
     return redirect('items:items')
 
+@require_http_methods(["GET", "POST"])
 def delete_item(request, id):
     item = Item.objects.get(id=id)
     item.delete()
     return redirect('items:items')
 
+@require_http_methods(["GET", "POST"])
 def search_items(request):
     s_nome = request.POST.get('search')
     if s_nome:

@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Usuario
 from .forms import UsuarioForm
+from django.views.decorators.http import require_http_methods
+
+@require_http_methods(["GET", "POST"])
 def home(request):
     usuario_form = UsuarioForm()
     return render(request, "users/index.html", {"form": usuario_form})
 
+@require_http_methods(["GET", "POST"])
 def save_user(request):
 
     form = UsuarioForm(request.POST)
@@ -27,15 +31,18 @@ def save_user(request):
         return render(request, 'users/index.html', {"form": UsuarioForm(), "errors": form.errors})
 
 
+@require_http_methods(["GET", "POST"])
 def list_users(request):
     usuarios = Usuario.objects.all()
 
     return render(request, "users/users.html", {"usuarios": usuarios})
 
+@require_http_methods(["GET", "POST"])
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
     return render(request, "users/update.html", {"usuario": usuario, "form": UsuarioForm()})
 
+@require_http_methods(["GET", "POST"])
 def update(request, id):
     form = UsuarioForm(request.POST)
     usuario = Usuario.objects.get(id=id)
@@ -58,11 +65,13 @@ def update(request, id):
     else:
         return render(request, 'users/update.html', {"usuario": usuario,"form": UsuarioForm(), "errors": form.errors})
 
+@require_http_methods(["GET", "POST"])
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
     return redirect('users:users')
 
+@require_http_methods(["GET", "POST"])
 def search_users(request):
     s_nome = request.POST.get('search')
     if s_nome:

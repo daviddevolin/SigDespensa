@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from item.models import Item
 from .forms import ItemForm
 from django.views.decorators.http import require_http_methods
 
 @require_http_methods(["GET", "POST"])
 def item_home(request):
-    return render(request, "items/index.html", {'form': ItemForm()})
+
+    rendered_page = render(request, "items/index.html", {'form': ItemForm()})
+
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def save_item(request):
@@ -20,18 +24,22 @@ def save_item(request):
                         marca=marca,
                         peso=peso,
                         data_validade=data_validade)
-    
-    return render(request, 'items/index.html', {'form': ItemForm()})
+    rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def list_items(request):
     items = Item.objects.all()
-    return render(request, "items/items.html", {"items": items, 'form': ItemForm()})
+
+    rendered_page = render(request, "items/items.html", {"items": items, 'form': ItemForm()})
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def update_item(request, id):
     item = Item.objects.get(id=id)
-    return render(request, "items/update.html", {"item": item, 'form': ItemForm()})
+
+    rendered_page = render(request, "items/update.html", {"item": item, 'form': ItemForm()})
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def update(request, id):
@@ -62,7 +70,10 @@ def search_items(request):
     s_nome = request.POST.get('search')
     if s_nome:
         items = Item.objects.filter(nome__icontains=s_nome)
-        return render(request, "items/search.html", {"items": items})
+
+        rendered_page = render(request, "items/search.html", {"items": items})
+        return HttpResponse(rendered_page)
     else:
         items = ""
-        return render(request, "items/search.html", {"items": items})
+        rendered_page = render(request, "items/search.html", {"items": items})
+        return HttpResponse(rendered_page)

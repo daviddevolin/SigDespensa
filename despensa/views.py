@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from .models import Despensa
 from .forms import DespensaForm
 from django.views.decorators.http import require_http_methods
@@ -7,12 +8,18 @@ from django.views.decorators.http import require_http_methods
 @require_http_methods(["GET", "POST"])
 def despensa_list(request):
     despensas = Despensa.objects.all()
-    return render(request, 'despensa/list.html', {'despensas': despensas})
+
+    rendered_page = render(request, 'despensa/list.html', {'despensas': despensas})
+
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def despensa_detail(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
-    return render(request, 'despensa/detail.html', {'despensa': despensa})
+
+    rendered_page = render(request, 'despensa/detail.html', {'despensa': despensa})
+
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def despensa_create(request):
@@ -23,7 +30,9 @@ def despensa_create(request):
         categoria = request.POST.get('categoria')
         Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, categoria=categoria)
         return redirect('despensas:despensa_list')
-    return render(request, 'despensa/form.html', {"form": DespensaForm()})
+    
+    rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def despensa_update(request, pk):
@@ -39,7 +48,9 @@ def despensa_update(request, pk):
         despensa.categoria = categoria
         despensa.save()
         return redirect('despensas:despensa_list')
-    return render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
+    
+    rendered_page = render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
+    return HttpResponse(rendered_page)
 
 @require_http_methods(["GET", "POST"])
 def despensa_delete(request, pk):
@@ -47,4 +58,6 @@ def despensa_delete(request, pk):
     if request.method == 'POST':
         despensa.delete()
         return redirect('despensas:despensa_list')
-    return render(request, 'despensa/confirm_delete.html', {'despensa': despensa})
+    
+    rendered_page = render(request, 'despensa/confirm_delete.html', {'despensa': despensa})
+    return HttpResponse(rendered_page)

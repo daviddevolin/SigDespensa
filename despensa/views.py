@@ -44,21 +44,29 @@ def despensa_update(request, id):
 
 @require_POST
 def update(request, id):
-    nome = request.POST.get('nome')
-    quantTotal = request.POST.get('quantTotal')
-    capacidade = request.POST.get('capacidade')
-    categoria = request.POST.get('categoria')
 
+    form = DespensaForm(request.POST)
     despensa = Despensa.objects.get(id=id)
 
-    despensa.nome = nome
-    despensa.quantTotal = quantTotal
-    despensa.capacidade = capacidade
-    despensa.categoria = categoria
-    despensa.save()
+    if form.is_valid():
+        cleaned_data = form.cleaned_data
 
-    return redirect('despensas:despensa_list')
+        nome = cleaned_data.get('nome')
+        quantTotal = cleaned_data.get('quantTotal')
+        capacidade = cleaned_data.get('capacidade')
+        categoria = cleaned_data.get('categoria')
 
+        despensa.nome = nome
+        despensa.quantTotal = quantTotal
+        despensa.capacidade = capacidade
+        despensa.categoria = categoria
+        despensa.save()
+
+        return redirect('despensas:despensa_list')
+    else:
+
+        rendered_page = render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
+        return HttpResponse(rendered_page)
 
 @require_safe
 def despensa_delete(request, id):

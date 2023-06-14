@@ -38,21 +38,21 @@ def save_user(request):
         return HttpResponse(rendered_page)
 
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def list_users(request):
     usuarios = Usuario.objects.all()
 
     rendered_page = render(request, "users/users.html", {"usuarios": usuarios})
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
 
     rendered_page = render(request, "users/update.html", {"usuario": usuario, "form": UsuarioForm()})
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_POST
 def update(request, id):
     form = UsuarioForm(request.POST)
     usuario = Usuario.objects.get(id=id)
@@ -77,13 +77,13 @@ def update(request, id):
         rendered_page = render(request, 'users/update.html', {"usuario": usuario,"form": UsuarioForm(), "errors": form.errors})
         return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
     return redirect('users:users')
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def search_users(request):
     s_nome = request.POST.get('search')
     if s_nome:

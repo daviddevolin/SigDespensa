@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Despensa
 from .forms import DespensaForm
-from django.views.decorators.http import require_safe, require_POST
+from django.views.decorators.http import require_safe, require_POST, require_http_methods
 
 @require_safe
 def despensa_list(request):
@@ -35,7 +35,7 @@ def despensa_create(request):
     rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
     return HttpResponse(rendered_page)
 
-@require_POST
+@require_http_methods(['GET', 'POST'])
 def despensa_update(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
     if request.method == 'POST':

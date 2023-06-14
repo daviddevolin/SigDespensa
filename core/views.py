@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Usuario
 from .forms import UsuarioForm
 from django.views.decorators.http import require_http_methods
-from django.views.decorators.http import require_GET, require_safe, require_POST
+from django.views.decorators.http import require_safe, require_POST
 
 @require_safe
 def home(request):
@@ -83,7 +83,7 @@ def delete_user(request, id):
     usuario.delete()
     return redirect('users:users')
 
-@require_safe
+@require_POST
 def search_users(request):
     s_nome = request.POST.get('search')
     if s_nome:

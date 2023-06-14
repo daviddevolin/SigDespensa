@@ -3,9 +3,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Despensa
 from .forms import DespensaForm
-from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_safe, require_POST
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def despensa_list(request):
     despensas = Despensa.objects.all()
 
@@ -13,7 +13,8 @@ def despensa_list(request):
 
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+
+@require_safe
 def despensa_detail(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
 
@@ -21,7 +22,7 @@ def despensa_detail(request, pk):
 
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_POST
 def despensa_create(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
@@ -34,7 +35,7 @@ def despensa_create(request):
     rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_POST
 def despensa_update(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
     if request.method == 'POST':
@@ -52,7 +53,7 @@ def despensa_update(request, pk):
     rendered_page = render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
     return HttpResponse(rendered_page)
 
-@require_http_methods(["GET", "POST"])
+@require_POST
 def despensa_delete(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
     if request.method == 'POST':

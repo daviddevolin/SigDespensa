@@ -13,7 +13,7 @@
 </head>
 <body>
     {{despensa.id}} -- {{despensa.nome}}
-    <form action="{% url 'despensas:despensa_update' despensa.id%}" method="POST">
+    <form action="{% url 'despensas:update' despensa.id%}" method="POST">
         {% csrf_token %}
         {{form}}
         <button type="submit">Editar</button>

@@ -35,31 +35,33 @@ def despensa_create(request):
     rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
     return HttpResponse(rendered_page)
 
-@require_POST
 @require_safe
-def despensa_update(request, pk):
-    despensa = get_object_or_404(Despensa, pk=pk)
-    if request.method == 'POST':
-        nome = request.POST.get('nome')
-        quantTotal = request.POST.get('quantTotal')
-        capacidade = request.POST.get('capacidade')
-        categoria = request.POST.get('categoria')
-        despensa.nome = nome
-        despensa.quantTotal = quantTotal
-        despensa.capacidade = capacidade
-        despensa.categoria = categoria
-        despensa.save()
-        return redirect('despensas:despensa_list')
-    
+def despensa_update(request, id):
+    despensa = Despensa.objects.get(id=id)
+
     rendered_page = render(request, 'despensa/update.html', {'form': DespensaForm(), 'despensa': despensa})
     return HttpResponse(rendered_page)
 
 @require_POST
-def despensa_delete(request, pk):
-    despensa = get_object_or_404(Despensa, pk=pk)
-    if request.method == 'POST':
-        despensa.delete()
-        return redirect('despensas:despensa_list')
-    
-    rendered_page = render(request, 'despensa/confirm_delete.html', {'despensa': despensa})
-    return HttpResponse(rendered_page)
+def update(request, id):
+    nome = request.POST.get('nome')
+    quantTotal = request.POST.get('quantTotal')
+    capacidade = request.POST.get('capacidade')
+    categoria = request.POST.get('categoria')
+
+    despensa = Despensa.objects.get(id=id)
+
+    despensa.nome = nome
+    despensa.quantTotal = quantTotal
+    despensa.capacidade = capacidade
+    despensa.categoria = categoria
+    despensa.save()
+
+    return redirect('despensas:despensa_list')
+
+
+@require_safe
+def despensa_delete(request, id):
+    despensa = Despensa.objects.get(id=id)
+    despensa.delete()
+    return redirect('despensas:despensa_list')

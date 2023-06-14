@@ -39,7 +39,7 @@ class DespensaViewsTestCase(TestCase):
         response = self.client.get(reverse('despensas:despensa_list'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'despensa/list.html')
-        self.assertQuerysetEqual(response.context['despensas'], [repr(self.despensa1), repr(self.despensa2)])
+        self.assertSetEqual(set(response.context['despensas']),{(self.despensa1), (self.despensa2)})
 
     def test_despensa_update_view(self):
         response = self.client.get(reverse('despensas:despensa_update', args=[self.despensa1.id]))

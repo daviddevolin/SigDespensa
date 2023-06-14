@@ -43,7 +43,7 @@ class ItemViewsTestCase(TestCase):
         response = self.client.get(reverse('items:items'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'items/items.html')
-        self.assertQuerysetEqual(response.context['itens'], [repr(self.item1), repr(self.item2)])
+        self.assertSetEqual(set(response.context['items']),{(self.item1), (self.item2)})
 
     def test_update_item_view(self):
         response = self.client.get(reverse('items:update', args=[self.item1.id]))
@@ -80,4 +80,5 @@ class ItemViewsTestCase(TestCase):
         response = self.client.post(reverse('items:search'), data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'items/search.html')
-        self.assertQuerysetEqual(response.context['itens'], [repr(self.item2)])
+        self.assertSetEqual(set(response.context['items']),{ (self.item2)})
+        

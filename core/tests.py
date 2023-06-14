@@ -53,6 +53,7 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/update.html')
         self.assertEqual(response.context['usuario'], self.usuario_felipe)
+        
 
     def test_update_view(self):
         data = {

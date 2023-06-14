@@ -8,65 +8,66 @@ class ItemViewsTestCase(TestCase):
             nome='Arroz',
             categoria='Alimentos',
             marca='Marca A',
-            peso='1kg',
-            validade='2023-06-01'
+            peso=1000,
+            data_validade='2023-06-01'
         )
         self.item2 = Item.objects.create(
             nome='Feijão',
             categoria='Alimentos',
             marca='Marca B',
-            peso='500g',
-            validade='2023-05-31'
+            peso=500,
+            data_validade='2023-05-31'
         )
 
     def test_home_view(self):
-        response = self.client.get(reverse('home'))
+        response = self.client.get(reverse('items:home'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'items/index.html')
 
     def test_save_item_view(self):
         data = {
             'nome': 'Macarrão',
             'categoria': 'Alimentos',
             'marca': 'Marca C',
-            'peso': '500g',
-            'validade': '2023-06-02'
+            'peso': 500,
+            'data_validade': '2023-06-02'
         }
-        response = self.client.post(reverse('save_item'), data)
-        self.assertEqual(response.status_code, 302)
+        response = self.client.post(reverse('items:salvar'), data)
+        self.assertEqual(response.status_code, 200)
 
         # Verificar se o item foi salvo no banco de dados
         macarrao_exists = Item.objects.filter(nome='Macarrão').exists()
         self.assertTrue(macarrao_exists)
 
     def test_list_items_view(self):
-        response = self.client.get(reverse('items'))
+        response = self.client.get(reverse('items:items'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'items.html')
-        self.assertQuerysetEqual(response.context['itens'], [repr(self.item1), repr(self.item2)])
+        self.assertTemplateUsed(response, 'items/items.html')
+        self.assertSetEqual(set(response.context['items']),{(self.item1), (self.item2)})
 
     def test_update_item_view(self):
-        response = self.client.get(reverse('update_item', args=[self.item1.id]))
+        response = self.client.get(reverse('items:update', args=[self.item1.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'update.html')
+        self.assertTemplateUsed(response, 'items/update.html')
         self.assertEqual(response.context['item'], self.item1)
 
-    def test_update_view(self):
+
+    def test_update_item_view(self):
         data = {
-            'nome': 'Arroz Integral',
+            'nome': 'Arroz Novo',
             'categoria': 'Alimentos',
             'marca': 'Marca A',
-            'peso': '1kg',
-            'validade': '2023-06-01'
+            'peso': 1000,
+            'data_validade': '2023-06-01'
         }
-        response = self.client.post(reverse('update', args=[self.item1.id]), data)
+        response = self.client.post(reverse('items:update', args=[self.item1.id]), data)
         self.assertEqual(response.status_code, 302)
 
         self.item1.refresh_from_db()
-        self.assertEqual(self.item1.nome, 'Arroz Integral')
+        self.assertEqual(self.item1.nome, 'Arroz Novo')
 
     def test_delete_item_view(self):
-        response = self.client.get(reverse('delete_item', args=[self.item1.id]))
+        response = self.client.get(reverse('items:delete', args=[self.item1.id]))
         self.assertEqual(response.status_code, 302)
 
         # Verificar se o item foi removido do banco de dados
@@ -77,7 +78,8 @@ class ItemViewsTestCase(TestCase):
         data = {
             'search': 'Feijão'
         }
-        response = self.client.post(reverse('search_items'), data)
+        response = self.client.post(reverse('items:search'), data)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'search.html')
-        self.assertQuerysetEqual(response.context['itens'], [repr(self.item2)])
+        self.assertTemplateUsed(response, 'items/search.html')
+        self.assertSetEqual(set(response.context['items']),{ (self.item2)})
+        

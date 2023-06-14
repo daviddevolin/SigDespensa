@@ -51,9 +51,10 @@ class ItemViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'items/update.html')
         self.assertEqual(response.context['item'], self.item1)
 
-    def test_update_view(self):
+
+    def test_update_item_view(self):
         data = {
-            'nome': 'Arroz Integral',
+            'nome': 'Arroz Novo',
             'categoria': 'Alimentos',
             'marca': 'Marca A',
             'peso': 1000,
@@ -63,7 +64,7 @@ class ItemViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
 
         self.item1.refresh_from_db()
-        self.assertEqual(self.item1.nome, 'Arroz Integral')
+        self.assertEqual(self.item1.nome, 'Arroz Novo')
 
     def test_delete_item_view(self):
         response = self.client.get(reverse('items:delete', args=[self.item1.id]))

@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from .models import Usuario
 from .forms import UsuarioForm
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_GET, require_safe
 
-@require_http_methods(["GET", "POST"])
+@require_safe
 def home(request):
     usuario_form = UsuarioForm()
 

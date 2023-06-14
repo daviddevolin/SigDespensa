@@ -35,7 +35,8 @@ def despensa_create(request):
     rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
     return HttpResponse(rendered_page)
 
-@require_http_methods(['GET', 'POST'])
+@require_POST
+@require_safe
 def despensa_update(request, pk):
     despensa = get_object_or_404(Despensa, pk=pk)
     if request.method == 'POST':

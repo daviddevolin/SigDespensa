@@ -47,6 +47,7 @@ class DespensaViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'despensa/update.html')
         self.assertEqual(response.context['despensa'], self.despensa1)
 
+
     def test_update_view(self):
         data = {
             'nome' : 'casa-SP',
@@ -54,7 +55,7 @@ class DespensaViewsTestCase(TestCase):
             'capacidade' : 200,
             'categoria' : 'alimentos'
         }
-        response = self.client.post(reverse('despensas:despensa_update', args=[self.despensa1.id]), data)
+        response = self.client.post(reverse('despensas:update', args=[self.despensa1.id]), data)
         self.assertEqual(response.status_code, 302)
 
         self.despensa1.refresh_from_db()

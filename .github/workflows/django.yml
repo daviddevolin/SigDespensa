@@ -27,7 +27,8 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        coverage run manage.py test
+        coverage xml
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:

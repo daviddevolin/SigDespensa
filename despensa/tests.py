@@ -48,18 +48,18 @@ class DespensaViewsTestCase(TestCase):
         self.assertEqual(response.context['despensa'], self.despensa1)
 
 
-    # def test_update_view(self):
-    #     data = {
-    #         'nome' : 'casa-SP',
-    #         'quantTotal' : 40,
-    #         'capacidade' : 200,
-    #         'categoria' : 'alimentos'
-    #     }
-    #     response = self.client.post(reverse('update', args=[self.despensa1.id]), data)
-    #     self.assertEqual(response.status_code, 302)
+    def test_update_view(self):
+        data = {
+            'nome' : 'casa-SP',
+            'quantTotal' : 40,
+            'capacidade' : 200,
+            'categoria' : 'alimentos'
+        }
+        response = self.client.post(reverse('despensas:update', args=[self.despensa1.id]), data)
+        self.assertEqual(response.status_code, 302)
 
-    #     self.despensa1.refresh_from_db()
-    #     self.assertEqual(self.despensa1.nome, 'casa-SP')
+        self.despensa1.refresh_from_db()
+        self.assertEqual(self.despensa1.nome, 'casa-SP')
 
    #def test_despensa_delete_view(self):
     #    response = self.client.get(reverse('despensas:despensa_delete', args=[self.despensa1.id]))

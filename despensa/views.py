@@ -5,6 +5,13 @@ from .models import Despensa
 from .forms import DespensaForm
 from django.views.decorators.http import require_safe, require_POST, require_http_methods
 
+
+
+@require_safe
+def despensa_form(request):
+    rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
+    return HttpResponse(rendered_page)
+
 @require_safe
 def despensa_list(request):
     despensas = Despensa.objects.all()
@@ -24,16 +31,14 @@ def despensa_detail(request, pk):
 
 @require_POST
 def despensa_create(request):
-    if request.method == 'POST':
-        nome = request.POST.get('nome')
-        quantTotal = request.POST.get('quantTotal')
-        capacidade = request.POST.get('capacidade')
-        categoria = request.POST.get('categoria')
-        Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, categoria=categoria)
-        return redirect('despensas:despensa_list')
+    nome = request.POST.get('nome')
+    quantTotal = request.POST.get('quantTotal')
+    capacidade = request.POST.get('capacidade')
+    categoria = request.POST.get('categoria')
+    Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, categoria=categoria)
+    return redirect('despensas:despensa_list')
     
-    rendered_page = render(request, 'despensa/form.html', {"form": DespensaForm()})
-    return HttpResponse(rendered_page)
+
 
 @require_safe
 def despensa_update(request, id):

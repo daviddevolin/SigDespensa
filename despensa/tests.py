@@ -11,13 +11,12 @@ class DespensaViewsTestCase(TestCase):
             nome = 'casa',
             quantTotal = 10,
             capacidade = 200,
-            categoria = 'alimentos'
         )
         self.despensa2 = Despensa.objects.create(
             nome = 'apartamento',
             quantTotal = 15,
             capacidade = 200,
-            categoria = 'limpeza'
+
         )
 
 
@@ -26,7 +25,6 @@ class DespensaViewsTestCase(TestCase):
             'nome' : 'sitio',
             'quantTotal' : 30,
             'capacidade' : 200,
-            'categoria' : 'ração'
         }
         response = self.client.post(reverse('despensas:despensa_create'), data)
         self.assertEqual(response.status_code, 302)
@@ -53,7 +51,6 @@ class DespensaViewsTestCase(TestCase):
             'nome' : 'casa-SP',
             'quantTotal' : 40,
             'capacidade' : 200,
-            'categoria' : 'alimentos'
         }
         response = self.client.post(reverse('despensas:update', args=[self.despensa1.id]), data)
         self.assertEqual(response.status_code, 302)

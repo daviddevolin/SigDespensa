@@ -18,7 +18,8 @@
 
     <form action="{%url 'users:salvar' %}" method="POST">
         {% csrf_token %}
-        {{form}}
+        {{user_form}}
+        {{usuario_form}}
         <button type="submit">Enviar</button>
         {% if not errs %}
             <div></div>

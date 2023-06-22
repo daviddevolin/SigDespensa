@@ -6,6 +6,9 @@ from .forms import UsuarioForm, UserForm
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.http import require_safe, require_POST
+from django.contrib.auth.decorators import login_required
+
+from allauth.account.forms import LoginForm
 
 @require_safe
 def home(request):
@@ -115,10 +118,11 @@ def search_users(request):
 
 @require_safe
 def login (request):
-    rendered_page= render(request, "users/login.html")
+    rendered_page= render(request, "users/login.html", {"login_form": LoginForm()})
     return rendered_page
 
-@require_POST
+@login_required
+@require_safe
 def auth_login (request):
-    rendered_page= render(request, "users/teste.html")
+    rendered_page = render(request, "users/test.html")
     return rendered_page

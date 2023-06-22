@@ -3,7 +3,7 @@ from django.urls import path, include
 from .views import home, save_category, list_categories, update_category, update, delete_category,search_categories
 app_name = 'categories'
 urlpatterns =  [
-    path('', home),
+    path('', home,name= "home"),
     path('salvar/', save_category, name="salvar"),
     path('categories/', list_categories, name="categories"),
     path('editar/<int:id>', update_category, name="editar"),

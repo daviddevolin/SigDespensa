@@ -112,3 +112,13 @@ def search_users(request):
         rendered_page = render(request, "users/search.html", {"usuarios": usuarios})
 
         return HttpResponse(rendered_page)
+
+@require_safe
+def login (request):
+    rendered_page= render(request, "users/login.html")
+    return rendered_page
+
+@require_POST
+def auth_login (request):
+    rendered_page= render(request, "users/teste.html")
+    return rendered_page

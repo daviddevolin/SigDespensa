@@ -124,5 +124,7 @@ def login (request):
 @login_required
 @require_safe
 def auth_login (request):
+    m = User.objects.get(username=request.user.username)
+    print(m.first_name)
     rendered_page = render(request, "users/test.html")
     return rendered_page

@@ -66,24 +66,33 @@ def list_users(request):
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
 
-    rendered_page = render(request, "users/update.html", {"usuario": usuario, "form": UsuarioForm()})
+    rendered_page = render(request, "users/update.html", {"usuario": usuario, "usuario_form": UsuarioForm(), "user_form": UserForm()})
     return HttpResponse(rendered_page)
 
 @require_POST
 def update(request, id):
-    form = UsuarioForm(request.POST)
+    usuario_form = UsuarioForm(request.POST)
+    user_form = UserForm(request.POST)
+
     usuario = Usuario.objects.get(id=id)
+    user = User.objects.get(id=id)
     
-    if form.is_valid():
-        cleaned_data = form.cleaned_data
-        nome = cleaned_data.get('nome')
-        email = cleaned_data.get('email')
-        cpf = cleaned_data.get('cpf')
-        telefone = cleaned_data.get('telefone')
+    if usuario_form.is_valid() and user_form.is_valid():
+        usuario_cleaned_data = usuario_form.cleaned_data
+        user_cleaned_data = user_form.cleaned_data
+        nome = user_cleaned_data.get('first_name')
+        sobrenome = user_cleaned_data.get('last_name')
+        email = user_cleaned_data.get('email')
+        cpf = usuario_cleaned_data.get('cpf')
+        telefone = usuario_cleaned_data.get('telefone')
 
 
-        usuario.nome = nome
-        usuario.email = email
+        user.first_name = nome
+        user.last_name = sobrenome
+        user.email = email
+
+        user.save()
+
         usuario.cpf = cpf
         usuario.telefone = telefone
         usuario.save()
@@ -91,13 +100,16 @@ def update(request, id):
         return redirect('users:users')
     else:
 
-        rendered_page = render(request, 'users/update.html', {"usuario": usuario,"form": UsuarioForm(), "errors": form.errors})
+        rendered_page = render(request, 'users/update.html', {"usuario": usuario, "usuario_form": UsuarioForm(),"user_form": UserForm() ,"errors": usuario_form.errors})
         return HttpResponse(rendered_page)
 
 @require_safe
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
+    user = User.objects.get(id=id)
+
     usuario.delete()
+    user.delete()
     return redirect('users:users')
 
 @require_POST

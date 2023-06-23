@@ -17,7 +17,6 @@
 
     <form action="{%url 'users:update' usuario.id%}" method="POST">
         {% csrf_token %}
-        {{user_form}}
         {{usuario_form}}
         <button type="submit">Editar</button>
 

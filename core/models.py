@@ -9,13 +9,4 @@ class Usuario(AbstractUser):
     telefone = models.CharField(max_length=11)
     
     def __str__(self):
-        return self.user.first_name
-    
-@receiver(post_save, sender=Usuario)
-def create_usuario(sender, instance, created, **kwargs):
-    if created:
-        Usuario.objects.create(user=instance)
-
-@receiver(post_save, sender=Usuario)
-def save_usuario(sender, instance, **kwargs):
-    instance.save()
+        return self.first_name

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuario
-from .forms import UsuarioForm, UserForm
+from .forms import UsuarioForm
 
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_http_methods
@@ -13,45 +13,42 @@ from allauth.account.forms import LoginForm
 @require_safe
 def home(request):
     usuario_form = UsuarioForm()
-    user_form = UserForm()
 
-    rendered_page = render(request, "users/index.html", {"usuario_form": usuario_form, "user_form": user_form})
+    rendered_page = render(request, "users/index.html", {"usuario_form": usuario_form})
 
     return HttpResponse(rendered_page)
 
 @require_POST
 def save_user(request):
 
-    user_form = UserForm(request.POST)
     usuario_form = UsuarioForm(request.POST)
 
-    if user_form.is_valid() and usuario_form.is_valid():
-        cleaned_data_user = user_form.cleaned_data
+    if usuario_form.is_valid():
         cleaned_data_usuario = usuario_form.cleaned_data
 
 
-        username = cleaned_data_user.get('username')
-        primeiro_nome = cleaned_data_user.get('first_name')
-        sobrenome = cleaned_data_user.get('last_name')
-        email = cleaned_data_user.get('email')
-        senha = cleaned_data_user.get('password')
+        username = cleaned_data_usuario.get('username')
+        primeiro_nome = cleaned_data_usuario.get('first_name')
+        sobrenome = cleaned_data_usuario.get('last_name')
+        email = cleaned_data_usuario.get('email')
+        senha = cleaned_data_usuario.get('password')
         cpf = cleaned_data_usuario.get('cpf')
         telefone = cleaned_data_usuario.get('telefone')
 
-        user = User.objects.create_user(username=username,
+        Usuario.objects.create_user(username=username,
                                 email=email,
                                 first_name=primeiro_nome,
                                 last_name=sobrenome,
-                                password=senha)
+                                password=senha,
+                                cpf=cpf,
+                                telefone=telefone)
 
-        Usuario.objects.create(user=user,
-                            cpf=cpf,
-                            telefone=telefone) 
+
         
-        rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "user_form": UserForm()})
+        rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm()})
         return HttpResponse(rendered_page)
     else:
-        rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(),"user_form":UserForm(), "errors": user_form.errors})
+        rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "errors": usuario_form.errors})
         return HttpResponse(rendered_page)
 
 
@@ -66,33 +63,28 @@ def list_users(request):
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
 
-    rendered_page = render(request, "users/update.html", {"usuario": usuario, "usuario_form": UsuarioForm(), "user_form": UserForm()})
+    rendered_page = render(request, "users/update.html", {"usuario": usuario, "usuario_form": UsuarioForm()})
     return HttpResponse(rendered_page)
 
 @require_POST
 def update(request, id):
     usuario_form = UsuarioForm(request.POST)
-    user_form = UserForm(request.POST)
+    
 
     usuario = Usuario.objects.get(id=id)
-    user = User.objects.get(id=id)
     
-    if usuario_form.is_valid() and user_form.is_valid():
+    if usuario_form.is_valid():
         usuario_cleaned_data = usuario_form.cleaned_data
-        user_cleaned_data = user_form.cleaned_data
-        nome = user_cleaned_data.get('first_name')
-        sobrenome = user_cleaned_data.get('last_name')
-        email = user_cleaned_data.get('email')
+        nome = usuario_cleaned_data.get('first_name')
+        sobrenome = usuario_cleaned_data.get('last_name')
+        email = usuario_cleaned_data.get('email')
         cpf = usuario_cleaned_data.get('cpf')
         telefone = usuario_cleaned_data.get('telefone')
 
 
-        user.first_name = nome
-        user.last_name = sobrenome
-        user.email = email
-
-        user.save()
-
+        usuario.first_name = nome
+        usuario.last_name = sobrenome
+        usuario.email = email
         usuario.cpf = cpf
         usuario.telefone = telefone
         usuario.save()
@@ -100,16 +92,14 @@ def update(request, id):
         return redirect('users:users')
     else:
 
-        rendered_page = render(request, 'users/update.html', {"usuario": usuario, "usuario_form": UsuarioForm(),"user_form": UserForm() ,"errors": usuario_form.errors})
+        rendered_page = render(request, 'users/update.html', {"usuario": usuario, "usuario_form": UsuarioForm() ,"errors": usuario_form.errors})
         return HttpResponse(rendered_page)
 
 @require_safe
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
-    user = User.objects.get(id=id)
 
     usuario.delete()
-    user.delete()
     return redirect('users:users')
 
 @require_POST
@@ -136,7 +126,7 @@ def login (request):
 @login_required
 @require_safe
 def auth_login (request):
-    m = User.objects.get(username=request.user.username)
+    m = Usuario.objects.get(username=request.user.username)
     print(m.first_name)
     rendered_page = render(request, "users/test.html")
     return rendered_page

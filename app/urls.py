@@ -25,5 +25,5 @@ urlpatterns = [
     path('despensa/', include('despensa.urls', namespace='despensas')),
     path('item/', include('item.urls', namespace='items')),
     path('categoria/', include('categoria.urls', namespace='categoria')),
-    path('accounts/', include('allauth.urls'))
+    path('account/', include('allauth.urls'))
 ]

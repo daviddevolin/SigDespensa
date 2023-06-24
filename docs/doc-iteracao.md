@@ -4,8 +4,8 @@
 | --- | ---------- | ---------- | ------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | It1 | 28/03/2023 | 13/04/2023 | 13/04/2023   | David Santos   | - Criar Documento de Visão<br/>- Criar Documento de Modelos<br/>- Definir gerente de cada Iteração<br/>- Detalhar os seguintes User Storys:<br/> Manter Usuario-US00,<br/> Manter Despensa -US01,<br/> Manter Categoria-US02,<br/>  Manter Item-US03,<br/> Monitorar Níveis de Despensa-US04                     |
 | It2 | 15/04/2023 | 15/05/2023 | 15/05/2023   | Manoel Anizio   | - Atualizar o Plano de Release<br/> - Implementar User Stories Manter Usuário<br/> - Realizar o Deploy da Iteração<br> - Criar documento de Projeto Arquitetural<br> - Atualizar documento de Iteração |
-| It3 | 16/05/2023 | 15/05/2023 | 25/05/2023   | Italo Dantas  | - Atualizar o plano da Release<br>- Implementar User Stories Manter Despensa<br>- Realizar o Deploy da Iteração                                           |
-| It4 | 15/06/2023 | 15/07/2023 | 15/07/2023   | Isadora Stéfany    | - Realizar revisão das iterações anteriores<br>- Realizar o Deploy da Iteração                                           |  
+| It3 | 16/05/2023 | 15/05/2023 | 25/05/2023   | Italo Dantas  | - Atualizar o plano da Release<br>- Implementar User Stories Manter Despensa                                        |
+| It4 | 15/06/2023 | 15/07/2023 | 15/07/2023   | Isadora Stéfany    | - Realizar revisão das iterações anteriores<br>- Realizar o Deploy da Iteração<br>- Criar relatorio de tests                                          |  
 | It5 | 15/07/2023  | 15/08/2023  | 15/08/2023    | David Santos | - Realizar revisão das iterações anteriores<br>- Realizar o Deploy da Iteração                                         |
 
 

@@ -20,10 +20,10 @@
         {% csrf_token %}
         {{usuario_form}}
         <button type="submit">Enviar</button>
-        {% if not errs %}
+        {% if not errors %}
             <div></div>
         {% else %}
-            <div>{{errs}}</div>
+            <div>{{errors}}</div>
         {%endif%}
     </form>
 </body>

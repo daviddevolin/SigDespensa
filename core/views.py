@@ -26,7 +26,6 @@ def save_user(request):
     if usuario_form.is_valid():
         cleaned_data_usuario = usuario_form.cleaned_data
 
-
         username = cleaned_data_usuario.get('username')
         primeiro_nome = cleaned_data_usuario.get('first_name')
         sobrenome = cleaned_data_usuario.get('last_name')
@@ -44,10 +43,10 @@ def save_user(request):
                                 telefone=telefone)
 
 
-        
         rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm()})
         return HttpResponse(rendered_page)
     else:
+        print(usuario_form.errors)
         rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "errors": usuario_form.errors})
         return HttpResponse(rendered_page)
 

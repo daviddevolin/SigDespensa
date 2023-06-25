@@ -1,0 +1,20 @@
+# Relatório de Testes de Módulo/Sistema
+
+Documento construido a partir do modelo **Modelo BSI - Doc 008 - Relatório de Testes de Módulo/Sistema** que pode ser encontrado no link:
+https://docs.google.com/document/d/11hLKf0FcspQrDRfo3gRMXzuY1028cUeniv_Aob8DX_0/edit?usp=sharing
+### Legenda
+|  Nome      |     Descrição |
+| ---------- | ------------- |
+|   Teste    | Código ou identificação do Teste. |
+| Descrição  | Descrição dos passos e detalhes do teste a ser executado. |
+| Especificação | Informações sobre a função testada e se ela de acordo com a especificação do caso de uso.|
+| Resultado  |  Resultado do teste, modificações sugeridas ou resultados do teste. No caso de erro ou problema na execução do teste descrever o erro em detalhes e adicionar print's das telas.|
+
+## US03 - Manter Item
+
+| Teste | Descrição | Especificação | Resultado |
+| ----- | --------- | -------------- | -------- |
+| Teste 01: Incluir Item | A1 - Incluir Item<br> A1.1. O ator preenche os dados;<br> A1.2. O ator clica no botão Enviar;<br>A1.3. O sistema salva os dados<br>A1.4. O sistema retorna para a página de cadastro de item;<br>A1.5. Fim do fluxo. | Especificação OK. | OK. |
+|Teste 02: Excluir Item | A2 - Excluir Item<br>A2.1. O ator executa o fluxo de Listar Itens;<br>A2.2. O ator clica no botão Excluir;<br>A2.3. O sistema exclui os dados do item;<br>A2.4 O sistema retorna para a página de itens;<br>A2.5. Fim do fluxo. | Especificação OK. | OK. |
+|Teste 03: Editar Item | A3 - Editar Item<br>A3.1. O ator executa o fluxo de Listar Itens;<br>A3.2. O ator clica no botão Editar;<br>A3.3. O sistema redireciona para a página de editar item;<br>A3.4. O ator preenche os dados;<br>A3.5. O ator clica no botão de Atualizar;<br>A3.6. O sistema salva os dados;<br>A3.7 O sistema redireciona para a página de itens;<br>A3.8 Fim do fluxo. | Especificação OK. | OK. |
+|Teste 04:<br>Listar Itens | A4 - Listar Itens<br> A4.1. - O ator clica no botão Itens;<br> A4.2. - O sistema redireciona para a página de listagem de itens;<br>A4.3 O sistema faz uma consulta aos dados dos itens cadastrados;<br>A4.4. - O sistema mostra uma mensagem se não houver itens cadastrados.<br> A4.5. - O sistema lista todos os itens na página;<br>A.4.6. Fim do fluxo. | Especificação OK. | OK. |

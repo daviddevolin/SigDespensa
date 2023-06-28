@@ -182,8 +182,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF026          | Username |
-| RF027          | Senha |
+| RF005          | Fazer Login |
 
 ### User Story US06 - Logout
 
@@ -193,9 +192,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF028          | Opção de logout |
-| RF027          | Encerramento da sessão |
-| RF028          | Redirecionamento após o logout |
+| RF026          | Fazer Logout |
 
 
 

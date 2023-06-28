@@ -61,6 +61,7 @@ RF022 - Filtrar Item Por Nome | Filtra itens da despensa baseado no nome, em ord
 RF023 - Filtrar Item Por Data | Filtra itens da despensa baseado na data adicionada, em ordem crescente ou decrescente. Filtrar item por data tem: data | Usuário |
 RF024 - Adição de notas pessoais | Adiciona notas pessoais para itens na despensa. Adição de notas pessoais tem: descrição, data | Usuário |
 RF025 - Monitorar níveis de Despensa | Monitora os níveis do estoque de um determinado produto dentro da despensa. Monitorar níveis de Despensa tem: código-ID, porcentagem | Usuário |
+RF026 - Fazer Logout | Realiza o logout do usuário atual | Usuário |
 
 
 

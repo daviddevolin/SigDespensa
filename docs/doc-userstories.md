@@ -170,3 +170,32 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF025          | Monitorar níveis de Despensa |
+
+
+
+
+### User Story US05 - Login
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | Autenticação que permite que o usuário acesse a despensa fornecendo suas credenciais pessoais, como nome de usuário e senha |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF026          | Username |
+| RF027          | Senha |
+
+### User Story US05 - Logout
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** |  Permite que um usuário encerre sua sessão em um sistema ou aplicativo. |
+
+| **Requisitos Funcionais envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF028          | Opção de logout |
+| RF027          | Encerramento da sessão |
+| RF028          | Redirecionamento após o logout |
+
+
+

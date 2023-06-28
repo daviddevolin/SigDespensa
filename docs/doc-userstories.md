@@ -185,7 +185,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF026          | Username |
 | RF027          | Senha |
 
-### User Story US05 - Logout
+### User Story US06 - Logout
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |

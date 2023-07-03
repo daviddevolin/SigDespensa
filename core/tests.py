@@ -5,14 +5,20 @@ from core.models import Usuario
 class UsuarioViewsTestCase(TestCase):
     def setUp(self):
         self.usuario_felipe = Usuario.objects.create(
-            nome='Felipe Souza',
+            username='Felipinho',
+            first_name='Felipe',
+            last_name='Souza',
             email='felipe@example.com',
+            password='S3nh4django',
             cpf='958.778.420-05',
             telefone='1234567890'
         )
         self.usuario_isabele = Usuario.objects.create(
-            nome='Isabele Santos',
+            username='Belinha',
+            first_name='Isabele',
+            last_name='Santos',
             email='isabele@example.com',
+            password='S3nh4django',
             cpf='293.482.350-44',
             telefone='9876543210'
         )
@@ -24,8 +30,11 @@ class UsuarioViewsTestCase(TestCase):
 
     def test_save_user_view(self):
         data = {
-            'nome': 'John Doe',
+            'username': 'John',
+            'first_name': 'John',
+            'last_name': 'Doe',
             'email': 'john@example.com',
+            'password': 'S3nh4django',
             'cpf': '636.652.580-30',
             'telefone': '9876543210'
         }
@@ -33,11 +42,14 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
         # Verificar se o usuário foi salvo no banco de dados
-        john_exists = Usuario.objects.filter(nome='John Doe').exists()
+        john_exists = Usuario.objects.filter(username='John').exists()
         self.assertTrue(john_exists)
 
-        john = Usuario.objects.get(nome='John Doe')
+        john = Usuario.objects.get(username='John')
+        self.assertEqual(john.first_name, 'John')
+        self.assertEqual(john.last_name, 'Doe')
         self.assertEqual(john.email, 'john@example.com')
+        self.assertTrue(john.check_password('S3nh4django'))
         self.assertEqual(john.cpf, '636.652.580-30')
         self.assertEqual(john.telefone, '9876543210')
 
@@ -57,8 +69,11 @@ class UsuarioViewsTestCase(TestCase):
 
     def test_update_view(self):
         data = {
-            'nome': 'Felipe Souza Novo',
+            'username': 'Felipão',
+            'first_name' :'Felipe',
+            'last_name': 'Santos',
             'email': 'felipe@example.com',
+            'password': 'S3nh4django',
             'cpf': '958.778.420-05',
             'telefone': '1234567890'
         }
@@ -66,7 +81,12 @@ class UsuarioViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
 
         self.usuario_felipe.refresh_from_db()
-        self.assertEqual(self.usuario_felipe.nome, 'Felipe Souza Novo')
+        self.assertEqual(self.usuario_felipe.username, 'Felipão')
+        self.assertEqual(self.usuario_felipe.first_name, 'Felipe')
+        self.assertEqual(self.usuario_felipe.last_name, 'Santos')
+        self.assertEqual(self.usuario_felipe.email, 'felipe@example.com')
+        self.assertEqual(self.usuario_felipe.cpf, '958.778.420-05')
+        self.assertEqual(self.usuario_felipe.telefone, '1234567890')
 
     def test_delete_user_view(self):
         response = self.client.get(reverse('users:delete', args=[self.usuario_felipe.id]))
@@ -78,7 +98,7 @@ class UsuarioViewsTestCase(TestCase):
 
     def test_search_users_view(self):
         data = {
-            'search': 'Isabele'
+            'search': 'Belinha'
         }
         response = self.client.post(reverse('users:search'), data)
         self.assertEqual(response.status_code, 200)

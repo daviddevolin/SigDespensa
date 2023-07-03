@@ -80,7 +80,7 @@ def update(request, id):
         cpf = usuario_cleaned_data.get('cpf')
         telefone = usuario_cleaned_data.get('telefone')
 
-
+        usuario.username = usuario_form.cleaned_data.get('username')
         usuario.first_name = nome
         usuario.last_name = sobrenome
         usuario.email = email
@@ -105,7 +105,7 @@ def delete_user(request, id):
 def search_users(request):
     s_nome = request.POST.get('search')
     if s_nome:
-        usuarios = Usuario.objects.filter(nome__icontains=s_nome)
+        usuarios = Usuario.objects.filter(username__icontains=s_nome)
 
         rendered_page = render(request, "users/search.html", {"usuarios": usuarios})
 

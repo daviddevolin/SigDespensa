@@ -10,6 +10,8 @@
 | ------------- | -------------------------------| ------------ | ------- | --------------------- |
 | id     | identificador gerado pelo SGBD |       INT    |   ---   | PK / Identity        |
 | nome          | representa o nome do usuário   | VARCHAR      |   150   | Not Null           |
+| sobrenome          | representa o sobrenome do usuário   | VARCHAR      |   150   | Not Null           |
+| username          | representa o username do usuário   | VARCHAR      |   150   | Unique / Not Null           |
 | email         | representa o e-mail escolhido pelo usuário | VARCHAR      |   50   | Unique / Not Null     |
 | senha         | representa a senha de usuário  | VARCHAR      | 50      | Unique / Not  Null  |
 | CPF | representa o Cadastro de Pessoa Física do usuário | VARCHAR      | 11      | Unique / Not Null              |

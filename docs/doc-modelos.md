@@ -18,9 +18,9 @@ Neste documento temos o modelo Conceitual (UML) ou de Dados (Entidade-Relacionam
  erDiagram
     Usuario }|--||Despensa_Usuario : has
     Despensa }|--|| Despensa_Usuario : has
-    Despensa ||--|{ Categoria : has
-    Despensa ||--o{Historico : has
-    Categoria ||--o{ Item : has
+    Despensa ||--|{ Item : has
+    Despensa ||--||Historico : has
+    Item }|--|| Categoria : has
 ```
 
 

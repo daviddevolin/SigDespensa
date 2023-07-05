@@ -31,8 +31,6 @@ classDiagram
     class Usuario{
         -int id
         -string nome
-        -string sobrenome
-        -string username
         -string email
         -string senha
         -string cpf

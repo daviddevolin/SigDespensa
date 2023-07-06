@@ -15,7 +15,7 @@
     <h1>Formulário de Despensa</h1>
     <form action="{% url 'despensas:despensa_create' %}" method="post">
         {% csrf_token %}
-        {{form}}
+        {{despensas_form}}
         <button type="submit">Salvar</button>
     </form>
     <a href="{% url 'despensas:despensa_list' %}">Cancelar</a>

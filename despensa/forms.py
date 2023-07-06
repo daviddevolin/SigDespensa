@@ -23,7 +23,7 @@ class DespensaForm(ModelForm):
             raise ValidationError(f"Nome de Despensa {nome} já existe", 'invalid')
         return nome
     
-    def check_user_exists(self, nome):
+    def check_despensa_exists(self, nome):
         try:
             Despensa.objects.get(nome=nome)
             return True

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from item.models import Item
+from categoria.models import Categoria
+from despensa.models import Despensa
 from .forms import ItemForm
 from django.views.decorators.http import require_safe, require_POST
 
@@ -15,16 +17,22 @@ def item_home(request):
 @require_POST
 def save_item(request):
     nome = request.POST.get('nome')
-    categoria = request.POST.get('categoria')
+    categoria_id = request.POST.get('categoria')
+    despensa_id = request.POST.get('despensa')
     marca = request.POST.get('marca')
     peso = request.POST.get('peso')
     data_validade = request.POST.get('data_validade')
+
+
+    categoria = Categoria.objects.get(id=categoria_id)
+    despensa = Despensa.objects.get(id=despensa_id)
 
     Item.objects.create(nome=nome,
                         categoria=categoria,
                         marca=marca,
                         peso=peso,
-                        data_validade=data_validade)
+                        data_validade=data_validade,
+                        despensa=despensa)
     rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
     return HttpResponse(rendered_page)
 
@@ -45,14 +53,19 @@ def update_item(request, id):
 @require_POST
 def update(request, id):
     nome = request.POST.get('nome')
-    categoria = request.POST.get('categoria')
+    categoria_id = request.POST.get('categoria')
+    despensa_id = request.POST.get('despensa')
     marca = request.POST.get('marca')
     peso = request.POST.get('peso')
     data_validade = request.POST.get('data_validade')
 
+    categoria = Categoria.objects.get(id=categoria_id)
+    despensa = Despensa.objects.get(id=despensa_id)
+
     item = Item.objects.get(id=id)
     item.nome = nome
     item.categoria = categoria
+    item.despensa = despensa
     item.marca = marca
     item.peso = peso
     item.data_validade = data_validade

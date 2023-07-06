@@ -1,22 +1,36 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.shortcuts import get_object_or_404
 from item.models import Item
+from despensa.models import Despensa
+from categoria.models import Categoria
+from item.forms import ItemForm
 
 class ItemViewsTestCase(TestCase):
     def setUp(self):
+
+        self.categoria = Categoria.objects.create(
+            nome="Alimentos"
+        )
+
         self.item1 = Item.objects.create(
             nome='Arroz',
-            categoria='Alimentos',
+            categoria=self.categoria,
             marca='Marca A',
             peso=1000,
             data_validade='2023-06-01'
         )
         self.item2 = Item.objects.create(
             nome='Feijão',
-            categoria='Alimentos',
+            categoria=self.categoria,
             marca='Marca B',
             peso=500,
             data_validade='2023-05-31'
+        )
+        self.despensa = Despensa.objects.create(
+            nome='DespensaTeste',
+            quantTotal=1000,
+            capacidade=2000
         )
 
     def test_home_view(self):
@@ -24,15 +38,18 @@ class ItemViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'items/index.html')
 
-    def test_save_item_view(self):
-        data = {
-            'nome': 'Macarrão',
-            'categoria': 'Alimentos',
-            'marca': 'Marca C',
-            'peso': 500,
-            'data_validade': '2023-06-02'
-        }
-        response = self.client.post(reverse('items:salvar'), data)
+    def test_save_item_view(self): 
+
+        form = ItemForm()
+
+        form.data['despensa'] = self.despensa.id
+        form.data['categoria'] = self.categoria.id
+        form.data['nome'] = 'Macarrão'
+        form.data['marca'] = 'Marca C'
+        form.data['peso'] = 500
+        form.data['data_validade'] = '2023-06-02'
+
+        response = self.client.post(reverse('items:salvar'), form.data)
         self.assertEqual(response.status_code, 200)
 
         # Verificar se o item foi salvo no banco de dados
@@ -53,14 +70,16 @@ class ItemViewsTestCase(TestCase):
 
 
     def test_update_item_view(self):
-        data = {
-            'nome': 'Arroz Novo',
-            'categoria': 'Alimentos',
-            'marca': 'Marca A',
-            'peso': 1000,
-            'data_validade': '2023-06-01'
-        }
-        response = self.client.post(reverse('items:update', args=[self.item1.id]), data)
+        form = ItemForm()
+
+        form.data['despensa'] = self.despensa.id
+        form.data['categoria'] = self.categoria.id
+        form.data['nome'] = 'Arroz Novo'
+        form.data['marca'] = 'Marca A'
+        form.data['peso'] = 1000
+        form.data['data_validade'] = '2023-06-01'
+
+        response = self.client.post(reverse('items:update', args=[self.item1.id]), form.data)
         self.assertEqual(response.status_code, 302)
 
         self.item1.refresh_from_db()

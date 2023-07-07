@@ -18,6 +18,13 @@
         {{despensas_form}}
         <button type="submit">Salvar</button>
     </form>
+
+    {% if not errors %}
+        <div></div>
+    {% else %}
+        <div>{{errors}}</div>
+    {% endif %}
+
     <a href="{% url 'despensas:despensa_list' %}">Cancelar</a>
 </body>
 </html>

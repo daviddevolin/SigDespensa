@@ -20,8 +20,8 @@ class UsuarioForm(ModelForm):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')
         confirm_password = cleaned_data.get('confirm_password')
-
-        if password and confirm_password and not check_password(confirm_password, password):
+        print(confirm_password, password)
+        if password and confirm_password and password != confirm_password:
             raise forms.ValidationError("As senhas não correspondem.")
 
         return cleaned_data

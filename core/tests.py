@@ -35,6 +35,7 @@ class UsuarioViewsTestCase(TestCase):
             'last_name': 'Doe',
             'email': 'john@example.com',
             'password': 'S3nh4django',
+            'confirm_password': 'S3nh4django',
             'cpf': '636.652.580-30',
             'telefone': '9876543210'
         }
@@ -74,6 +75,7 @@ class UsuarioViewsTestCase(TestCase):
             'last_name': 'Santos',
             'email': 'felipe@example.com',
             'password': 'S3nh4django',
+            'confirm_password': 'S3nh4django',
             'cpf': '958.778.420-05',
             'telefone': '1234567890'
         }

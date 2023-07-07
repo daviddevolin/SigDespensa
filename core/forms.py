@@ -1,7 +1,7 @@
-from django.contrib.auth.hashers import check_password
 from django import forms
 from django.forms import ModelForm, ValidationError, PasswordInput
 from .models import Usuario
+from django.contrib.auth import password_validation
 
 class UsuarioForm(ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
@@ -23,6 +23,11 @@ class UsuarioForm(ModelForm):
         print(confirm_password, password)
         if password and confirm_password and password != confirm_password:
             raise forms.ValidationError("As senhas não correspondem.")
+        
+        try:
+            password_validation.validate_password(password)
+        except forms.ValidationError as validation_error:
+            self.add_error('password', validation_error)
 
         return cleaned_data
 

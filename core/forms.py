@@ -1,11 +1,18 @@
 from typing import Any, Dict
-from django.forms import ModelForm, ValidationError
+from django.forms import ModelForm, ValidationError, PasswordInput
 from .models import Usuario
+from django import forms
 
 class UsuarioForm(ModelForm):
+
     class Meta:
         model = Usuario
         fields = [ 'username', 'first_name', 'last_name', 'email', 'password','cpf', 'telefone',]
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Alterar o tipo de campo para password
+        self.fields['password'].widget = PasswordInput()
 
     def clean_username(self):
         username = self.cleaned_data.get('username')

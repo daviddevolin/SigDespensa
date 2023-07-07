@@ -28,19 +28,6 @@ def despensa_detail(request, id):
 
     return HttpResponse(rendered_page)
 
-# @login_required
-# @require_POST
-# def despensa_create(request):
-    nome = request.POST.get('nome')
-    quantTotal = request.POST.get('quantTotal')
-    capacidade = request.POST.get('capacidade')
-
-    # testar se funciona: Cadastrar despensa para o usuário atual     
-    # usuario = Usuario.objects.get(username=request.user.username)
-    # Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade, usuarios=usuario)
-    
-    Despensa.objects.create(nome=nome, quantTotal=quantTotal, capacidade=capacidade)
-    return redirect('despensas:despensa_list')
 
 @login_required
 @require_POST
@@ -66,7 +53,7 @@ def despensa_create(request):
         despensa.save()
 
         rendered_page = render(request, 'despensa/form.html', {"despensas_form": DespensaForm()})
-        return HttpResponse(rendered_page)
+        return redirect('despensas:despensa_list')
     else:
         print(despensa_form.errors)
         rendered_page = render(request, 'despensa/form.html', {"despensas_form": DespensaForm(), "errors": despensa_form.errors})

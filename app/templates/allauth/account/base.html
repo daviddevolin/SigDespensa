@@ -30,7 +30,7 @@
         <li><a href="{% url 'account_logout' %}">{% trans "Sair" %}</a></li>
         {% else %}
         <li><a href="{% url 'account_login' %}">{% trans "Login" %}</a></li>
-        <li><a href="{% url 'account_signup' %}">{% trans "Cadastrar" %}</a></li>
+        <li><a href="/core/">{% trans "Cadastrar" %}</a></li>
         {% endif %}
       </ul>
     </div>

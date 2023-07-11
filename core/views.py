@@ -43,8 +43,9 @@ def save_user(request):
                                 telefone=telefone)
 
 
-        rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm()})
-        return HttpResponse(rendered_page)
+        #rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm()})
+        #return HttpResponse(rendered_page)
+        return redirect('users:login')
     else:
         print(usuario_form.errors)
         rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "errors": usuario_form.errors})

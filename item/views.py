@@ -33,8 +33,8 @@ def save_item(request):
                         peso=peso,
                         data_validade=data_validade,
                         despensa=despensa)
-    rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
-    return HttpResponse(rendered_page)
+    #rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
+    return redirect('items:items')
 
 @require_safe
 def list_items(request):

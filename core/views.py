@@ -43,9 +43,9 @@ def save_user(request):
                                 telefone=telefone)
 
 
-        #rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm()})
-        #return HttpResponse(rendered_page)
-        return redirect('users:login')
+        rendered_page = render(request, 'users/login.html', {"usuario_form": UsuarioForm()})
+        return HttpResponse(rendered_page)
+        # return redirect('SigDespensa/app/templates/allauth/account/login.html')
     else:
         print(usuario_form.errors)
         rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "errors": usuario_form.errors})
@@ -120,7 +120,8 @@ def search_users(request):
 
 @require_safe
 def login (request):
-    rendered_page= render(request, "users/login.html", {"login_form": LoginForm()})
+    user = Usuario.objects.get(username=request.user.username)
+    rendered_page= render(request, "users/login.html", {"login_form": LoginForm(), 'user':user})
     return rendered_page
 
 @login_required

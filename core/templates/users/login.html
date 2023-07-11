@@ -7,12 +7,20 @@
 </head>
 <body>
     {% block content %}
+
+    {% if user.username == '' %}
         <h2>Login</h2>
-        <form action="{% url 'users:profile' %}" method="POST">
+        <form action="{% url 'account_login' %}" method="POST">
             {% csrf_token %}
             {{ login_form }}
             <button type="submit">Login</button>
         </form> 
+    {% else %}
+        <div>Logado como: {{user.username}}</div>
+        <div>
+            <a href="{% url 'account_logout' %}">Sair</a>
+        </div>
+    {% endif %}
     {% endblock %}
 </body>
 </html>

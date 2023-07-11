@@ -29,7 +29,7 @@
         <li><a href="{% url 'account_email' %}">{% trans "Mudar E-mail" %}</a></li>
         <li><a href="{% url 'account_logout' %}">{% trans "Sair" %}</a></li>
         {% else %}
-        <li><a href="{% url 'account_login' %}">{% trans "Login" %}</a></li>
+        <li><a href="{% url 'users:login' %}">{% trans "Login" %}</a></li>
         <li><a href="{% url 'users:home' %}">{% trans "Cadastrar" %}</a></li>
         {% endif %}
       </ul>

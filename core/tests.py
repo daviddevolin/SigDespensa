@@ -40,7 +40,7 @@ class UsuarioViewsTestCase(TestCase):
             'telefone': '9876543210'
         }
         response = self.client.post(reverse('users:salvar'), data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
         # Verificar se o usuário foi salvo no banco de dados
         john_exists = Usuario.objects.filter(username='John').exists()

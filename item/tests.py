@@ -50,7 +50,7 @@ class ItemViewsTestCase(TestCase):
         form.data['data_validade'] = '2023-06-02'
 
         response = self.client.post(reverse('items:salvar'), form.data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
         # Verificar se o item foi salvo no banco de dados
         macarrao_exists = Item.objects.filter(nome='Macarrão').exists()

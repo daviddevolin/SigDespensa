@@ -25,7 +25,7 @@ class CategoriaViewsTestCase(TestCase):
 
         }
         response = self.client.post(reverse('categories:salvar'), data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
         # Verificar se o Categoria foi salvo no banco de dados
         macarrao_exists = Categoria.objects.filter(nome='Macarrão').exists()

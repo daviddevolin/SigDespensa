@@ -16,8 +16,9 @@ def save_category(request):
     nome = request.POST.get('nome')
     Categoria.objects.create(nome=nome)
 
-    rendered_page = render(request, 'categories/index.html', {'form': CategoriaForm()})
-    return HttpResponse(rendered_page)
+    #rendered_page = render(request, 'categories/index.html', {'form': CategoriaForm()})
+    #return HttpResponse(rendered_page)
+    return redirect('categories:categories')
 
 @require_safe
 def list_categories(request):

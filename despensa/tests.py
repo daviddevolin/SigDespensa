@@ -1,12 +1,17 @@
-from django.test import TestCase
+from django.test import TestCase,Client
 from django.urls import reverse
 from despensa.models import Despensa
+from django.contrib.auth import get_user_model
 
 # Create your tests here.
 
 
 class DespensaViewsTestCase(TestCase):
     def setUp(self):
+        self.client = Client()
+        self.user = get_user_model().objects.create_user(username='testuser', password='testpassword')
+        self.client.force_login(self.user)
+
         self.despensa1 = Despensa.objects.create(
             nome = 'casa',
             quantTotal = 10,

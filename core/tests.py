@@ -35,11 +35,12 @@ class UsuarioViewsTestCase(TestCase):
             'last_name': 'Doe',
             'email': 'john@example.com',
             'password': 'S3nh4django',
+            'confirm_password': 'S3nh4django',
             'cpf': '636.652.580-30',
             'telefone': '9876543210'
         }
         response = self.client.post(reverse('users:salvar'), data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
         # Verificar se o usuário foi salvo no banco de dados
         john_exists = Usuario.objects.filter(username='John').exists()
@@ -74,6 +75,7 @@ class UsuarioViewsTestCase(TestCase):
             'last_name': 'Santos',
             'email': 'felipe@example.com',
             'password': 'S3nh4django',
+            'confirm_password': 'S3nh4django',
             'cpf': '958.778.420-05',
             'telefone': '1234567890'
         }

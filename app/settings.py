@@ -11,7 +11,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
+
+# Get .env path and initialize it
+dotenv_path = Path(__file__).resolve().parent.parent.joinpath('.env')
+load_dotenv(dotenv_path)
+
+# Set DEBUG_STATE from .env
+DEBUG_STATE = os.environ.get("DEBUG_STATE")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!al8(^73)q_e#y4f@g%0gp53j9!#102^-sxurv%e7vq)i-my$)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEBUG_STATE
 
 ALLOWED_HOSTS = []
 

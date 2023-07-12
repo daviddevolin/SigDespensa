@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuario
+from despensa.models import Despensa
 from .forms import UsuarioForm
 
 from django.contrib.auth.models import User
@@ -43,7 +44,7 @@ def save_user(request):
                                 telefone=telefone)
 
 
-        rendered_page = render(request, 'users/login.html', {"usuario_form": UsuarioForm()})
+        rendered_page = render(request, 'users/login.html', {"login_form": LoginForm()})
         return HttpResponse(rendered_page)
         # return redirect('SigDespensa/app/templates/allauth/account/login.html')
     else:
@@ -128,6 +129,8 @@ def login (request):
 @require_safe
 def auth_login (request):
     m = Usuario.objects.get(username=request.user.username)
-    print(m.first_name)
-    rendered_page = render(request, "users/test.html")
+
+    despensas = Despensa.objects.all().filter(usuarios=m)
+    
+    rendered_page = render(request, "users/test.html", {'despensas': despensas})
     return rendered_page

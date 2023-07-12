@@ -9,6 +9,18 @@
     <p>User is logged in :)</p>
     <p>Username -->  {{ request.user.username }}</p>
     <a href="{%url 'despensas:despensa_form' %}">Criar Despensa</a>
-    
+
+    {% for despensa in despensas %}
+
+        {% if not despensa %}
+            <div></div>
+        {% else %}
+            <div>
+                <p>
+                    <a href="{%url 'despensas:despensa_detail' despensa.id%}">{{ despensa.nome }}</a>
+                </p>
+            </div>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>

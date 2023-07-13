@@ -3,15 +3,16 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Despensa
 from core.models import Usuario
+from item.models import Item
 from .forms import DespensaForm
 from django.views.decorators.http import require_safe, require_POST, require_http_methods
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 
 @login_required
 @require_safe
 def despensa_list(request):
     despensas = Despensa.objects.all()
-
     rendered_page = render(request, 'despensa/list.html', {'despensas': despensas})
 
     return HttpResponse(rendered_page)
@@ -22,9 +23,12 @@ def despensa_detail(request, id):
     despensa = get_object_or_404(Despensa, id=id)
     dono = list(despensa.usuarios.all())
 
-    print(dono[0].first_name)
+    try:
+        itens = Item.objects.all().filter(despensa=despensa)
+        rendered_page = render(request, 'despensa/detail.html', {'despensa': despensa, 'donos': dono, 'itens':itens})
+    except ObjectDoesNotExist:
+        rendered_page = render(request, 'despensa/detail.html', {'despensa': despensa, 'donos': dono})
 
-    rendered_page = render(request, 'despensa/detail.html', {'despensa': despensa, 'donos': dono})
 
     return HttpResponse(rendered_page)
 

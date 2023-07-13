@@ -1,11 +1,14 @@
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import HttpResponsePermanentRedirect
+from django.urls import reverse
 from item.models import Item
 from categoria.models import Categoria
 from despensa.models import Despensa
 from .forms import ItemForm
 from django.views.decorators.http import require_safe, require_POST
-
+from despensa.views import despensa_detail
 
 @require_safe
 def item_home(request):
@@ -23,7 +26,6 @@ def save_item(request):
     peso = request.POST.get('peso')
     data_validade = request.POST.get('data_validade')
 
-
     categoria = Categoria.objects.get(id=categoria_id)
     despensa = Despensa.objects.get(id=despensa_id)
 
@@ -34,7 +36,7 @@ def save_item(request):
                         data_validade=data_validade,
                         despensa=despensa)
     #rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
-    return redirect('items:items')
+    return HttpResponsePermanentRedirect(reverse('despensas:despensa_detail', args=[despensa.id]))
 
 @require_safe
 def list_items(request):

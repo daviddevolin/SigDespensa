@@ -4,6 +4,7 @@ from .models import Usuario
 from despensa.models import Despensa
 from .forms import UsuarioForm
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.http import require_safe, require_POST
@@ -121,8 +122,13 @@ def search_users(request):
 
 @require_safe
 def login (request):
-    user = Usuario.objects.get(username=request.user.username)
-    rendered_page= render(request, "users/login.html", {"login_form": LoginForm(), 'user':user})
+
+    try:
+        user = Usuario.objects.get(username=request.user.username)    
+        rendered_page= render(request, "users/login.html", {"login_form": LoginForm(), 'user':user})
+    except ObjectDoesNotExist:
+        rendered_page= render(request, "users/login.html", {"login_form": LoginForm()})
+
     return rendered_page
 
 @login_required

@@ -114,10 +114,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**            |   10         |
 | **Tempo Gasto (real):**   |              |
 | **Tamanho Funcional**     |  19          |
-| **Analista**              | Isadora      |
-| **Desenvolvedor**         | David        |
-| **Revisor**               | Manoel       |
-| **Testador**              | Italo        |
+| **Analista**              | David      |
+| **Desenvolvedor**         | Isadora        |
+| **Revisor**               | Italo       |
+| **Testador**              | Manoel        |
 
  
 |Contagem |      N       |
@@ -147,8 +147,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**            |   10         |
 | **Tempo Gasto (real):**   |              |
 | **Tamanho Funcional**     |  19          |
-| **Analista**              | David        |
-| **Desenvolvedor**         | Isadora      |
+| **Analista**              | Isadora        |
+| **Desenvolvedor**         | David      |
 | **Revisor**               | Italo        |
 | **Testador**              | Manoel       |
 
@@ -172,6 +172,24 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF025          | Monitorar níveis de Despensa |
 
 
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | Isadora       |
+| **Desenvolvedor**         | Italo        |
+| **Revisor**               | Manoel      |
+| **Testador**              | David        |
+
+
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
 
 
 ### User Story US05 - Login
@@ -180,9 +198,54 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | Autenticação que permite que o usuário acesse a despensa fornecendo suas credenciais pessoais, como nome de usuário e senha |
 
+
+
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | David       |
+| **Desenvolvedor**         | Italo        |
+| **Revisor**               | Isadora      |
+| **Testador**              | Manoel        |
+
+
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
+
+
+
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF005          | Fazer Login |
+
+
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | Italo       |
+| **Desenvolvedor**         | David        |
+| **Revisor**               | Manoel      |
+| **Testador**              | Isadora        |
+
+
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
+
+
 
 ### User Story US06 - Logout
 
@@ -193,6 +256,26 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF026          | Fazer Logout |
+
+
+|                           |              |
+| ------------------------- | -------------|
+| **Prioridade**            | Essencial    |
+| **Estimativa**            |   10         |
+| **Tempo Gasto (real):**   |              |
+| **Tamanho Funcional**     |  19          |
+| **Analista**              | Manoel       |
+| **Desenvolvedor**         | David        |
+| **Revisor**               | Isadora      |
+| **Testador**              | Italo        |
+
+
+|Contagem |      N       |
+|---------|--------------|
+|ALI      |      7       |
+|EE       |      9       |
+|CE       |      3       |
+
 
 
 

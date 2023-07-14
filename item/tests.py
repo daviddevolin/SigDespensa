@@ -32,8 +32,8 @@ class ItemViewsTestCase(TestCase):
         )
         self.despensa = Despensa.objects.create(
             nome='DespensaTeste',
-            quantTotal=1000,
-            capacidade=2000
+            quantTotal=0,
+
         )
 
     def test_home_view(self):

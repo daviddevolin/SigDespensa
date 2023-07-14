@@ -3,14 +3,17 @@ from django.http import HttpResponse
 from .models import Categoria
 from .forms import CategoriaForm
 from django.views.decorators.http import require_safe, require_POST
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+@login_required
 @require_safe
 def home(request):
 
     rendered_page =  render(request, "categories/index.html", {'form': CategoriaForm()})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_POST
 def save_category(request):
     nome = request.POST.get('nome')
@@ -20,6 +23,7 @@ def save_category(request):
     #return HttpResponse(rendered_page)
     return redirect('categories:categories')
 
+@login_required
 @require_safe
 def list_categories(request):
     categorias = Categoria.objects.all()
@@ -28,6 +32,7 @@ def list_categories(request):
     rendered_page = render(request, "categories/categories.html", {"categorias": categorias})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_safe
 def update_category(request, id):
     categoria = Categoria.objects.get(id=id)
@@ -35,6 +40,7 @@ def update_category(request, id):
     rendered_page = render(request, "categories/update.html", {"categoria": categoria, 'form':CategoriaForm()})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_POST
 def update(request, id):
     nome = request.POST.get('nome')
@@ -45,12 +51,14 @@ def update(request, id):
 
     return redirect('categories:categories')
 
+@login_required
 @require_safe
 def delete_category(request, id):
     categoria = Categoria.objects.get(id=id)
     categoria.delete()
     return redirect('categories:categories')
 
+@login_required
 @require_POST
 def search_categories(request):
     s_nome = request.POST.get('search')

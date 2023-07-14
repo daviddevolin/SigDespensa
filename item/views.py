@@ -9,7 +9,9 @@ from despensa.models import Despensa
 from .forms import ItemForm
 from django.views.decorators.http import require_safe, require_POST
 from despensa.views import despensa_detail
+from django.contrib.auth.decorators import login_required
 
+@login_required
 @require_safe
 def item_home(request):
 
@@ -17,6 +19,7 @@ def item_home(request):
 
     return HttpResponse(rendered_page)
 
+@login_required
 @require_POST
 def save_item(request):
     nome = request.POST.get('nome')
@@ -38,6 +41,7 @@ def save_item(request):
     #rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
     return HttpResponsePermanentRedirect(reverse('despensas:despensa_detail', args=[despensa.id]))
 
+@login_required
 @require_safe
 def list_items(request):
     items = Item.objects.all()
@@ -45,6 +49,7 @@ def list_items(request):
     rendered_page = render(request, "items/items.html", {"items": items, 'form': ItemForm()})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_safe
 def update_item(request, id):
     item = Item.objects.get(id=id)
@@ -52,6 +57,7 @@ def update_item(request, id):
     rendered_page = render(request, "items/update.html", {"item": item, 'form': ItemForm()})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_POST
 def update(request, id):
     nome = request.POST.get('nome')
@@ -75,12 +81,14 @@ def update(request, id):
 
     return redirect('items:items')
 
+@login_required
 @require_safe
 def delete_item(request, id):
     item = Item.objects.get(id=id)
     item.delete()
     return redirect('items:items')
 
+@login_required
 @require_POST
 def search_items(request):
     s_nome = request.POST.get('search')

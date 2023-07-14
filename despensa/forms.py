@@ -13,7 +13,7 @@ from .models import Despensa
 class DespensaForm(ModelForm):
     class Meta:
         model = Despensa
-        fields = [ 'nome', 'capacidade', 'quantTotal',]
+        fields = [ 'nome',]
 
     def clean_nome(self):
         nome = self.cleaned_data.get('nome')
@@ -31,16 +31,3 @@ class DespensaForm(ModelForm):
             return False
 
 
-    def clean(self):
-
-        cleaned_data = super().clean()
-
-        print(cleaned_data)
-
-        quantTotal = cleaned_data.get('quantTotal')
-        capacidade = cleaned_data.get('capacidade')
-
-        if quantTotal > capacidade:
-            raise ValidationError("A quantidade total não pode ser maior que a capacidade.")
-
-        return cleaned_data

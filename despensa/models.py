@@ -3,8 +3,8 @@ from core.models import Usuario
 
 class Despensa(models.Model):
     nome = models.CharField(max_length=100)
-    quantTotal = models.IntegerField()
-    capacidade = models.IntegerField()
+    quantTotal = models.IntegerField(default=0, null=True)
+
 
     usuarios = models.ManyToManyField(Usuario, blank=True)
     

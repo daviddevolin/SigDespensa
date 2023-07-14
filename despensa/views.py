@@ -46,11 +46,11 @@ def despensa_create(request):
 
         nome = cleaned_data_despensa.get('nome')
         quantTotal = cleaned_data_despensa.get('quantTotal')
-        capacidade = cleaned_data_despensa.get('capacidade')
+
 
         despensa = Despensa.objects.create(nome=nome,
                                 quantTotal=quantTotal,
-                                capacidade=capacidade,
+
                                 )
 
         despensa.usuarios.set([usuario])
@@ -83,11 +83,11 @@ def update(request, id):
 
         nome = cleaned_data.get('nome')
         quantTotal = cleaned_data.get('quantTotal')
-        capacidade = cleaned_data.get('capacidade')
+
 
         despensa.nome = nome
         despensa.quantTotal = quantTotal
-        despensa.capacidade = capacidade
+
         despensa.save()
 
         return redirect('despensas:despensa_list')

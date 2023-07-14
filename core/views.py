@@ -54,6 +54,7 @@ def save_user(request):
         return HttpResponse(rendered_page)
 
 
+@login_required
 @require_safe
 def list_users(request):
     usuarios = Usuario.objects.all()
@@ -61,6 +62,7 @@ def list_users(request):
     rendered_page = render(request, "users/users.html", {"usuarios": usuarios})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_safe
 def update_user(request, id):
     usuario = Usuario.objects.get(id=id)
@@ -68,6 +70,7 @@ def update_user(request, id):
     rendered_page = render(request, "users/update.html", {"usuario": usuario, "usuario_form": UsuarioForm()})
     return HttpResponse(rendered_page)
 
+@login_required
 @require_POST
 def update(request, id):
     usuario_form = UsuarioForm(request.POST)
@@ -97,6 +100,7 @@ def update(request, id):
         rendered_page = render(request, 'users/update.html', {"usuario": usuario, "usuario_form": UsuarioForm() ,"errors": usuario_form.errors})
         return HttpResponse(rendered_page)
 
+@login_required
 @require_safe
 def delete_user(request, id):
     usuario = Usuario.objects.get(id=id)
@@ -104,6 +108,7 @@ def delete_user(request, id):
     usuario.delete()
     return redirect('users:users')
 
+@login_required
 @require_POST
 def search_users(request):
     s_nome = request.POST.get('search')

@@ -32,14 +32,17 @@ def save_item(request):
     categoria = Categoria.objects.get(id=categoria_id)
     despensa = Despensa.objects.get(id=despensa_id)
 
+    despensa.quantTotal += 1
+    despensa.save()
+
     Item.objects.create(nome=nome,
                         categoria=categoria,
                         marca=marca,
                         peso=peso,
                         data_validade=data_validade,
                         despensa=despensa)
-    #rendered_page = render(request, 'items/index.html', {'form': ItemForm()})
-    return HttpResponsePermanentRedirect(reverse('despensas:despensa_detail', args=[despensa.id]))
+    
+    return redirect(reverse('despensas:despensa_detail', kwargs={'id':despensa_id}))
 
 @login_required
 @require_safe
@@ -79,14 +82,19 @@ def update(request, id):
     item.data_validade = data_validade
     item.save()
 
-    return redirect('items:items')
+    return redirect(reverse('despensas:despensa_detail', kwargs={'id': despensa_id}))
 
 @login_required
 @require_safe
 def delete_item(request, id):
     item = Item.objects.get(id=id)
+    despensa_id = item.despensa.id
+
+    item.despensa.quantTotal -= 1
+    item.despensa.save()
+
     item.delete()
-    return redirect('items:items')
+    return redirect(reverse('despensas:despensa_detail', kwargs={'id': despensa_id}))
 
 @login_required
 @require_POST

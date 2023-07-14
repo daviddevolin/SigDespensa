@@ -45,13 +45,8 @@ def despensa_create(request):
         cleaned_data_despensa = despensa_form.cleaned_data
 
         nome = cleaned_data_despensa.get('nome')
-        quantTotal = cleaned_data_despensa.get('quantTotal')
 
-
-        despensa = Despensa.objects.create(nome=nome,
-                                quantTotal=quantTotal,
-
-                                )
+        despensa = Despensa.objects.create(nome=nome)
 
         despensa.usuarios.set([usuario])
         despensa.save()

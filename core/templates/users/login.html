@@ -18,6 +18,7 @@
     {% else %}
         <div>Logado como: {{user.username}}</div>
         <div>
+            <a href="{% url 'users:profile' %}">Profile</a>
             <a href="{% url 'account_logout' %}">Sair</a>
         </div>
     {% endif %}

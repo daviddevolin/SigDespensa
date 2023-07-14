@@ -13,7 +13,6 @@
 </head>
 <body>
     <h1>SigDespensa</h1>
-    <a href="{% url 'items:items' %}">Itens</a>
 
     <form action="{% url 'items:salvar' %}" method="POST">
         {% csrf_token %}

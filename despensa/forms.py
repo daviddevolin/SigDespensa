@@ -13,7 +13,7 @@ from .models import Despensa
 class DespensaForm(ModelForm):
     class Meta:
         model = Despensa
-        fields = [ 'nome',]
+        fields = [ 'nome', 'usuarios']
 
     def clean_nome(self):
         nome = self.cleaned_data.get('nome')

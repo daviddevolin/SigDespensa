@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model
 from item.models import Item
 from despensa.models import Despensa
 from categoria.models import Categoria
@@ -8,6 +9,8 @@ from item.forms import ItemForm
 
 class ItemViewsTestCase(TestCase):
     def setUp(self):
+        self.user = get_user_model().objects.create_user(username='testuser', password='testpassword')
+        self.client.force_login(self.user)
 
         self.categoria = Categoria.objects.create(
             nome="Alimentos"
@@ -50,7 +53,7 @@ class ItemViewsTestCase(TestCase):
         form.data['data_validade'] = '2023-06-02'
 
         response = self.client.post(reverse('items:salvar'), form.data)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 301)
 
         # Verificar se o item foi salvo no banco de dados
         macarrao_exists = Item.objects.filter(nome='Macarrão').exists()

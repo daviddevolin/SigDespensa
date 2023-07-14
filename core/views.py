@@ -47,7 +47,6 @@ def save_user(request):
 
         rendered_page = render(request, 'users/login.html', {"login_form": LoginForm()})
         return HttpResponse(rendered_page)
-        # return redirect('SigDespensa/app/templates/allauth/account/login.html')
     else:
         print(usuario_form.errors)
         rendered_page = render(request, 'users/index.html', {"usuario_form": UsuarioForm(), "errors": usuario_form.errors})

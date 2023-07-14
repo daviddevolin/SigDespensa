@@ -1,9 +1,14 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 from core.models import Usuario
 
 class UsuarioViewsTestCase(TestCase):
     def setUp(self):
+
+        self.user = get_user_model().objects.create_user(username='testuser', password='testpassword')
+        self.client.force_login(self.user)
+
         self.usuario_felipe = Usuario.objects.create(
             username='Felipinho',
             first_name='Felipe',
@@ -40,7 +45,7 @@ class UsuarioViewsTestCase(TestCase):
             'telefone': '9876543210'
         }
         response = self.client.post(reverse('users:salvar'), data)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
         # Verificar se o usuário foi salvo no banco de dados
         john_exists = Usuario.objects.filter(username='John').exists()
@@ -58,7 +63,7 @@ class UsuarioViewsTestCase(TestCase):
         response = self.client.get(reverse('users:users'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/users.html')
-        self.assertSetEqual(set(response.context['usuarios']), {(self.usuario_felipe),(self.usuario_isabele)})
+        self.assertSetEqual(set(response.context['usuarios']), {(self.user),(self.usuario_felipe),(self.usuario_isabele)})
 
 
     def test_update_user_view(self):

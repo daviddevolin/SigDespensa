@@ -14,26 +14,6 @@
             font-family: 'Roboto', sans-serif;
         }  
         
-        input{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 0.6rem 0;
-            padding:0.4rem 0.6rem;;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 1px 1px 6px #0000001c;
-            font-size: 0.8rem;
-            flex-flow: column;
-        }
-
-        input:hover{
-            background-color: #eeeeee75;
-        }
-
-        input:focus-visible{
-            outline: 1px solid #0c375c;
-        }
 
         body{
             display: flex;
@@ -47,9 +27,8 @@
             width: 80%;
             height: 80vh;
             display: flex;
-            flex-flow: row;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-            align-items: center;
+            overflow: hidden;
         }
 
         .form-image {
@@ -59,11 +38,50 @@
             align-items: center;
             background-color: #b7e6e2d5;
             padding: 1rem;
-            
         }
 
         .form-image img {
             width: 20rem;
+        }
+
+        .form-column {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.1rem;
+        }
+
+        .form-row input {
+            margin: 0.6rem 0;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px #0000001c;
+            font-size: 0.8rem;
+        }
+
+        .form-row input:hover {
+            background-color: #eeeeee75;
+        }
+
+        .form-row input:focus-visible {
+            outline: 1px solid #0c375c;
+        }
+
+        .form-row label{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        .form-rowinput::placeholder {
+            color: #000000be;
         }
 
         .form {
@@ -74,37 +92,170 @@
             padding: 3rem;
             flex-flow: column;
         }
+        .form-header {
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-header h1::after {
+            content: '';
+            display: block;
+            width: 5rem;
+            height: 0.3rem;
+            background-color: #0c375c;
+            margin: 0 auto;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .login-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .login-button button {
+            border: none;
+            background-color: #0c375c;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button button:hover {
+            background-color: #0c375c;
+        }
+
+        .login-button button a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+        }
+
+
+        .submit-button button {
+            width: 100%;
+            margin-top: 0rem;
+            border: none;
+            background-color: #0c375c;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button button:hover {
+            background-color: #0c375c;
+        }
+
+        .submit-button button b {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
         .title{
             display: flex;
             flex-flow: column;
+            flex-grow: 1;
         }
         .title h1{
-            color: #0c375c
-;
+            color: #0c375c;
+        }
+
+        @media screen and (max-width: 1330px) {
+            .form-image {
+                display: none;
+            }
+            .container {
+                width: 50%;
+            }
+            .form {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1064px) {
+            .container {
+                width: 90%;
+                height: auto;
+            }
+            .form-column {
+                flex-direction: column;
+                z-index: 5;
+                padding-right: 5rem;
+                max-height: 10rem;
+                overflow-y: scroll;
+                flex-wrap: nowrap;
+            }
+            
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            <h1>SigDespensa</h1>
-            <div class = "form-image">
-                {% load static %}
-                <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
+    <div class="container">   
+        <div class = "form-image">
+            {% load static %}
+            <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
+        </div>
+        <div class="form">
+            <div class="form-header">
+                <div class="title">
+                    <h1>SigDespensa</h1>
+                </div>
+                <div class="login-button">
+                    <button><a href="{%url 'users:login' %}">Entrar</a></button>
+                </div>
             </div>
+    
+            <form action="{%url 'users:salvar' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-column">
+                    <div class="form-row">
+                        <label for="{{ usuario_form.username.id_for_label }}">Username:</label>
+                        {{ usuario_form.username }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.first_name.id_for_label }}">First Name:</label>
+                        {{ usuario_form.first_name }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.last_name.id_for_label }}">Last Name:</label>
+                        {{ usuario_form.last_name }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.email.id_for_label }}">Email:</label>
+                        {{ usuario_form.email }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.password.id_for_label }}">Password:</label>
+                        {{ usuario_form.password }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.confirm_password.id_for_label }}">Confirm Password:</label>
+                        {{ usuario_form.confirm_password }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.cpf.id_for_label }}">CPF:</label>
+                        {{ usuario_form.cpf }}
+                    </div>
+                    <div class="form-row">
+                        <label for="{{ usuario_form.telefone.id_for_label }}">Telefone:</label>
+                        {{ usuario_form.telefone }}
+                    </div>
+                </div>
+                <div class="submit-button">
+                    <button type="submit"> <b>Enviar</b> </button>
+                </div>
+                {% if not errors %}
+                    <div></div>
+                {% else %}
+                    <div>{{errors}}</div>
+                {%endif%}
+            </form>
         </div>
 
-        <form class="form" action="{%url 'users:salvar' %}" method="POST">
-            {% csrf_token %}
-            {{usuario_form}}
-            <button type="submit">Enviar</button>
-            {% if not errors %}
-                <div></div>
-            {% else %}
-                <div>{{errors}}</div>
-            {%endif%}
-        </form>
     </div>
 </body>
 </html>

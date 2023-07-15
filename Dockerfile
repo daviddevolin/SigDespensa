@@ -10,12 +10,12 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN mkdir -p /opt/app
 RUN mkdir -p /opt/app/pip_cache
 RUN mkdir -p /opt/app/SigDespensa
-RUN mkdir -p /opt/app/SigDespensa/sigdespensa
+RUN mkdir -p /opt/app/SigDespensa/sig-despensa
 
 # copy source
-COPY sigdespensa/requirements.txt /opt/app/SigDespensa/
+COPY sig-despensa/requirements.txt /opt/app/SigDespensa/
 COPY start-server.sh /opt/app/SigDespensa/
-COPY sigdespensa /opt/app/SigDespensa/sigdespensa
+COPY sig-despensa /opt/app/SigDespensa/sig-despensa
 WORKDIR /opt/app/SigDespensa
 
 # install dependencies 

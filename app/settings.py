@@ -35,6 +35,11 @@ SECRET_KEY = 'django-insecure-!al8(^73)q_e#y4f@g%0gp53j9!#102^-sxurv%e7vq)i-my$)
 DEBUG = DEBUG_STATE
 
 ALLOWED_HOSTS = []
+STATIC_URL = '/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'gic/assets')]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
+MEDIA_URL = '/img/'
 
 
 # Application definition

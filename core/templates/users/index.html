@@ -14,16 +14,21 @@
 </head>
 <body>
     <h1>SigDespensa</h1>
-
-    <form action="{%url 'users:salvar' %}" method="POST">
-        {% csrf_token %}
-        {{usuario_form}}
-        <button type="submit">Enviar</button>
-        {% if not errors %}
-            <div></div>
-        {% else %}
-            <div>{{errors}}</div>
-        {%endif%}
-    </form>
+    <div class="'container">
+        <div class = "form-image">
+            {% load static %}
+            <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
+        </div>
+        <form action="{%url 'users:salvar' %}" method="POST">
+            {% csrf_token %}
+            {{usuario_form}}
+            <button type="submit">Enviar</button>
+            {% if not errors %}
+                <div></div>
+            {% else %}
+                <div>{{errors}}</div>
+            {%endif%}
+        </form>
+    </div>
 </body>
 </html>

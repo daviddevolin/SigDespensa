@@ -232,3 +232,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Act tool
+act.exe

@@ -34,10 +34,15 @@ SECRET_KEY = 'django-insecure-!al8(^73)q_e#y4f@g%0gp53j9!#102^-sxurv%e7vq)i-my$)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG_STATE
 
+STATICFILES_FINDERS = (
+'django.contrib.staticfiles.finders.FileSystemFinder',
+'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+)
+
 ALLOWED_HOSTS = []
-STATIC_URL = '/assets/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'gic/assets')]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'gic/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 MEDIA_URL = '/img/'
 
@@ -66,6 +71,7 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -164,4 +170,4 @@ CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
 
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8020']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8020', 'http://labens.dct.ufrn.br']

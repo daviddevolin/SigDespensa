@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    sigdespensa:
+        ports:
+            - '8020:8020'
+        environment:
+            - DJANGO_SUPERUSER_USERNAME=admin
+            - DJANGO_SUPERUSER_PASSWORD=sekret1
+            - DJANGO_SUPERUSER_EMAIL=admin@example.com
+        image: sigdespensa

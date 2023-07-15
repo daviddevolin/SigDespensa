@@ -30,7 +30,7 @@ jobs:
       run: |
         cd sig-despensa/
         coverage run manage.py test
-        coverage xml -o ../coverage.xml
+        coverage xml
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:

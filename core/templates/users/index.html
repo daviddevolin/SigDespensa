@@ -6,20 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SigDespensa</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap%27');
+        *{align-items: center;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }  
+        
         input{
-            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0.6rem 0;
+            padding:0.4rem 0.6rem;;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 1px 6px #0000001c;
+            font-size: 0.8rem;
+            flex-flow: column;
+        }
+
+        input:hover{
+            background-color: #eeeeee75;
+        }
+
+        input:focus-visible{
+            outline: 1px solid #0c375c;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            background: #b7e6e2d5;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            height: 80vh;
+            display: flex;
+            flex-flow: row;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+            align-items: center;
+        }
+
+        .form-image {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #b7e6e2d5;
+            padding: 1rem;
+            
+        }
+
+        .form-image img {
+            width: 20rem;
+        }
+
+        .form {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            background-color: #b7e6e2d5;
+            padding: 3rem;
+            flex-flow: column;
+        }
+        .title{
+            display: flex;
+            flex-flow: column;
+        }
+        .title h1{
+            color: #0c375c
+;
         }
 
     </style>
 </head>
 <body>
-    <h1>SigDespensa</h1>
-    <div class="'container">
-        <div class = "form-image">
-            {% load static %}
-            <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
+    <div class="container">
+        <div class="title">
+            <h1>SigDespensa</h1>
+            <div class = "form-image">
+                {% load static %}
+                <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
+            </div>
         </div>
-        <form action="{%url 'users:salvar' %}" method="POST">
+
+        <form class="form" action="{%url 'users:salvar' %}" method="POST">
             {% csrf_token %}
             {{usuario_form}}
             <button type="submit">Enviar</button>

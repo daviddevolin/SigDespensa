@@ -1,6 +1,0 @@
-<h1>{{ despensa.nome }}</h1>
-<p>Quantidade Total: {{ despensa.quantTotal }}</p>
-<p>Capacidade: {{ despensa.capacidade }}</p>
-<a href="{% url 'despensas:despensa_update' despensa.pk %}">Editar</a>
-<a href="{% url 'despensas:despensa_delete' despensa.pk %}">Deletar</a>
-<a href="{% url 'despensas:despensa_list' %}">Voltar para a lista</a>

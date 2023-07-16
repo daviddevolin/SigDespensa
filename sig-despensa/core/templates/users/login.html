@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% block content %}
+
+    {% if user.username == '' %}
+        <h2>Login</h2>
+        <form action="{% url 'account_login' %}" method="POST">
+            {% csrf_token %}
+            {{ login_form }}
+            <button type="submit">Login</button>
+        </form> 
+    {% else %}
+        <div>Logado como: {{user.username}}</div>
+        <div>
+            <a href="{% url 'users:profile' %}">Profile</a>
+            <a href="{% url 'account_logout' %}">Sair</a>
+        </div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

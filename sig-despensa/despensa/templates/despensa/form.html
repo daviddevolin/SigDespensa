@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Despensa</title>
+    {% load static %}
+    <style>
+        input {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Despensa</h1>
+    <form action="{% url 'despensas:despensa_create' %}" method="post">
+        {% csrf_token %}
+        {{despensas_form}}
+        <button type="submit">Salvar</button>
+    </form>
+
+    {% if not errors %}
+        <div></div>
+    {% else %}
+        <div>{{errors}}</div>
+    {% endif %}
+
+    <a href="{% url 'despensas:despensa_list' %}">Cancelar</a>
+</body>
+</html>

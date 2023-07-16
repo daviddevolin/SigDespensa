@@ -28,8 +28,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        cd sig-despensa/
-        coverage run manage.py test
+        coverage run sig-despensa/manage.py test sig-despensa/
         coverage xml
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master

@@ -19,6 +19,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 02/05/2023 | 0.0.7   |Correção dos requisitos| Manoel|
 | 02/05/2023 | 0.0.8   |Correção dos autores| David|
 | 02/05/2023 | 0.0.9   |Correção |Correção do número de user stories| David|
+| 02/06/2023 | 0.1.0   |Adicão de user stories de login e logout| Isadora|
+| 02/06/2023 | 0.1.1   |Correção dos requisitos| Manoel|
 
 
 

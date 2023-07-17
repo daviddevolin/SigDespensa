@@ -4,24 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap%27');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }  
+        
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+            background-attachment: fixed;
+        }
+
+        div.container {
+            background: white;
+            min-width: 320px;
+            min-height: 40vh;
+            padding: 2rem;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .container .title{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .container .title::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+            
+        }
+
+
+        form .user-details .input-field{
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);
+        }
+        form .input-field {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .user-details .input-field input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .user-details .input-field input:focus,
+        .user-details .input-field input:hover{
+            border-color: #0c375c;
+        }
+
+        .title h1{
+            color: #0c375c;
+        }
+
+
+        .submit-button button {
+            width: 100%;
+            margin-top: 2rem;
+            border: none;
+            background-color: #0c375c;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button button:hover {
+            background-color: #0c375c;
+        }
+
+        .submit-button button b {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
+       
+        form input[type="radio"]{
+            display: none;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;    
+        }
+  
+    </style>
 </head>
 <body>
-    {% block content %}
+    <div class="container">
+        {% block content %}
+    
+        {% if user.username == '' %}
+            <div class="title">
+                <h1>SigDespensa</h1>
+            </div> 
+            <div class="content">
+                <div class="user-details">
 
-    {% if user.username == '' %}
-        <h2>Login</h2>
-        <form action="{% url 'account_login' %}" method="POST">
-            {% csrf_token %}
-            {{ login_form }}
-            <button type="submit">Login</button>
-        </form> 
-    {% else %}
-        <div>Logado como: {{user.username}}</div>
-        <div>
-            <a href="{% url 'users:profile' %}">Profile</a>
-            <a href="{% url 'account_logout' %}">Sair</a>
-        </div>
-    {% endif %}
-    {% endblock %}
+                    <form action="{% url 'account_login' %}" method="POST">
+                        {% csrf_token %}
+                    
+                        <div class="input-field">
+                            <label for="{{ login_form.login.id_for_label }}">Username:</label>
+                            {{ login_form.login }}
+                        </div>
+        
+                        <div class="input-field">
+                            <label for="{{ login_form.password.id_for_label }}">Password:</label>
+                            {{ login_form.password }}
+                        </div>
+        
+                        <div class="submit-button">
+                            <button type="submit"> <b>Login</b> </button>
+                        </div>   
+                    </form> 
+                </div>
+            </div>
+        {% else %}
+            <div>Logado como: {{user.username}}</div>
+            <div>
+                <a href="{% url 'users:profile' %}">Profile</a>
+                <a href="{% url 'account_logout' %}">Sair</a>
+            </div>
+        {% endif %}
+        {% endblock %}
+    </div>
 </body>
 </html>

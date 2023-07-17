@@ -1,26 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SigDespensa</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 20px;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+        }
+
+        .bg-0c375c {
+            background-color: #0c375c;
+        }
+
+        .rounded-table {
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 8px; 
+            overflow: hidden; 
+            border-top: none;
+        }
+
+        .rounded-table th,
+        .rounded-table td {
+
+            border-right: none;
+            text-align: center;
+            border-left: none;
+            padding: 8px; 
+        }
+
+        .rounded-table th {
+            background-color: #0c375c;
+            color: white;
+            border-right: none;
+            border-left: none;
+            
+            
+        }
+
+        .rounded-table td {
+            background-color: #fff;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            padding-left:flex;
+            padding-right:flex;
+        }
+    </style>
 </head>
 <body>
-    <p>User is logged in :)</p>
-    <p>Username -->  {{ request.user.username }}</p>
-    <a href="{%url 'despensas:despensa_form' %}">Criar Despensa</a>
+    <div class="main-container">
+        <div class="table-container">
+            <h1>Usuário: {{ request.user.username }}</h1>
 
-    {% for despensa in despensas %}
-
-        {% if not despensa %}
-            <div></div>
-        {% else %}
-            <div>
-                <p>
-                    <a href="{%url 'despensas:despensa_detail' despensa.id%}">{{ despensa.nome }}</a>
-                </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover table-lg rounded-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Lista das Despensas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for despensa in despensas %}
+                            {% if not despensa %}
+                                <tr>
+                                    <td colspan="2" class="text-center">Nenhuma despensa encontrada.</td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td>{{ despensa.id }}</td>
+                                    <td><a href="{%url 'despensas:despensa_detail' despensa.id%}" style="text-decoration: none; color: black; font-family: 'Roboto', sans-serif;">{{ despensa.nome }}</a></td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-        {% endif %}
-    {% endfor %}
+
+            <center><a href="{%url 'despensas:despensa_form' %}" class="btn btn-primary bg-0c375c">Criar Despensa</a></center>
+        </div>
+    </div>
 </body>
 </html>

@@ -18,6 +18,20 @@ Connect React JS Frontend with Django Backend
 Django 4 CRUD completo
 * [Django 4 CRUD completo em ~30 minutos](https://www.youtube.com/watch?v=GGBzMpIAgz4) 
 
+### Para implantar o projeto no Docker:
+
+bash:
+```
+docker build -t sig-despensa .
+```
+
+### Para iniciar o servidor, execute o seguinte comando no terminal:
+
+bash:
+```
+docker-compose up
+```
+
 # Instalando o sistema
 É necessário ter alguma versão do python instalada no seu sistema. De preferência python >= 3.10
 

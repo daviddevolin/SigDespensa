@@ -101,6 +101,26 @@
             font-weight: 500;
             color: #fff;
         }
+        .button button {
+            width: 100%;
+            margin-top: 2rem;
+            border: none;
+            background-color: #0c375c;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button button:hover {
+            background-color: #0c375c;
+        }
+
+        .button button b {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
        
         form input[type="radio"]{
             display: none;
@@ -153,8 +173,13 @@
         
                         <div class="submit-button">
                             <button type="submit"> <b>Login</b> </button>
-                        </div>   
+                        </div> 
+
+                        
                     </form> 
+                    <div class="button">
+                        <button><a href="{% url 'users:home' %}"><b>Cadastre-se</b></a></button>
+                    </div>
                 </div>
             </div>
         {% else %}

@@ -4,138 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>SigDespensa</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap%27');
-        *{align-items: center;
+        *{
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
         }  
         
-
         body{
-            display: flex;
-            align-items: center;
-            background: #b7e6e2d5;
-            justify-content: center;
-            width: 100%;
             height: 100vh;
-        }
-        .container {
-            width: 80%;
-            height: 80vh;
-            display: flex;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-            overflow: hidden;
-        }
-
-        .form-image {
-            width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #b7e6e2d5;
-            padding: 1rem;
+            padding: 10px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+            background-attachment: fixed;
         }
-
-        .form-image img {
-            width: 20rem;
+        .container{
+            max-width: 700px;
+            width: 100%;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         }
-
-        .form-column {
+        .container .title{
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+        .container .title::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+        }
+        .content form .user-details{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 1rem 0;
+            margin: 20px 0 12px 0;
         }
-
-        .form-row {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.1rem;
+        form .user-details .form-row{
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);
         }
-
-        .form-row input {
-            margin: 0.6rem 0;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 1px 1px 6px #0000001c;
-            font-size: 0.8rem;
-        }
-
-        .form-row input:hover {
-            background-color: #eeeeee75;
-        }
-
-        .form-row input:focus-visible {
-            outline: 1px solid #0c375c;
-        }
-
-        .form-row label{
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #000000c0;
-        }
-
-        .form-rowinput::placeholder {
-            color: #000000be;
-        }
-
-        .form {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            background-color: #b7e6e2d5;
-            padding: 3rem;
-            flex-flow: column;
-        }
-        .form-header {
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .form-header h1::after {
-            content: '';
+        form .form-row {
             display: block;
-            width: 5rem;
-            height: 0.3rem;
-            background-color: #0c375c;
-            margin: 0 auto;
-            position: absolute;
-            border-radius: 10px;
-        }
-
-        .login-button {
-            display: flex;
-            align-items: center;
-        }
-
-        .login-button button {
-            border: none;
-            background-color: #0c375c;
-            padding: 0.4rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .login-button button:hover {
-            background-color: #0c375c;
-        }
-
-        .login-button button a {
-            text-decoration: none;
             font-weight: 500;
-            color: #fff;
+            margin-bottom: 5px;
+        }
+        .user-details .form-row input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .user-details .form-row input:focus,
+        .user-details .form-row input:hover{
+            border-color: #0c375c;
         }
 
+        .title h1{
+            color: #0c375c;
+        }
 
-        .submit-button button {
+        .submit-button {
+            display: flex;
+            flex-flow: row;
+            gap: 2rem;
+            
+        }
+        
+        .submit-button button, a {
             width: 100%;
-            margin-top: 0rem;
+            margin-top: 2rem;
             border: none;
             background-color: #0c375c;
             padding: 0.62rem;
@@ -154,74 +110,73 @@
             color: #fff;
         }
 
-        .title{
-            display: flex;
-            flex-flow: column;
-            flex-grow: 1;
+        .submit-button a {
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
         }
-        .title h1{
-            color: #0c375c;
+       
+        form input[type="radio"]{
+            display: none;
         }
-
-        @media screen and (max-width: 1330px) {
-            .form-image {
-                display: none;
+        
+        input{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;    
+        }
+       
+        @media(max-width: 584px){
+            .container{
+                max-width: 100%;
             }
-            .container {
-                width: 50%;
-            }
-            .form {
+            form .user-details .form-row{
+                margin-bottom: 15px;
                 width: 100%;
             }
-        }
-
-        @media screen and (max-width: 1064px) {
-            .container {
-                width: 90%;
-                height: auto;
-            }
-            .form-column {
-                flex-direction: column;
-                z-index: 5;
-                padding-right: 5rem;
-                max-height: 10rem;
+            .content form .user-details{
+                max-height: 300px;
                 overflow-y: scroll;
-                flex-wrap: nowrap;
             }
-            
+            .user-details::-webkit-scrollbar{
+                width: 5px;
+            }
         }
-
+        @media(max-width: 459px){
+            .container .content {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">   
-        <div class = "form-image">
-            {% load static %}
-            <img src="{% static 'img/undraw_online_groceries_a02y.svg' %}" alt="">
-        </div>
-        <div class="form">
-            <div class="form-header">
-                <div class="title">
-                    <h1>SigDespensa</h1>
-                </div>
-                <div class="login-button">
-                    <button><a href="{%url 'users:login' %}">Entrar</a></button>
-                </div>
-            </div>
-    
-            <form action="{%url 'users:salvar' %}" method="POST">
-                {% csrf_token %}
-                <div class="form-column">
+    <div class="container">
+        <div class="title">
+            <h1>SigDespensa</h1>
+        </div>   
+        <div class="content">  
+            <div class="user-details">
+                <form action="{%url 'users:salvar' %}" method="POST">
+                    {% csrf_token %}
                     <div class="form-row">
-                        <label for="{{ usuario_form.username.id_for_label }}">Username:</label>
+                        <label for="{{ usuario_form.username.id_for_label }}">Nome de Usuário:</label>
                         {{ usuario_form.username }}
                     </div>
                     <div class="form-row">
-                        <label for="{{ usuario_form.first_name.id_for_label }}">First Name:</label>
+                        <label for="{{ usuario_form.first_name.id_for_label }}">Nome:</label>
                         {{ usuario_form.first_name }}
                     </div>
                     <div class="form-row">
-                        <label for="{{ usuario_form.last_name.id_for_label }}">Last Name:</label>
+                        <label for="{{ usuario_form.last_name.id_for_label }}">Sobrenome:</label>
                         {{ usuario_form.last_name }}
                     </div>
                     <div class="form-row">
@@ -229,11 +184,11 @@
                         {{ usuario_form.email }}
                     </div>
                     <div class="form-row">
-                        <label for="{{ usuario_form.password.id_for_label }}">Password:</label>
+                        <label for="{{ usuario_form.password.id_for_label }}">Senha:</label>
                         {{ usuario_form.password }}
                     </div>
                     <div class="form-row">
-                        <label for="{{ usuario_form.confirm_password.id_for_label }}">Confirm Password:</label>
+                        <label for="{{ usuario_form.confirm_password.id_for_label }}">Confirmar Senha:</label>
                         {{ usuario_form.confirm_password }}
                     </div>
                     <div class="form-row">
@@ -244,18 +199,19 @@
                         <label for="{{ usuario_form.telefone.id_for_label }}">Telefone:</label>
                         {{ usuario_form.telefone }}
                     </div>
-                </div>
-                <div class="submit-button">
-                    <button type="submit"> <b>Enviar</b> </button>
-                </div>
-                {% if not errors %}
-                    <div></div>
-                {% else %}
-                    <div>{{errors}}</div>
-                {%endif%}
-            </form>
+                
+                    <div class="submit-button">
+                        <button type="submit"> <b>Enviar</b> </button>
+                        <a href="{% url 'home' %}">Voltar</a>
+                    </div>
+                    {% if not errors %}
+                        <div></div>
+                    {% else %}
+                        <div>{{errors}}</div>
+                    {%endif%}
+                </form>
+            </div>
         </div>
-
     </div>
 </body>
 </html>

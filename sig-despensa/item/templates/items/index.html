@@ -4,20 +4,225 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>SigDespensa</title>
     <style>
-        input {
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap%27');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }  
+        
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+            background-attachment: fixed;
+        }
+        .container{
+            max-width: 700px;
+            width: 100%;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+        .container .title::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+        }
+        .content form .user-details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+        form .user-details .form-row{
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);
+        }
+        form .form-row {
             display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .user-details .form-row input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .user-details .form-row input:focus,
+        .user-details .form-row input:hover{
+            border-color: #0c375c;
+        }
+
+        .title h1{
+            color: #0c375c;
+        }
+
+        .submit-button {
+            display: flex;
+            flex-flow: row;
+            gap: 2rem;
+            
+        }
+
+        .submit-button button {
+            width: 100%;
+            margin-top: 2rem;
+            border: none;
+            background-color: #0c375c;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button button:hover {
+            background-color: #0c375c;
+        }
+
+        .submit-button button b {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .drop-down {
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);
+        }
+
+        .drop-down label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .drop-down select {
+            height: 45px;
+            width: 60%;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding-left: 15px;
+            border: 1px solid #ccc;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .drop-down select:focus,
+        .drop-down select:hover {
+            border-color: #0c375c;
+        }
+       
+        form input[type="radio"]{
+            display: none;
+        }
+        
+        input{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+       
+        @media(max-width: 584px){
+            .container{
+                max-width: 100%;
+            }
+            form .user-details .form-row{
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            .content form .user-details{
+                max-height: 300px;
+                overflow-y: scroll;
+            }
+            .user-details::-webkit-scrollbar{
+                width: 5px;
+            }
+        }
+        @media(max-width: 459px){
+            .container .content {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>SigDespensa</h1>
-
-    <form action="{% url 'items:salvar' %}" method="POST">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="container">
+        <div class="title">
+            <h1>SigDespensa</h1>
+        </div>
+        <div class="content">
+            <div class="user-details">
+                <form action="{% url 'items:salvar' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <label for="{{ form.nome.id_for_label }}">Nome:</label>
+                        {{ form.nome }}
+                    </div>
+                    
+                    <div class="form-row">
+                        <label for="{{ form.marca.id_for_label }}">Marca:</label>
+                        {{ form.marca }}
+                    </div>
+                    
+                    <div class="form-row">
+                        <label for="{{ form.peso.id_for_label }}">Peso:</label>
+                        {{ form.peso }}
+                    </div>
+                    
+                    <div class="form-row">
+                        <label for="{{ form.data_validade.id_for_label }}">Data de Validade:</label>
+                        {{ form.data_validade }}
+                    </div>
+                    
+                    <div class="drop-down">
+                        <label for="{{ form.despensa.id_for_label }}" >Despensa:</label>
+                        {{ form.despensa }}
+                    </div>
+                    
+                    <div class="drop-down">
+                        <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
+                           {{ form.categoria }}
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit"><b>Enviar</b></button>
+                        <button type="button" onclick="javascript:history.back()"><b>Voltar</b></button>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

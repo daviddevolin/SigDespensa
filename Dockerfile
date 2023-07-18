@@ -16,6 +16,10 @@ RUN mkdir -p /opt/app/SigDespensa/sig-despensa
 COPY sig-despensa/requirements.txt /opt/app/SigDespensa/
 COPY start-server.sh /opt/app/SigDespensa/
 COPY sig-despensa /opt/app/SigDespensa/sig-despensa
+
+RUN touch /opt/app/SigDespensa/sig-despensa/.env
+RUN echo "DEBUG_STATE=False" >> /opt/app/SigDespensa/sig-despensa/.env
+
 WORKDIR /opt/app/SigDespensa
 
 # install dependencies 

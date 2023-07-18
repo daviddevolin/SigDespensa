@@ -1,0 +1,30 @@
+[
+    {
+        "model": "categoria.Categoria",
+        "pk": 1,
+        "fields": {
+            "nome": "Alimentos"
+        }
+    },
+    {
+        "model": "categoria.Categoria",
+        "pk": 2,
+        "fields": {
+            "nome": "Limpeza"
+        }
+    },
+    {
+        "model": "categoria.Categoria",
+        "pk": 3,
+        "fields": {
+            "nome": "Higiene"
+        }
+    },
+    {
+        "model": "categoria.Categoria",
+        "pk": 4,
+        "fields": {
+            "nome": "Outros"
+        }
+    }
+]

@@ -42,8 +42,8 @@ RF003 - Pesquisar Usuário | Pesquisa informações de um determinado usuário. 
 RF004 - Excluir Usuário | Remove permanentemente o cadastro do Usuário. Excluir Usuário tem: código-ID, email, CPF e senha. | Usuário|
 RF005 - Fazer Login | Realiza o login do usuário com as informações passadas: email e senha | Usuário |
 RF006 - Controle de permissões de usuários no sistema | O sistema deverá conceder permissões de administrador para usuários que criarem uma despensa e para usuários selecionados pelo administrador. | Usuário |
-RF007 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal, capacidade, e categoria. | Usuário |
-RF008 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal, capacidade, e categoria | Usuário |
+RF007 - Inserir Despensa | A Despensa é onde estará o estoque de produtos. Uma Despensa tem: código-ID, quantidadeTotal e categoria. | Usuário |
+RF008 - Alterar Despensa | Edita as informações de uma determinada Despensa. Alterar uma despensa tem: quantidadeTotal e categoria | Usuário |
 RF009 - Pesquisar Despensa | Pesquisa informações sobre uma despensa. Pesquisar despensa tem: código-ID. | Usuário |
 RF010 - Excluir Despensa | Remove permanentemente o cadastro de uma despensa. Excluir despensa tem: código-ID | Usuário |
 RF011 - Inserir Categoria |  Categoria estabelece que tipo de item pode ser armazenado em determinado depósito. Uma Categoria tem: código-ID e nome. | Usuário |

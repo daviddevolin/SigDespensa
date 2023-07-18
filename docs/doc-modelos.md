@@ -46,7 +46,6 @@ classDiagram
     class Despensa{
         -int id
         -int quantTotal
-        -int capacidade
         -Categoria categoria
 
         +updateDespensa(id) Despensa

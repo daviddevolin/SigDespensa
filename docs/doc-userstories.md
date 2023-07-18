@@ -67,7 +67,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | A user story Manter Despensa é uma funcionalidade essencial para o SigDespensa, pois é o pilar principal de todo o sistema, sem ele não haveria SigDespensa. Manter despensa é responsável pela gestão de todo o estoque, sendo composto de requisitos funcionais como: Inserir Despensa, Alterar Despensa, Pesquisar Despensa e Excluir Despensa. Manter Despensa é responsável por inserir novas despensas, editar informações de uma determinada despensa, pesquisar informações sobre uma despensa e até mesmo excluir permanentemente o cadastro de uma despensa. A user story em questão possui os seguintes atributos: Nome, quantidadeTotal, capacidade.  |
+| **Descrição** | A user story Manter Despensa é uma funcionalidade essencial para o SigDespensa, pois é o pilar principal de todo o sistema, sem ele não haveria SigDespensa. Manter despensa é responsável pela gestão de todo o estoque, sendo composto de requisitos funcionais como: Inserir Despensa, Alterar Despensa, Pesquisar Despensa e Excluir Despensa. Manter Despensa é responsável por inserir novas despensas, editar informações de uma determinada despensa, pesquisar informações sobre uma despensa e até mesmo excluir permanentemente o cadastro de uma despensa. A user story em questão possui os seguintes atributos: Nome, quantidadeTotal.  |
 
 | **Requisitos Funcionais envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |

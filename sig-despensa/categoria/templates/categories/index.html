@@ -47,13 +47,13 @@
             border-radius: 5px;
             background: linear-gradient(135deg, #b7e6e2d5, #0c375c);
         }
-        .content form .user-details{
+        .content form .categorie-details{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin: 20px 0 12px 0;
         }
-        form .user-details .form-row{
+        form .categorie-details .form-row{
             margin-bottom: 15px;
             width: calc(100% / 2 - 20px);
         }
@@ -62,7 +62,7 @@
             font-weight: 500;
             margin-bottom: 5px;
         }
-        .user-details .form-row input{
+        .categorie-details .form-row input{
             height: 45px;
             width: 100%;
             outline: none;
@@ -73,8 +73,8 @@
             border-bottom-width: 2px;
             transition: all 0.3s ease;
         }
-        .user-details .form-row input:focus,
-        .user-details .form-row input:hover{
+        .categorie-details .form-row input:focus,
+        .categorie-details .form-row input:hover{
             border-color: #0c375c;
         }
 
@@ -139,15 +139,15 @@
             .container{
                 max-width: 100%;
             }
-            form .user-details .form-row{
+            form .categorie-details .form-row{
                 margin-bottom: 40px;
                 width: 100%;
             }
-            .content form .user-details{
+            .content form .categorie-details{
                 max-height: 300px;
                 overflow-y: scroll;
             }
-            .user-details::-webkit-scrollbar{
+            .categorie-details::-webkit-scrollbar{
                 width: 5px;
             }
         }
@@ -165,7 +165,7 @@
             <h1>SigDespensa</h1>
         </div>
         <div class="content">
-            <div class="user-details">
+            <div class="categorie-details">
                 <form action="{%url 'categories:salvar' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">

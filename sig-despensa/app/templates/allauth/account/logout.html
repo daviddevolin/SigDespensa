@@ -1,19 +1,69 @@
-{% extends "account/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Out</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+        }
 
-{% load i18n %}
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+        .submit-button button {
+            width: 100%;
+            margin-top: 2rem;
+            border: none;
+            background-color: #0c375c;
+            padding: 0.62rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-{% block content %}
-<h1>{% trans "Sign Out" %}</h1>
+        .submit-button button:hover {
+            background-color: #0c375c;
+        }
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+        .submit-button button b {
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        {% load i18n %}
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-{% endblock %}
+        {% block content %}
+        <h1>{% trans "Sign Out" %}</h1>
+
+        <p>{% trans 'Tem certeza que deseja sair ?' %}</p>
+
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+          {% endif %}
+          
+          <div class="submit-button">
+            <button type="submit"> <b>Sair</b> </button>
+          </div> 
+        </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

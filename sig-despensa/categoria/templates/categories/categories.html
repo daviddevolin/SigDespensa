@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Categorias</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background-image: linear-gradient(135deg, #b7e6e2d5, #0c375c);
+        }
+
+        .bg-0c375c {
+            background-color: #0c375c;
+        }
+
+        .rounded-table {
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 8px; 
+            overflow: hidden; 
+            border-top: none;
+            margin-top: 20px;
+        }
+
+        .rounded-table th,
+        .rounded-table td {
+
+            border-right: none;
+            text-align: center;
+            border-left: none;
+            padding: 8px; 
+        }
+
+        .rounded-table th {
+            background-color: #0c375c;
+            color: white;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+        }
+
+        .rounded-table td {
+            background-color: #fff;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            padding-left: flex;
+            padding-right: flex;
+            border-top: none;
+        }
+
+        .button-container {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="table-container">
+            <form action="{% url 'categories:search' %}" method="POST" class="form-inline my-2 my-lg-0">
+                {% csrf_token %}
+                <input type="text" name="search" class="form-control mr-sm-2" placeholder="Pesquisar">
+                <button type="submit" class="btn btn-primary my-2 my-sm-0 bg-0c375c">Pesquisar</button>
+                <button type="button" onclick="javascript:history.back()" class="btn btn-primary bg-0c375c mx-2">Voltar</button>
+            </form>
+            {% if not categorias %}
+                <h1>Sem categorias!</h1>
+            {% else %}
+                <table class="rounded-table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Categorias</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in categorias %}
+                            <tr>
+                                <td>{{ c.id }}</td>
+                                <td>{{ c.nome }}</td>
+                                <td>
+                                    <a href="{% url 'categories:editar' c.id %}" class="btn btn-sm btn-primary bg-0c375c">Editar</a>
+                                    <a href="{% url 'categories:delete' c.id %}" class="btn btn-sm btn-primary bg-0c375c">Deletar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

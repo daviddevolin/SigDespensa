@@ -18,7 +18,6 @@
 | telefone      | representa o numero para contato do usuário | INT      | 11      | Unique / Not Null             |
 
 
-
 ## Despensa
 
 |   Tabela   | Inserir Despensa  |

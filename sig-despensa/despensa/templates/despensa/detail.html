@@ -17,19 +17,29 @@
             min-height: 100vh;
             background-image: linear-gradient(135deg, #b7e6e2d5, #0c375c);
         }
+        
         .bg-0c375c {
             background-color: #0c375c;
-        
         }
+
         .table th {
             border-bottom: 1px solid black;
             color: black; 
             font-family: 'Roboto', sans-serif;
         }  
+
         .table td {
             color: black; 
             font-family: 'Roboto', sans-serif;
         }  
+        
+        .rounded-table {
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 8px; 
+            overflow: hidden; 
+            border-top: none;
+        }
     </style>
 </head>
 <body>
@@ -87,8 +97,8 @@
                                     <td>{{ item.peso }}</td>
                                     <td>{{ item.data_validade }}</td>
                                     <td>
-                                        <a href="{% url 'items:editar' item.id %}" style= "text-decoration: none;color: black;">Editar</a> |
-                                        <a href="{% url 'items:delete' item.id %}" style= "text-decoration: none;color: black;">Excluir</a>
+                                        <a href="{% url 'items:editar' item.id %}" style="text-decoration: none; color: black;">Editar</a> |
+                                        <a href="{% url 'items:delete' item.id %}" style="text-decoration: none; color: black;">Excluir</a>
                                     </td>
                                 </tr>
                             {% endfor %}

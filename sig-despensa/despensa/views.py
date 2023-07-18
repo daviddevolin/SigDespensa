@@ -52,7 +52,7 @@ def despensa_create(request):
         despensa.save()
 
         rendered_page = render(request, 'despensa/form.html', {"despensas_form": DespensaForm()})
-        return redirect('despensas:despensa_list')
+        return redirect('users:profile')
     else:
         print(despensa_form.errors)
         rendered_page = render(request, 'despensa/form.html', {"despensas_form": DespensaForm(), "errors": despensa_form.errors})

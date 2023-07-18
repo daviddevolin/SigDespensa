@@ -21,6 +21,7 @@ load_dotenv(dotenv_path)
 # Set DEBUG_STATE from .env
 DEBUG_STATE = os.environ.get("DEBUG_STATE")
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

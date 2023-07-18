@@ -57,6 +57,10 @@
             padding-left:flex;
             padding-right:flex;
         }
+        .button-container {
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
@@ -89,7 +93,15 @@
                 </table>
             </div>
 
-            <center><a href="{%url 'despensas:despensa_form' %}" class="btn btn-primary bg-0c375c">Criar Despensa</a></center>
+            <center>
+                <div class="button-container">
+                    <a href="{%url 'despensas:despensa_form' %}" class="btn btn-primary bg-0c375c mx-2">Criar Despensa</a>
+                    <a href="{% url 'account_logout' %}" class="btn btn-primary bg-0c375c mx-2">Sair</a>
+                </div>
+            </center>
+            
+            
+            
         </div>
     </div>
 </body>
